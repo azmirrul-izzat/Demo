@@ -11,6 +11,7 @@
             var url = new URL(url_string);
             var c = url.searchParams.get("category");
             var cc = url.searchParams.get("countrycode");
+            var ccc = url.searchParams.get("key");
             
             var data;
             var getJSONarr = [];
@@ -20,7 +21,12 @@
 
             $(".default-col").hide();
 
-            getLocalCompare();
+            if(ccc){
+				getShareCompare();
+            }else{
+                getLocalCompare();
+            }
+
 
             function getLocalCompare() {
                 if (localStorage.getItem(currCategoryKey) === null) {
@@ -46,19 +52,67 @@
                         $(".default-col").show();
 
                     }
-                    loadLocalCompare();
+
+                    loadLocalCompare(getJSONarr);
                 }
             }
 
+        	function getShareCompare() {
 
-            function loadLocalCompare() {
+                $.ajax({
+                    url: "/bin/usgb/v3/shareService",
+                    type: "GET",
+                    data: 'rType=get&key=' + ccc,
+                    cache: false,
+                    success: function(response) {
+                        console.log(response.path);
+                        data = response.path;
+                        if(data == null || data.length == 0){
+                            $(".default-col").show();
+                        } else {
+                            $(".default-col").hide();
+
+                            //get from local storage
+                            //data = JSON.parse(localStorage.getItem(currCategoryKey));
+                            console.log("path = ", data);
+        
+
+        
+        
+                            if (data.length < 1) {
+                                //console.log("nomore");
+                                localStorage.removeItem(currCategoryKey);
+                                $(".compare-product-col").remove();
+                                $(".default-col").show();
+        
+                            }
+        
+                            loadLocalCompare(data);
+
+                			$( document ).ajaxComplete(function() {
+                              $(".close-btn-box").addClass("hidden");
+                              $(".product-compare-content a").removeAttr("href");
+                              $(".product-compare-content a").removeAttr("onclick");
+                            });
+
+                			$(".emailCompare").addClass("hidden");
+
+
+                        }
+
+                    }
+                });
+            }
+
+
+            function loadLocalCompare(compareData) {
                 //data = JSON.parse(localStorage.getItem('ceiling')) || [];
                 // getJSONarr = data.map(function (getJSONarr) {
                 // return getJSONarr.url.split(".").reverse()[1] + ".json";
                 //  });
 
                 //after ajax get all data in array, run pagination
-                getAll(getJSONarr).done(function (results) {
+                getAll(compareData).done(function (results) {
 
                     currOnStageMainResultData = results;
 
@@ -84,10 +138,13 @@
 
 
                     $('[data-div-height="physicalProperties"]').matchHeight();
+                    $('[data-div-height="featureAndBenefits"]').matchHeight();
                     $('[data-div-height="applications"]').matchHeight();
-                    $('[data-div-height="sustainability"]').matchHeight();
                     $('[data-div-height="resourceList"]').matchHeight();
+                    $('[data-div-height="sustainability"]').matchHeight();
                     $('[data-div-height="wrapper"]').matchHeight();
+
+
 
                 });
 
@@ -140,6 +197,30 @@
                 localStorage.setItem(currCategoryKey, JSON.stringify(data));
                 getLocalCompare();
 
+            });
+
+        	$("body").on("click", ".emailCompare", function () {
+                event.preventDefault();
+
+                var jsonpath = new Object();
+                jsonpath.paths = getJSONarr;
+
+                var paths = JSON.stringify(jsonpath);
+
+                    $.ajax({
+                        url: "/bin/usgb/v3/shareService",
+                        type: "GET",
+                        data: 'rType=write&paths='+paths,
+                        cache: false,
+                        success: function(response) {
+                            var compareUrl = window.location.href.split('?')[0] + "?key=" + response.key;
+                        	window.location = 'mailto:?subject=My USG Boral Compare&body='+compareUrl;
+                        	//window.open('mailto:?subject=My USG Boral Compare&body='+compareUrl);
+
+                        }
+                    });
+
+                console.log("jsonpath : " + JSON.stringify(jsonpath));
             });
 
 

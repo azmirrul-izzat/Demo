@@ -12,18 +12,18 @@
 				<div class="c-flex-items col-xs-12">
 					<div class="item-stretch breadcrumb-box"> </div>
 					<div class="item-fix p-no text-center hidden-xs">
-						<a class="color-darker-grey right-line-dark-grey p-right-xs fs-3" href="mailto:noreply@usgboral.com">
+						<a class="color-darker-grey right-line-dark-grey p-right-xs fs-3 emailCompare" href="#">
 							<span class="glyphicon glyphicon-print p-right-s"></span>Email
 						</a>
 						<a class="color-darker-grey p-left-xs fs-3" href="#" onclick="window.print();">
 							<span class="glyphicon glyphicon-print p-right-s"></span>Print
 						</a>
 					</div>
-	
+
 				</div>
 			</div>
 		</div>
-	
+
 		<!-- SECTION 1 -->
 		<div class="container">
 			<div class="row m-top-xl m-sm-top-3xl">
@@ -31,11 +31,11 @@
 					<h2 class="ht4 uppercase color-darker-grey">${properties.title @ context='html'}</h2>
 				</div>
 				<div class="col-xs-4 pull-right visible-xs">
-					<span class="fa-stack fa-1x">
+					<span class="fa-stack fa-1x emailCompare">
 						<i class="fa fa-square fa-stack-2x"></i>
 						<i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
 					</span>
-					<span class="fa-stack fa-1x">
+					<span class="fa-stack fa-1x" onclick="window.print();">
 						<i class="fa fa-square fa-stack-2x"></i>
 						<i class="fa fa-print fa-stack-1x fa-inverse"></i>
 					</span>
@@ -45,7 +45,7 @@
 				</div>
 			</div>
 		</div>
-	
+
 		<div class="container">
 	
 			<script id="compare-product-col" type="text/x-handlebars-template">
@@ -68,9 +68,9 @@
 					{{#each pagePropertiesList}}
 	
 					<div class="p-xl m-top-l">
-						<h2 class=" title ht6 uppercase color-darker-grey">${'Physical Properties' @ i18n}</h2>
+						<h2 class=" title ht6 uppercase color-darker-grey">Physical Properties</h2>
 	
-	
+
 					</div>
 	
 					<hr class="m-no">
@@ -83,7 +83,7 @@
 					</div>
 	
 					<div class="p-xl m-top-l">
-						<h2 class=" title ht6 uppercase color-darker-grey">${'Features & Benefits' @ i18n}</h2>
+						<h2 class=" title ht6 uppercase color-darker-grey">Features & Benefits</h2>
 					</div>
 					<hr class="m-no">
 					<div data-div-height="featuresAndBenefits" class=" applicationsp-side-xl p-m ">
@@ -94,7 +94,7 @@
 						{{/if}}
 					</div>
 					<div class="p-xl m-top-l">
-						<h2 class=" title ht6 uppercase color-darker-grey">${'Applications' @ i18n}</h2>
+						<h2 class=" title ht6 uppercase color-darker-grey">Applications</h2>
 					</div>
 					<hr class="m-no">
 					<div data-div-height="applications" class="p-side-xl p-m ">
@@ -105,7 +105,7 @@
 						{{/if}}
 					</div>
 					<div class="p-xl m-top-l">
-						<h2 class=" title ht6 uppercase color-darker-grey">${'Sustainability' @ i18n}</h2>
+						<h2 class=" title ht6 uppercase color-darker-grey">Sustainability</h2>
 					</div>
 					<hr class="m-no">
 					<div data-div-height="sustainability" class="p-side-xl p-m ">
@@ -116,7 +116,7 @@
 						{{/if}}
 					</div>
 					<div class="p-xl m-top-l"> 
-						<h2 class=" title ht6 uppercase color-darker-grey">${'Resources' @ i18n}</h2>
+						<h2 class=" title ht6 uppercase color-darker-grey">Resources</h2>
 	
 					</div>
 					<hr class="m-no">
@@ -131,7 +131,7 @@
 					{{/each}}
 	
 	
-	
+
 				</div>
 	
 				{{/each}}
@@ -148,7 +148,7 @@
 											</div>
 										</div>
 									</div>
-									<h2 class="p-vertical-l color-darker-grey ht6 text-center uppercase">${'Add to compare' @ i18n}</h2>
+									<h2 class="p-vertical-l color-darker-grey ht6 text-center uppercase">Add To Compare</h2>
 								</div>
 							</div>
 						</div>
@@ -167,7 +167,7 @@
 											</div>
 										</div>
 									</div>
-									<h2 class="p-vertical-l color-darker-grey ht6 text-center uppercase">${'Add to compare' @ i18n} </h2>
+									<h2 class="p-vertical-l color-darker-grey ht6 text-center uppercase">Add To Compare</h2>
 								</div>
 							</div>
 						</div>
@@ -185,7 +185,7 @@
 											</div>
 										</div>
 									</div>
-									<h2 class="p-vertical-l color-darker-grey ht6 text-center uppercase">${'Add to compare' @ i18n}</h2>
+									<h2 class="p-vertical-l color-darker-grey ht6 text-center uppercase">Add To Compare</h2>
 								</div>
 							</div>
 						</div>

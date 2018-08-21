@@ -25,9 +25,6 @@
     <modules>
         <module>core</module>
         <module>ui.apps</module>
-        <!-- <module>ui.content</module>
-        <module>it.tests</module>
-        <module>it.launcher</module> -->
     </modules>
 
     <properties>
@@ -44,7 +41,7 @@
 
         <!--     DEV -->
         <aem.host.dev>usgbdevaut.cloudapp.net</aem.host.dev>
-        <aem.port.dev>4504</aem.port.dev>
+        <aem.port.dev>4502</aem.port.dev>
         <aem.slng.user.dev>admin</aem.slng.user.dev>
         <aem.slng.password.dev>admin</aem.slng.password.dev>
         <aem.vlt.user.dev>admin</aem.vlt.user.dev>
@@ -56,7 +53,7 @@
         <aem.slng.user.uat>admin</aem.slng.user.uat>
         <!-- WARNING! to avoid accidental deployment, manually copy password and DON'T COMMIT POM changes! -->
         <!-- manually copy this password to below: Usg_boral@Apd16 -->
-        <aem.slng.password.uat>paste_password_here</aem.slng.password.uat>
+        <aem.slng.password.uat>Usgb@123</aem.slng.password.uat>
 
         <!--     PROD 2 -->
         <aem.host.prod2>usgbproaut2.cloudapp.net</aem.host.prod2>
@@ -199,13 +196,10 @@
                     <groupId>org.apache.sling</groupId>
                     <artifactId>maven-sling-plugin</artifactId>
                     <version>2.2.0</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>install</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+<!--                     <configuration> -->
+<!--                         <slingUrl>http://${aem.host.demo}:${aem.port.demo}/system/console</slingUrl> -->
+<!--                         <deploymentMethod>WebConsole</deploymentMethod> -->
+<!--                     </configuration> -->
                 </plugin>
                 <!-- HTL Maven Plugin -->
                 <plugin>
@@ -339,7 +333,7 @@
             <id>adobe-public</id>
 
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
 
             <properties>
@@ -379,94 +373,158 @@
             </pluginRepositories>
         </profile>
 
-        <!-- Development profile: install only the Bundle -->
+        <!-- Development profile: install only the bundle -->
+        <profile>
+            <id>autoInstallBundle</id>
+            <!--
+                To enable this feature for a bundle, the maven-sling-plugin
+                (without configuration) needs to be included:
 
+                <plugin>
+                    <groupId>org.apache.sling</groupId>
+                    <artifactId>maven-sling-plugin</artifactId>
+                </plugin>
+            -->
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.sling</groupId>
+                            <artifactId>maven-sling-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>install-bundle</id>
+                                    <goals>
+                                        <goal>install</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
         <profile>
             <id>autoInstallBundleLocal</id>
             <activation>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.sling</groupId>
-                        <artifactId>maven-sling-plugin</artifactId>
-                        <configuration>
-                            <slingUrlSuffix>/apps/uiux/install</slingUrlSuffix>
-                            <failOnError>true</failOnError>
-                            <slingUrl>http://${aem.host.local}:${aem.port.local}/crx/repository/crx.default</slingUrl>
-                            <user>${aem.slng.user.local}</user>
-					        <password>${aem.slng.password.local}</password>
-	                        <deploymentMethod>WebDAV</deploymentMethod>
-	                        <failOnError>true</failOnError>
-                        </configuration>
-                    </plugin>
-                </plugins>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.sling</groupId>
+                            <artifactId>maven-sling-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>install-local</id>
+                                    <goals>
+                                        <goal>install</goal>
+                                    </goals>
+                                    <configuration>
+                                        <slingUrl>http://${aem.host.local}:${aem.port.local}/system/console</slingUrl>
+                                        <deploymentMethod>WebConsole</deploymentMethod>
+                                        <user>${aem.slng.user.local}</user>
+                                        <password>${aem.slng.password.local}</password>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
             </build>
         </profile>
         <profile>
             <id>autoInstallBundleDev</id>
             <activation>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.sling</groupId>
-                        <artifactId>maven-sling-plugin</artifactId>
-                        <configuration>
-                            <slingUrlSuffix>/apps/usgbv3/install/</slingUrlSuffix>
-                            <failOnError>true</failOnError>
-                            <slingUrl>http://${aem.host.dev}:${aem.port.dev}/crx/repository/crx.default</slingUrl>
-                            <user>${aem.slng.user.dev}</user>
-					        <password>${aem.slng.password.dev}</password>
-	                        <usePut>true</usePut>
-	                        <failOnError>true</failOnError>
-                        </configuration>
-                    </plugin>
-                </plugins>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.sling</groupId>
+                            <artifactId>maven-sling-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>install-dev</id>
+                                    <goals>
+                                        <goal>install</goal>
+                                    </goals>
+                                    <configuration>
+                                        <slingUrl>http://${aem.host.dev}:${aem.port.dev}/system/console</slingUrl>
+                                        <deploymentMethod>WebConsole</deploymentMethod>
+                                        <user>${aem.slng.user.dev}</user>
+                                        <password>${aem.slng.password.dev}</password>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
             </build>
         </profile>
         <profile>
             <id>autoInstallBundleUat</id>
             <activation>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.sling</groupId>
-                        <artifactId>maven-sling-plugin</artifactId>
-                        <configuration>
-                            <slingUrlSuffix>/apps/usgbv3/install/</slingUrlSuffix>
-                            <failOnError>true</failOnError>
-                            <slingUrl>http://${aem.host.uat}:${aem.port.uat}/crx/repository/crx.default</slingUrl>
-                            <user>${aem.slng.user.uat}</user>
-					        <password>${aem.slng.password.uat}</password>
-	                        <usePut>true</usePut>
-	                        <failOnError>true</failOnError>
-                        </configuration>
-                    </plugin>
-                </plugins>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.sling</groupId>
+                            <artifactId>maven-sling-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>install-uat</id>
+                                    <goals>
+                                        <goal>install</goal>
+                                    </goals>
+                                    <configuration>
+                                        <slingUrl>http://${aem.host.uat}:${aem.port.uat}/system/console</slingUrl>
+                                        <deploymentMethod>WebConsole</deploymentMethod>
+                                        <user>${aem.slng.user.uat}</user>
+                                        <password>${aem.slng.password.uat}</password>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
             </build>
         </profile>
         <profile>
             <id>autoInstallBundleProd2</id>
             <activation>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.sling</groupId>
-                        <artifactId>maven-sling-plugin</artifactId>
-                        <configuration>
-                            <slingUrlSuffix>/apps/usgbv3/install/</slingUrlSuffix>
-                            <failOnError>true</failOnError>
-                            <slingUrl>http://${aem.host.prod2}:${aem.port.prod2}/crx/repository/crx.default</slingUrl>
-                            <user>${aem.slng.user.prod2}</user>
-					        <password>${aem.slng.password.prod2}</password>
-	                        <usePut>true</usePut>
-	                        <failOnError>true</failOnError>
-                        </configuration>
-                    </plugin>
-                </plugins>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>org.apache.sling</groupId>
+                            <artifactId>maven-sling-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>install-prod2</id>
+                                    <goals>
+                                        <goal>install</goal>
+                                    </goals>
+                                    <configuration>
+                                        <slingUrl>http://${aem.host.prod2}:${aem.port.prod2}/system/console</slingUrl>
+                                        <deploymentMethod>WebConsole</deploymentMethod>
+                                        <user>${aem.slng.user.prod2}</user>
+                                        <password>${aem.slng.password.prod2}</password>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
             </build>
         </profile>
         
@@ -475,62 +533,93 @@
         <profile>
 			<id>autoInstallPackageLocal</id>
 			<activation>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.day.jcr.vault</groupId>
-						<artifactId>content-package-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>install-package</id>
-								<goals>
-									<goal>install</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<targetURL>http://${aem.host.local}:${aem.port.local}/crx/packmgr/service.jsp</targetURL>
-							<failOnError>true</failOnError>
-							<failOnMissingEmbed>true</failOnMissingEmbed>
-							<userId>${aem.vlt.user.local}</userId> 
-					        <password>${aem.vlt.password.local}</password>
-						</configuration>
-					</plugin>
-				</plugins>
+				<pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.day.jcr.vault</groupId>
+                            <artifactId>content-package-maven-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>install-local</id>
+                                    <goals>
+                                        <goal>install</goal>
+                                    </goals>
+                                    <configuration>
+                                    	<targetURL>http://${aem.host.local}:${aem.port.local}/crx/packmgr/service.jsp</targetURL>
+                                        <failOnError>true</failOnError>
+                                        <userId>${aem.vlt.user.local}</userId>
+                                        <password>${aem.vlt.password.local}</password>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
 			</build>
 		</profile>
-		<profile>
+        <profile>
 			<id>autoInstallPackageDev</id>
 			<activation>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.day.jcr.vault</groupId>
-						<artifactId>content-package-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>install-package</id>
-								<goals>
-									<goal>install</goal>
-								</goals>
-							</execution>
-						</executions>
-						<configuration>
-							<targetURL>http://${aem.host.dev}:${aem.port.dev}/crx/packmgr/service.jsp</targetURL>
-							<failOnError>true</failOnError>
-							<failOnMissingEmbed>true</failOnMissingEmbed>
-							<userId>${aem.vlt.user.dev}</userId>
-					        <password>${aem.vlt.password.dev}</password>
-						</configuration>
-					</plugin>
-				</plugins>
+				<pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.day.jcr.vault</groupId>
+                            <artifactId>content-package-maven-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>install-dev</id>
+                                    <goals>
+                                        <goal>install</goal>
+                                    </goals>
+                                    <configuration>
+                                    	<targetURL>http://${aem.host.dev}:${aem.port.dev}/crx/packmgr/service.jsp</targetURL>
+                                        <failOnError>true</failOnError>
+                                        <userId>${aem.vlt.user.dev}</userId>
+                                        <password>${aem.vlt.password.dev}</password>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
 			</build>
 		</profile>
-        
-        
-
+        <profile>
+			<id>autoInstallPackageUat</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.day.jcr.vault</groupId>
+                            <artifactId>content-package-maven-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>install-uat</id>
+                                    <goals>
+                                        <goal>install</goal>
+                                    </goals>
+                                    <configuration>
+                                    	<targetURL>http://${aem.host.uat}:${aem.port.uat}/crx/packmgr/service.jsp</targetURL>
+                                        <failOnError>true</failOnError>
+                                        <userId>${aem.vlt.user.uat}</userId>
+                                        <password>${aem.vlt.password.uat}</password>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+			</build>
+		</profile>
     </profiles>
 
 

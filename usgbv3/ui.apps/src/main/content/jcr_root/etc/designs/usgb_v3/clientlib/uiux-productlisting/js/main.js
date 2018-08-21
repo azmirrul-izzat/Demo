@@ -25,7 +25,7 @@
               // }
 
                 //if ( scrollPos > 1300) {
-                   stickySidebar.destroy();
+                  // stickySidebar.destroy();
                 //}else{
                  //   stickySidebar.updateSticky();
                // }

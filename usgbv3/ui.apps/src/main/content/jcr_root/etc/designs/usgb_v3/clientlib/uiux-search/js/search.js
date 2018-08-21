@@ -12,7 +12,7 @@
     var searchedText = "";
     var sort = "a_z";
     var dt = {};
-
+    var paramSearch = true;
     var autoCompleteData = [];
 
 
@@ -80,6 +80,9 @@
                 var text = urlParams.get('text');
                 $('#search-form input').val(text);
                 searchedText = text;
+                if(urlParams.get('category') == "doc_finder"){
+                    currCategory = "doc_finder";
+                }
                 getResult();
             }
 
@@ -87,13 +90,15 @@
                 e.preventDefault();
                 var val = "";
                 var parent = $(this).closest('.sub-search-section');
-                $(parent).find('li').removeClass('active');
-                $(this).closest('li').addClass('active');
+                // $(parent).find('li').removeClass('active');
+                // $(this).closest('li').addClass('active');
                 val = $(this).attr('data-category');
                 currCategory = val;
                 if(searchedText !== ""){
                     $('#search-form input').val(searchedText);
                     getResult();
+                    $('.container-tabs-content-type li').removeClass('active');
+                    $('.container-tabs-content-type').find('[data-category="'+ currCategory +'"]').parent().addClass('active');
                     scrollToTarget('.search-category-controller-container');
                 }
             });
@@ -359,6 +364,12 @@
 
                 if(response.result){
                     $('.container-tabs-content-type').removeClass('hidden');
+                    if(urlParams.get('category') == "doc_finder" && paramSearch == true){
+                        $('.container-tabs-content-type li').removeClass('active');
+                        $('.container-tabs-content-type').find('[data-category="doc_finder"]').parent().addClass('active');
+                        paramSearch = false;
+                    }
+
                     $('.no-search-result-container').addClass('hidden');
                     $('.search-result-container').removeClass('hidden');
 

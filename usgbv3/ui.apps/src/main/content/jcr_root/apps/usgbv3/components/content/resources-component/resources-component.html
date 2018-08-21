@@ -60,7 +60,7 @@
         
                         <sly data-sly-list.resourceCategory="${component.resourceList}">
         
-                            <div data-resource-category="${resourceCategory.tag.name @ context='unsafe'}" class="accordion-item ">
+                            <div data-resource-category="${resourceCategory.tag.name @ context='unsafe'}" class="accordion-item  ">
         
                                 <div class=" bg-light-grey p-m panel-heading rounded-corners m-bottom-xl m-md-bottom-m ${resourceCategoryList.first ? '' : 'collapsed'}" data-toggle="collapse" data-parent="#accordion"
                                     data-target="#${resourceCategory.tag.name @ context='unsafe'}">
@@ -103,7 +103,7 @@
                                                                 <!-- desktop only -->
                                                                 <div class="each hidden-xs">
                                                                     <div class="two-btn">
-                                                                        <a href="${resource.link @ context='unsafe'}" class="btn-one">Download</a>
+                                                                        <a href="${resource.link @ context='unsafe'}" class="btn-one">View</a>
                                                                         <a href="${resource.link @ context='unsafe'}" class="btn-two cta-add-submittal disabled">
                                                                             <span class="glyphicon glyphicon-plus"></span>Add to submittal</a>
                                                                     </div>
@@ -156,7 +156,7 @@
                                 <!-- desktop only -->
                                 <div class="each hidden-xs">
                                     <div class="two-btn">
-                                        <a href="${resource.link @ context='unsafe'}" class="btn-one">Download</a>
+                                        <a href="${resource.link @ context='unsafe'}" class="btn-one">View</a>
                                         <a href="${resource.link @ context='unsafe'}" class="btn-two cta-add-submittal disabled">
                                             <span class="glyphicon glyphicon-plus"></span>Add to submittal</a>
                                     </div>

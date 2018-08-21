@@ -4,11 +4,15 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="6a8b7e1b-ffcf-4437-851b-f6e05430485b">
     <jcr:content
+        cq:lastReplicated="{Date}2018-08-16T12:00:31.405+08:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
         dam:assetState="processed"
         dam:relativePath="USGBoral/Global/Website/Images/component/allsample/arrow-grey-btn.png"
         dam:s7damType="Image"
         jcr:lastModified="{Date}2018-05-17T11:58:47.777+08:00"
         jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}32"

@@ -104,8 +104,8 @@
 <!--     <filter root="/etc/designs/usgb_v3/clientlib/uiux-mapoperate" /> -->
 <!--     <filter root="/etc/designs/usgb_v3/clientlib/uiux-mixmedia" /> -->
 <!--     <filter root="/etc/designs/usgb_v3/clientlib/uiux-mysubmittal" /> -->
-    <filter root="/etc/designs/usgb_v3/clientlib/uiux-os-history" />
-    <filter root="/etc/designs/usgb_v3/clientlib/uiux-os-listing" />
+<!--     <filter root="/etc/designs/usgb_v3/clientlib/uiux-os-history" /> -->
+<!--     <filter root="/etc/designs/usgb_v3/clientlib/uiux-os-listing" /> -->
 <!--     <filter root="/etc/designs/usgb_v3/clientlib/uiux-productdetail" /> -->
 <!--     <filter root="/etc/designs/usgb_v3/clientlib/uiux-productlisting" /> -->
 <!--     <filter root="/etc/designs/usgb_v3/clientlib/uiux-search" /> -->
@@ -125,12 +125,66 @@
 
 
 <!--     CUSTOM COMMIT	-->   
-<!--     	<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/components/_order-sample-transition.less" /> -->
-<!--     	<filter root="/apps/usgbv3/components/content/pd-description-component/pd-description-component.html" /> -->
-<!--     	<filter root="/etc/designs/usgb_v3/clientlib/uiux-productlisting/js/main.js" /> -->
-<!--     	<filter root="/etc/designs/usgb_v3/clientlib/uiux-compare/js/compare.js" /> -->
-<!--     	<filter root="/apps/usgbv3/components/content/browsing-history-component/browsing-history-component.html" /> -->
-    	
+<!-- 		<filter root="/apps/usgbv3/components/structure/common/datasources/iconcode/iconcode.jsp" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/tab-tiles-component/tab-tiles-component.html" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/hotspots-component/hotspots-component.html" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/pd-description-component/pd-description-component.html" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/images" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/compare-component/compare-component.html" /> -->
+		
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-productlisting/js/main.js" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/search-component/search-component.html" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-search/js/search.js" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/where-to-buy-component/where-to-buy-component.html" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/wtb-tile-component/wtb-tile-component.html" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-where-to-buy/js/where-to-buy.js" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/header-megamenu/header-megamenu.html" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/Icon-button-tile-component/Icon-button-tile-component.html" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/contact-us-component/contact-us-component.html" /> -->
+<!--     	<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/base/_icons.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/fonts/usgbicon.svg" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/fonts/usgbicon.ttf" />	 -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/fonts/usgbicon.woff" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/main.less" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/Icon-button-tile-component/Icon-button-tile-component.html" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/header-megamenu/header-megamenu.html" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-all-js-vc/js/contact-us.js" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/search-component/search-component.html" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-contactus/css.txt" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-contactus/css/main.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-contactus/js/main.js" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/left-circle-tile-component/left-circle-tile-component.html" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/components/_image-cropper.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/main.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/base/_fonts.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/components/_custom-richtext.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/main.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/components/_cta-video-inline.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/components/_cta-video-popup.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-video/js/video.js" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/components/_megamenu.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/components/_megamenu.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/components/_carousel-home-banner.less" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/page-guide/page-guide.html" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/components/_where-to-buy.less" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-where-to-buy/js/where-to-buy.js" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-where-to-buy/js/where-to-buy.js" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/main-banner-component/main-banner-component.html" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-less/css/components/_carousel-home-banner.less" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/content/wtb-tile-component/wtb-tile-component.html" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-where-to-buy/js/where-to-buy.js" /> -->
+<!-- 		<filter root="/etc/designs/usgb_v3/clientlib/uiux-geolocation/js/main.js" /> -->
+<!-- 		<filter root="/apps/usgbv3/components/structure/globallandingtemplate/globallandingtemplate.html" /> -->
+<!-- 		<filter root="/apps/usgbv3/templates" /> -->
+<!-- 		<filter root="/apps/usgbv3/widgets" /> -->
+
+
+
+<!--     DEMO PACKAGE	-->   
+		<filter root="/apps/usgbv3" />
+	    <filter root="/etc/tags/usgbv3" />
+	    <filter root="/etc/usgbCountryList" />
+    	<filter root="/etc/designs/usgb_v3" />
     	
     	
 </workspaceFilter>

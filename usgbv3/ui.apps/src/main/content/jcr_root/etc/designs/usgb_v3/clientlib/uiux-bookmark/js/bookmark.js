@@ -233,7 +233,7 @@
 
     function getShareKey(){
         $.ajax({
-            url: "/bin/usgb/shareService",
+            url: "/bin/usgb/v3/shareService",
             type: "GET",
             data: 'rType=write&paths={"paths":' + JSON.stringify(data) + '}',
             cache: false,
@@ -262,7 +262,7 @@
 
     function getBookmarkJson(){
         $.ajax({
-            url: "/bin/usgb/shareService",
+            url: "/bin/usgb/v3/shareService",
             type: "GET",
             data: 'rType=get&key=' + gettedSharedKey,
             cache: false,

@@ -80,7 +80,7 @@
                             <img class="img-responsive hs-img" src="${item.properties.imgPath @ context='unsafe'}">
                           </div>
                           <div class="col-xs-12 col-sm-6 order-2 order-sm-2">
-                            <h2 class="ht4 m-sm-bottom-m m-bottom-s top-no hs-title">${item.properties.title}</h2>
+                            <h2 class="ht4 m-sm-bottom-m m-bottom-s top-no hs-title">${item.properties.title @ context='html'}</h2>
                     
         					${item.properties.description @ context='html'}
                     
