@@ -320,6 +320,7 @@
                     $('.wtb-search-bar').addClass('add-bg');
                     $('.search-bar-toggle-button').addClass('open');
                     $('.filter-back-btn').addClass('open');
+                  
                 }
             });
         
@@ -725,7 +726,8 @@
                         $('.search-detail-group').html(template(markersData));
                         $('.cta-search-detail-on').addClass('active');
                         $('.btn-filter').removeClass('disabled');
-
+                        $('.state-wrap').delay(1000).fadeIn(800).addClass('open');
+                       
                         filterListScrollbarReset();
 
                         if (window.matchMedia("(min-width: 768px)").matches) {

@@ -5,20 +5,43 @@
     "use strict";
     $(document).ready(function(){
        $(".carousel-home-banner").slick({
-                                            "dots": true,
-                                            "infinite": true,
-                                            "speed": 300,
-                                            "slidesToShow": 1,
-                                            "slidesToScroll": 1,
-                                            "responsive": [
-                                                {
-                                                    "breakpoint": 992,
-                                                    "settings": {
-                                                        "slidesToShow": 1
-                                                    }
-                                                }
-                                            ]
-                                        });
+                "dots": true,
+                "infinite": true,
+                "speed": 300,
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "responsive": [
+                    {
+                        "breakpoint": 992,
+                        "settings": {
+                            "slidesToShow": 1
+                        }
+                    }
+                ]
+            });
+
+
+		var lFollowX = 0,
+        lFollowY = 0,
+        x = 0,
+        y = 0,
+        friction = 1 / 20;
+
+
+        $(".hero-banner-wrapper").on('mousemove', function(e) {
+
+            var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+            var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+            lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+            lFollowY = (10 * lMouseY) / 100;
+
+			x += (lFollowX - x) * friction;
+            y += (lFollowY - y) * friction;
+
+            $('.slick-current').css("background-position", x+"px  " +y+"px");
+            //window.requestAnimationFrame(moveBackground);
+
+        });
 
 
     });
@@ -40,7 +63,7 @@
 	});
 
     $('.carousel-home-banner').on('init', function(ev, el){ 
-            $('video').each(function () {
+            $('.carousel-home-banner > video').each(function () {
                 this.play();
             });
         }); 

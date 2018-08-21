@@ -25,11 +25,11 @@
                                   <sly data-sly-test.assetExist="${item.properties.imgPath || item.properties.mblImgPath || item.properties.videoDam}">
                                       <sly data-sly-test.enablevideo="${item.properties.enableVideo}">
                                         <sly data-sly-test.urlAssetExist="${item.properties.link}">
-                                            <a href="${item.properties.link}.html" target="${properties.targettype == properties.hiddentarget ? properties.targetName : properties.targettype}" class="hero-banner-wrapper" style="background: rgb(0, 0, 0); width: 1349px;"
+                                            <a href="${item.properties.link}.html" target="${properties.targettype == properties.hiddentarget ? properties.targetName : properties.targettype}" class="hero-banner-wrapper" style="background: rgb(0, 0, 0);  background-size:110%; width: 1349px;"
                                                 data-img-mobile="background:#000" >
                                         </sly>
                                         <sly data-sly-test="${!urlAssetExist}">
-                                            <a class="hero-banner-wrapper" style="background: rgb(0, 0, 0); width: 1349px;" data-img-mobile="background:#000" >
+                                            <a class="hero-banner-wrapper" style="background: rgb(0, 0, 0); background-size:110%; width: 1349px;" data-img-mobile="background:#000" >
                                         </sly>
     
     
