@@ -16,14 +16,17 @@
     
     Map<String, String> kv = new LinkedHashMap<String, String>();
 
-    kv.put("None", "");
-    kv.put("Facebook", "fa-facebook-square");
-    kv.put("Youtube", "fa-youtube-square");
-    kv.put("Twitter", "fa-twitter-square");
-    kv.put("LinkedIn", "fa-linkedin-square");
-    kv.put("Pinterest", "fa-pinterest-square");
-    kv.put("Instagram", "fa-instagram");
-
+	kv.put("None","no");
+    kv.put("xxs", "xxs");
+    kv.put("xs", "xs");
+    kv.put("s", "s");
+    kv.put("m", "m");
+    kv.put("l", "l");
+    kv.put("xl", "xl");
+    kv.put("xxl", "xxl");
+    kv.put("3xl", "3xl");
+    kv.put("4xl", "4xl");
+    kv.put("5xl", "5xl");
 
     for (String key : kv.keySet()) {
 		Map<String, Object> map = new HashMap<String, Object>();

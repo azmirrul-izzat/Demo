@@ -34,7 +34,7 @@
 
 		map.put("text", key);
 		map.put("value", kv.get(key));
-		
+
 		ValueMapResource syntheticResource = new ValueMapResource(resourceResolver, new ResourceMetadata(), "", new ValueMapDecorator(map));
 		resourceList.add(syntheticResource);
     }

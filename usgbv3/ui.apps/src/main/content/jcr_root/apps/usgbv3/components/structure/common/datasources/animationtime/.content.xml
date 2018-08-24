@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    cq:lastReplicated="{Date}2018-08-21T14:06:55.620+08:00"
+    cq:lastReplicated="{Date}2018-08-21T14:06:59.094+08:00"
     cq:lastReplicatedBy="admin_sothman"
     cq:lastReplicationAction="Activate"
     jcr:mixinTypes="[cq:ReplicationStatus]"
