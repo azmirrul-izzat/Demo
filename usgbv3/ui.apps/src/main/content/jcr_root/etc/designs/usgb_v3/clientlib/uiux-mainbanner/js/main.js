@@ -21,30 +21,46 @@
             });
 
 
-		var lFollowX = 0,
-        lFollowY = 0,
-        x = 0,
-        y = 0,
-        friction = 1 / 20;
+
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+
+        $(".carousel-home-banner-wrapper").mousemove(function(e){
+            var getWidth=$(window).width();
+            var newX
+            var newY 
+            if(getWidth < 768){
+                newX = 0;
+                newY = 0;
+            }
+             if(getWidth > 768){
+                newX = 50;
+                newY = 50;
+            }
+
+            if(getWidth > 1200){
+                newX = 80;
+                newY = 100;
+            }
+            if(getWidth > 1500){
+                newX = 100;
+                newY = 180;
+            }
 
 
-        $(".hero-banner-wrapper").on('mousemove', function(e) {
-
-            var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
-            var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
-            lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
-            lFollowY = (10 * lMouseY) / 100;
-
-			x += (lFollowX - x) * friction;
-            y += (lFollowY - y) * friction;
-
-            $('.slick-current').css("background-position", x+"px  " +y+"px");
-            //window.requestAnimationFrame(moveBackground);
-
+            var pageX = e.pageX - ($(window).width() / 2);
+            var pageY = e.pageY - ($(window).height() / 2);
+            var newvalueX = width * pageX * -1 - 25 - newX;
+            var newvalueY = height * pageY * -1 - 50 - newY;
+            $('.slick-current').css("background-position", newvalueX+"px     "+newvalueY+"px");
         });
 
 
+
     });
+
+
 
 	function detectVideo() {
 		theVideo.play();
