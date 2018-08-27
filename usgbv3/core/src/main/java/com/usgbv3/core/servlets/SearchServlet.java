@@ -365,7 +365,13 @@ public class SearchServlet extends BaseAllMethodsServlet {
 							if(hitProperties.containsKey("pageDescription")) {
 								searchContentJson.put("description", hitProperties.get("pageDescription", String.class));
 							}else {
-								searchContentJson.put("description", hitProperties.get("jcr:description", String.class));
+								
+								if(asset.getMetadataValue("jcr:description") != null) {
+									searchContentJson.put("description", asset.getMetadataValue("jcr:description"));
+								}else {
+									searchContentJson.put("description", asset.getMetadataValue("dc:description"));
+								}
+								
 							}
 							
 							if(hitProperties.containsKey("pageImage")) {

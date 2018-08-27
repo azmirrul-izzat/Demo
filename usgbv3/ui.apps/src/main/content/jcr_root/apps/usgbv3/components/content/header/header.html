@@ -148,12 +148,15 @@
                             	<a href="#" class="btn btn-sm btn-brand-default button-green">Request Sample</a>
                             </sly>
 
-                            <a href="#" class="icon-min-width btn btn-sm btn-brand-default icon-bg color-white">
+                            <a href="${countryInfo.countryInfo.contactusUrl @ context='unsafe'}.html" class="icon-min-width btn btn-sm btn-brand-default icon-bg color-white">
                                 <span class=" glyphicon glyphicon-earphone"></span>
                             </a>
-                            <a href="${countryInfo.countryInfo.wtbUrl @ context='unsafe'}.html" class="icon-min-width btn btn-sm btn-brand-default icon-bg color-white">
-                                <span class=" glyphicon glyphicon-map-marker"></span>
-                            </a>
+
+                            <sly data-sly-test="${!properties.disabledWtb }">
+                                <a href="${countryInfo.countryInfo.wtbUrl @ context='unsafe'}.html" class="icon-min-width btn btn-sm btn-brand-default icon-bg color-white">
+                                    <span class=" glyphicon glyphicon-map-marker"></span>
+                                </a>
+                            </sly>
                         </div>
                     </div>
                 </div>
