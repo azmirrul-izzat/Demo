@@ -430,9 +430,10 @@
                     </p>
                 </div>
             </a>
+
             <div class="align-center flex-basis-no flex-IE-grow-auto flex-grow-0 flex-row justify-end side-functions-short">
                 {{#ifEquals this.type "page"}}
-                <div class="bookmark uppercase fs-3">
+                <div class="bookmark uppercase">
                     <a href="{{link}}" class="cta-bookmark disabled">
                         <div class="btn button-grey visible-xs">
                             <span class="glyphicon glyphicon-bookmark"></span>
@@ -446,6 +447,12 @@
                     </a>
                 </div>
                 {{/ifEquals}}
+
+                 {{#ifEquals this.type "video"}}
+                 <div class="btn button-green visible-xs">
+                 	<span class="glyphicon glyphicon-play"></span>
+                 </div>
+                 {{/ifEquals}}
             </div>
         </div>
     </div>
@@ -603,7 +610,7 @@
                         </a>
                         <div class="align-center flex-basis-no flex-IE-grow-auto flex-grow-0 flex-row justify-end side-functions-short">
                             {{#ifEquals this.type "page"}}
-                            <div class="bookmark uppercase fs-3">
+                            <div class="bookmark uppercase">
                                 <a href="#" class="cta-bookmark disabled">
                                     <div class="btn button-grey visible-xs">
                                         <span class="glyphicon glyphicon-bookmark"></span>
@@ -615,6 +622,11 @@
                                         </span>
                                     </div>
                                 </a>
+                            </div>
+                            {{/ifEquals}}
+                            {{#ifEquals this.type "video"}}
+                            <div class="btn button-green visible-xs">
+                                <span class="glyphicon glyphicon-play"></span>
                             </div>
                             {{/ifEquals}}
                         </div>
