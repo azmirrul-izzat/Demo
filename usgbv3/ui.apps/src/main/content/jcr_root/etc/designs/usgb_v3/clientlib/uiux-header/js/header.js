@@ -697,11 +697,11 @@ jQuery(document).ready(function($){
         });
 
         // header search keyword
-        $(document).on('click', '.search-pop-up button[type="submit"]', function(e){
-            e.preventDefault();
-            var text = $(this).closest('.search-pop-up').find('.search-box input').val();
-            window.location.href = "/content/usgboral/en_au/search.html?text=" + text;
-        });
+        //$(document).on('click', '.search-pop-up button[type="submit"]', function(e){
+        //    e.preventDefault();
+        //    var text = $(this).closest('.search-pop-up').find('.search-box input').val();
+        //    window.location.href = "/content/usgboral/en_au/search.html?text=" + text;
+        //});
 
     });
 })();
