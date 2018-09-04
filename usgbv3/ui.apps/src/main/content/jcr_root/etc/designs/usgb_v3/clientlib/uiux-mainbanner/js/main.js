@@ -57,6 +57,15 @@
         });
 
 
+        //remove slick dot
+        var heroTileNum =  $(".hero-banner-wrapper").length
+        if(heroTileNum = 1){
+            $(".carousel-home-banner-wrapper .slick-dots").hide(100);
+        }else{
+            $(".carousel-home-banner-wrapper .slick-dots").show(100);
+        }
+
+
 
     });
 
