@@ -320,6 +320,7 @@
                     $('.wtb-search-bar').addClass('add-bg');
                     $('.search-bar-toggle-button').addClass('open');
                     $('.filter-back-btn').addClass('open');
+                  
                 }
             });
         
@@ -335,7 +336,7 @@
                 if($('#input-search-location').val() !== ""){
                     var value = $('#input-search-location').val();
                     currSenario = "";
-                    console.log(wtbAutocompleteData,value);
+                    console.log("wtbAuto", wtbAutocompleteData,value);
                     //wtbAutocompleteData, variable created at the autocomplte.js
                     // if(wtbAutocompleteData.Items !== undefined && wtbAutocompleteData.Items.length > 0){
                     //     selectionFlag = true;
@@ -486,17 +487,33 @@
             });
         }
 
+       
 
         function initialize() {
+
+            var myStyles =[
+                {
+                    featureType: "poi",
+                    elementType: "labels",
+                    stylers: [
+                          { visibility: "off" }
+                    ]
+                }
+            ];
+            
+
             var mapOptions = {
-                center: new google.maps.LatLng(countryLat, countryLng),
+                center:  new google.maps.LatLng(countryLat, countryLng),
                 zoom: 4,
-                mapTypeId: 'roadmap',
-                mapTypeControl: false
+                mapTypeId:   'roadmap',
+                mapTypeControl: false,
+                styles: myStyles 
             };
+
+           map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
         
-            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-        
+
             // a new Info Window is created
             infoWindow = new google.maps.InfoWindow({ maxWidth: 320 });
             // Event that closes the Info Window with a click on the map
@@ -709,7 +726,8 @@
                         $('.search-detail-group').html(template(markersData));
                         $('.cta-search-detail-on').addClass('active');
                         $('.btn-filter').removeClass('disabled');
-
+                        $('.state-wrap').delay(1000).fadeIn(800).addClass('open');
+                       
                         filterListScrollbarReset();
 
                         if (window.matchMedia("(min-width: 768px)").matches) {
@@ -881,6 +899,14 @@
         return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
     });
 
+
+
     
+
+
+
+
+
+
 })();
 

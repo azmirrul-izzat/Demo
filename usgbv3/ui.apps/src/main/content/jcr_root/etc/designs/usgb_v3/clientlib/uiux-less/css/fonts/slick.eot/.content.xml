@@ -4,10 +4,14 @@
     jcr:primaryType="dam:Asset"
     jcr:uuid="4f3e0ca1-78c8-4f08-93eb-b7eb5d7a1101">
     <jcr:content
+        cq:lastReplicated="{Date}2018-08-16T12:00:15.931+08:00"
+        cq:lastReplicatedBy="admin"
+        cq:lastReplicationAction="Activate"
         dam:assetState="processed"
         dam:relativePath="USGBoral/Global/Website/Images/component/slick.eot"
         jcr:lastModified="{Date}2018-04-27T14:52:11.817+08:00"
         jcr:lastModifiedBy="admin"
+        jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:extracted="{Date}2018-04-27T14:52:11.676+08:00"

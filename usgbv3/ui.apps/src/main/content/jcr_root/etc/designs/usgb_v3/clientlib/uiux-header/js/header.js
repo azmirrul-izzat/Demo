@@ -157,7 +157,7 @@ jQuery(document).ready(function($){
 
             //public
             var $all = $(".mega-menu-wrapper .nav-dropdown-wrapper");
-            var i = 0;
+            var i = 5;
 
 
 
@@ -697,11 +697,11 @@ jQuery(document).ready(function($){
         });
 
         // header search keyword
-        $(document).on('click', '.search-pop-up button[type="submit"]', function(e){
-            e.preventDefault();
-            var text = $(this).closest('.search-pop-up').find('.search-box input').val();
-            window.location.href = "/content/usgboral/en_au/search.html?text=" + text;
-        });
+        //$(document).on('click', '.search-pop-up button[type="submit"]', function(e){
+        //    e.preventDefault();
+        //    var text = $(this).closest('.search-pop-up').find('.search-box input').val();
+        //    window.location.href = "/content/usgboral/en_au/search.html?text=" + text;
+        //});
 
     });
 })();
@@ -751,7 +751,6 @@ jQuery(document).ready(function($){
 
 
 
-
 // ----------------------------------------------------------------------
 // Order Sample Notification
 // ----------------------------------------------------------------------
@@ -759,28 +758,30 @@ jQuery(document).ready(function($){
     "use strict";
     $(document).ready(function () {
 
-		$("a.cart > .pop-notification").addClass("width-none");
-        setTimeout(function () {
-
-            if (localStorage.getItem('sampleOrdersJson') === null) {
-                console.log("orderSampleEmpty")
-            } else {
-                var array = JSON.parse(localStorage.getItem('sampleOrdersJson'));
-                console.log("sampleORder", array.length );
-                var countSample = array.length;
-                $("a.cart > .pop-notification").removeClass("width-none");
-                $("a.cart > .pop-notification").addClass("counter");
-                $("a.cart > .pop-notification.counter").text(countSample);
-                $(".header>.wrapper").addClass("desktop-mobile-slide-down");
+      if ($.ssoManager.isLogin){
+			console.log("has login");
+            $("a.cart > .pop-notification").addClass("width-none");
+            setTimeout(function () {
+            
+                if (localStorage.getItem('sampleOrdersJson') === null) {
+                    console.log("orderSampleEmpty")
+                } else {
+                    var array = JSON.parse(localStorage.getItem('sampleOrdersJson'));
+                    console.log("sampleORder", array.length );
+                    var countSample = array.length;
+                    $("a.cart > .pop-notification").removeClass("width-none");
+                    $("a.cart > .pop-notification").addClass("counter");
+                    $("a.cart > .pop-notification.counter").text(countSample);
+                    $(".header>.wrapper").addClass("desktop-mobile-slide-down");
+                }
+               
+            }, 1000);
                 
-            }
-           
-        }, 1000);
+        }
 
-                    
-      
     });
 })();
+
 
 
 

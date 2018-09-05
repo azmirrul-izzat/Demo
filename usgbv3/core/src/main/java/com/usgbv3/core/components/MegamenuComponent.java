@@ -117,9 +117,8 @@ public class MegamenuComponent extends WCMUsePojo {
 						
 						while (ni.hasNext()) {
 					        Node child = (Node)ni.nextNode(); 
-					         
+					         LOG.info("bottomSection = " + child.getName() + " | " + "bottomSection" + tabNo);
 					         if(child.getName().equals("bottomSection" + tabNo)) {
-					        	 	
 					        	 	if(getProperties().containsKey("bottomSectionTitle" + tabNo)) {
 					        	 		
 					        	 		tabMegamenu.setBottomSectionTitle((String) getProperties().get("bottomSectionTitle" + tabNo));
@@ -127,16 +126,38 @@ public class MegamenuComponent extends WCMUsePojo {
 
 									List<ArticleModel> bottomPanel = new ArrayList<ArticleModel>();
 									NodeIterator ni2 =  child.getNodes() ; 
+						        	 LOG.info("bottomSection Size = " + child.getNodes().getSize());
 									
 							        while (ni2.hasNext()) {
 							        	ArticleModel bottomSection = new ArticleModel();
 								        Node child2 = (Node)ni2.nextNode(); 
 								        
-								        bottomSection.setTitle(child2.getProperty("bottomTitle" + tabNo).getString());
-								        bottomSection.setLink(child2.getProperty("bottomLink" + tabNo).getString());
-								        bottomSection.setDescription(child2.getProperty("bottomDescription" + tabNo).getString());
-								        bottomSection.setImgAlt(child2.getProperty("bottomAlt" + tabNo).getString());
-								        bottomSection.setImage(child2.getProperty("bottomImgPath" + tabNo).getString());
+								        LOG.info("bottomTitle = " + child2.getProperty("bottomTitle" + tabNo).getString());
+								        LOG.info("bottomLink = " + child2.getProperty("bottomLink" + tabNo).getString());
+								        LOG.info("bottomDescription = " + child2.getProperty("bottomDescription" + tabNo).getString());
+								        LOG.info("bottomAlt = " + child2.getProperty("bottomAlt" + tabNo).getString());
+								        LOG.info("bottomImgPath = " + child2.getProperty("bottomImgPath" + tabNo).getString());
+								        
+								        if(child2.getProperty("bottomTitle" + tabNo) != null) {
+								        	bottomSection.setTitle(child2.getProperty("bottomTitle" + tabNo).getString());
+								        }
+								        
+								        if(child2.getProperty("bottomLink" + tabNo) != null) {
+								        	bottomSection.setLink(child2.getProperty("bottomLink" + tabNo).getString());
+								        }
+
+								        if(child2.getProperty("bottomDescription" + tabNo) != null) {
+								        	bottomSection.setDescription(child2.getProperty("bottomDescription" + tabNo).getString());
+								        }
+
+								        if(child2.getProperty("bottomAlt" + tabNo) != null) {
+								        	bottomSection.setImgAlt(child2.getProperty("bottomAlt" + tabNo).getString());
+								        }
+
+								        if(child2.getProperty("bottomImgPath" + tabNo) != null) {
+								        	bottomSection.setImage(child2.getProperty("bottomImgPath" + tabNo).getString());
+								        }
+								        
 								        bottomPanel.add(bottomSection);
 							        }
 					        	 
@@ -156,9 +177,16 @@ public class MegamenuComponent extends WCMUsePojo {
 							        while (ni2.hasNext()) {
 							        	ArticleModel rightSection = new ArticleModel();
 								        Node child2 = (Node)ni2.nextNode(); 
-								        
-								        rightSection.setTitle(child2.getProperty("rightTitle" + tabNo).getString());
-								        rightSection.setLink(child2.getProperty("rightLink" + tabNo).getString());
+
+
+								        if(child2.getProperty("rightTitle" + tabNo) != null) {
+								        	rightSection.setTitle(child2.getProperty("rightTitle" + tabNo).getString());
+								        }
+
+								        if(child2.getProperty("rightLink" + tabNo) != null) {
+								        	rightSection.setLink(child2.getProperty("rightLink" + tabNo).getString());
+								        }
+
 								        sidePanel.add(rightSection);
 							        }
 					        	 

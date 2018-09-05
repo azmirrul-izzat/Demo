@@ -426,18 +426,19 @@
                     <p class="sub-headline fs-2 m-bottom-xs">{{category_header}}</p>
                     <h6 class="headline ht6 uppercase m-bottom-xxs">{{title}}</h6>
                     <p class="description m-no">
-                        {{description}}
+                        {{{description}}}
                     </p>
                 </div>
             </a>
+
             <div class="align-center flex-basis-no flex-IE-grow-auto flex-grow-0 flex-row justify-end side-functions-short">
                 {{#ifEquals this.type "page"}}
-                <div class="bookmark uppercase fs-3">
+                <div class="bookmark uppercase">
                     <a href="{{link}}" class="cta-bookmark disabled">
                         <div class="btn button-grey visible-xs">
                             <span class="glyphicon glyphicon-bookmark"></span>
                         </div>
-                        <div class="hidden-xs">
+                        <div class="hidden-xs fs-3">
                             <span class="glyphicon glyphicon-bookmark m-right-xxs"></span>
                             <span>
                                 <strong>Bookmark</strong>
@@ -446,6 +447,14 @@
                     </a>
                 </div>
                 {{/ifEquals}}
+
+                 {{#ifEquals this.type "video"}}
+                 <a data-fancybox="" href="{{link}}">
+                    <div class="btn button-green visible-xs">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </div>
+                </a>
+                 {{/ifEquals}}
             </div>
         </div>
     </div>
@@ -466,7 +475,7 @@
                     <p class="sub-headline fs-2 m-bottom-xs">{{category_header}} | {{document_type}}</p>
                     <h6 class="headline ht6 uppercase m-bottom-xxs">{{title}}</h6>
                     <p class="description m-no">
-                        {{description}}
+                        {{{description}}}
                     </p>
                 </div>
             </a>
@@ -524,7 +533,7 @@
                             <!-- <p class="sub-headline fs-2 m-bottom-xs">{{category_header}} | {{document_type}}</p> -->
                             <h6 class="headline ht6 uppercase m-bottom-xxs">{{title}}</h6>
                             <p class="description m-no">
-                                {{description}}
+                                {{{description}}}
                             </p>
                         </div>
                     </a>
@@ -597,18 +606,18 @@
                                 <p class="sub-headline fs-2 m-bottom-xs">{{category_header}}</p>
                                 <h6 class="headline ht6 uppercase m-bottom-xxs">{{title}}</h6>
                                 <p class="description m-no">
-                                    {{description}}
+                                    {{{description}}}
                                 </p>
                             </div>
                         </a>
                         <div class="align-center flex-basis-no flex-IE-grow-auto flex-grow-0 flex-row justify-end side-functions-short">
                             {{#ifEquals this.type "page"}}
-                            <div class="bookmark uppercase fs-3">
+                            <div class="bookmark uppercase">
                                 <a href="#" class="cta-bookmark disabled">
                                     <div class="btn button-grey visible-xs">
                                         <span class="glyphicon glyphicon-bookmark"></span>
                                     </div>
-                                    <div class="hidden-xs">
+                                    <div class="hidden-xs fs-3">
                                         <span class="glyphicon glyphicon-bookmark m-right-xxs"></span>
                                         <span>
                                             <strong>Bookmark</strong>
@@ -616,6 +625,13 @@
                                     </div>
                                 </a>
                             </div>
+                            {{/ifEquals}}
+                            {{#ifEquals this.type "video"}}
+                            <a data-fancybox="" href="{{link}}">
+                                <div class="btn button-green visible-xs">
+                                    <span class="glyphicon glyphicon-play"></span>
+                                </div>
+                            </a>
                             {{/ifEquals}}
                         </div>
                     </div>

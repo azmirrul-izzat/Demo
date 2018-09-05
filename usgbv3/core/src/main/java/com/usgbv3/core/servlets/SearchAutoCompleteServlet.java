@@ -65,7 +65,7 @@ public class SearchAutoCompleteServlet extends BaseAllMethodsServlet {
                 }
             }
         	
-        	pageURL = "/content/usgboral/en_au";
+//        	pageURL = "/content/usgboral/en_au";
         	
         	if(!pageURL.isEmpty()) {
         		

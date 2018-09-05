@@ -33,6 +33,11 @@
     kv.put("Plastering DIY", "icon-plasteringdiy");
     kv.put("Steel Framing", "icon-steel-framing");
 
+    kv.put("System Plasterboard", "icon-systemplasterboard");
+    kv.put("Bimwizard", "icon-bimwizard");
+    kv.put("E-Selector", "icon-eselector");
+    kv.put("Speciality", "icon-speciality");
+
 
     for (String key : kv.keySet()) {
 		Map<String, Object> map = new HashMap<String, Object>();

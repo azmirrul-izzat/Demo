@@ -79,8 +79,8 @@ public class SearchServlet extends BaseAllMethodsServlet {
 	@Reference
     private QueryBuilder builder;
 	
-	private static String defaultSearchImage = "/content/dam/USGBoral/global/website/image/logo/default_search.jpg";
-	private static String defaultPdfIcon = "/content/dam/USGBoral/global/website/image/logo/pdf-icon.png";
+	private static String defaultSearchImage = "/content/dam/USGBoral/Global/Website/Images/v3/logo/default_search.jpg";
+	private static String defaultPdfIcon = "/content/dam/USGBoral/Global/Website/Images/v3/logo/pdf-icon.png";
 	
 	@Override
 	protected void doGet(SlingHttpServletRequest request,
@@ -288,42 +288,6 @@ public class SearchServlet extends BaseAllMethodsServlet {
 			LOG.info("videooo count = " + totalMatchforVideo);
 			if(totalMatchforVideo > 0){
 				
-				boolean addVideo = false;
-				LOG.info("addVideo = " + addVideo);
-				for (int i = 0 ; i < jsonArrayFilter.length(); i++) {
-					
-					
-					if("type".equalsIgnoreCase(jsonArrayFilter.getJSONObject(i).get("key").toString())) {
-						
-						
-						JSONArray videoList = (JSONArray) jsonArrayFilter.getJSONObject(i).get("child");
-						
-						JSONObject videoFilter = new JSONObject();
-						videoFilter.put("key", "video");
-						videoFilter.put("name", "Video");
-						videoList.put(videoFilter);
-						
-						jsonArrayFilter.getJSONObject(i).remove("child");
-						jsonArrayFilter.getJSONObject(i).put("child", videoList);
-						addVideo = true;
-						break;
-						
-					}
-				}
-				
-				if(!addVideo) {
-					
-					JSONObject jsonFilterType = new JSONObject();
-					jsonFilterType.put("key", "type");
-					jsonFilterType.put("title", "Type");
-					
-					JSONArray typeChild = new JSONArray();
-					JSONObject pageType = new JSONObject();
-					pageType.put("key", "video");
-					pageType.put("name", "Video");
-					typeChild.put(pageType);
-					jsonFilterType.put("child", typeChild);
-				}
 				
 				int hitVideoNo = 0;
 				for(Hit hit : resultVideo.getHits()){
@@ -357,6 +321,43 @@ public class SearchServlet extends BaseAllMethodsServlet {
 						LOG.info("VIDEO COMPARE = " + videoTitle.toLowerCase() + " | " + keyword);
 						if(videoTitle.toLowerCase().contains(keyword)) {
 							
+							// Setup the filter for video
+							boolean addVideo = false;
+							for (int i = 0 ; i < jsonArrayFilter.length(); i++) {
+								
+								
+								if("type".equalsIgnoreCase(jsonArrayFilter.getJSONObject(i).get("key").toString())) {
+									
+									
+									JSONArray videoList = (JSONArray) jsonArrayFilter.getJSONObject(i).get("child");
+									
+									JSONObject videoFilter = new JSONObject();
+									videoFilter.put("key", "video");
+									videoFilter.put("name", "Video");
+									videoList.put(videoFilter);
+									
+									jsonArrayFilter.getJSONObject(i).remove("child");
+									jsonArrayFilter.getJSONObject(i).put("child", videoList);
+									addVideo = true;
+									break;
+									
+								}
+							}
+							
+							if(!addVideo) {
+								
+								JSONObject jsonFilterType = new JSONObject();
+								jsonFilterType.put("key", "type");
+								jsonFilterType.put("title", "Type");
+								
+								JSONArray typeChild = new JSONArray();
+								JSONObject pageType = new JSONObject();
+								pageType.put("key", "video");
+								pageType.put("name", "Video");
+								typeChild.put(pageType);
+								jsonFilterType.put("child", typeChild);
+							}
+							
 							
 							totalMatchforContent++;
 							searchContentJson.put("key", "video_" + hitVideoNo);
@@ -364,7 +365,13 @@ public class SearchServlet extends BaseAllMethodsServlet {
 							if(hitProperties.containsKey("pageDescription")) {
 								searchContentJson.put("description", hitProperties.get("pageDescription", String.class));
 							}else {
-								searchContentJson.put("description", hitProperties.get("jcr:description", String.class));
+								
+								if(asset.getMetadataValue("jcr:description") != null) {
+									searchContentJson.put("description", asset.getMetadataValue("jcr:description"));
+								}else {
+									searchContentJson.put("description", asset.getMetadataValue("dc:description"));
+								}
+								
 							}
 							
 							if(hitProperties.containsKey("pageImage")) {
@@ -394,6 +401,139 @@ public class SearchServlet extends BaseAllMethodsServlet {
 						
 					}
 					
+					
+				}
+			}
+			
+			// get data from main-banner-component and mix-media-player-component
+			SearchResult resultMultifieldVideo = queryMultifieldVideo(resourceResolver, path, keyword);
+			
+			LOG.info("videooo = " + resultVideo);
+			
+			int totalMatchforMultifieldVideo = (int) resultVideo.getTotalMatches();
+
+
+			LOG.info("Multifield videooo count = " + totalMatchforMultifieldVideo);
+			if(totalMatchforMultifieldVideo > 0){
+				
+				
+				int hitMultifieldVideoNo = 0;
+				for(Hit hit : resultMultifieldVideo.getHits()){
+
+					JSONObject searchContentJson = new JSONObject();
+					Node hitNode = hit.getNode();
+					NodeIterator ni =  hitNode.getNodes() ; 
+					
+
+				    while (ni.hasNext()) {
+				        Node child = (Node)ni.nextNode(); 
+				         
+				        
+				        NodeIterator ni2 =  child.getNodes() ; 
+				        while (ni2.hasNext()) {
+					        Node child2 = (Node)ni2.nextNode(); 
+					        
+					        if(child2.hasProperty("enableVideo") && 
+									("yes".equalsIgnoreCase(child2.getProperty("enableVideo").getString()) || "true".equalsIgnoreCase(child2.getProperty("enableVideo").getString()))) {
+								
+								
+					        	if(child2.hasProperty("videoDam") && !(child2.getProperty("videoDam").getString().isEmpty())){
+					        		
+					        		String videoDam = child2.getProperty("videoDam").getString();
+									searchContentJson.put("link", videoDam);
+					        		
+					        		Resource res = resourceResolver.getResource(videoDam);
+									Asset asset = res.adaptTo(Asset.class);
+									
+									
+									
+									String videoTitle = "";
+									if(child2.hasProperty("title") && !(child2.getProperty("title").getString().isEmpty())){
+										videoTitle = child2.getProperty("title").getString();
+										
+									}
+									else {
+										if(asset.getMetadataValue("dc:title") != null) {
+											videoTitle = asset.getMetadataValue("dc:title");
+										}else {
+											videoTitle = asset.getName();
+										}
+									}
+									LOG.info("VIDEO COMPARE = " + videoTitle.toLowerCase() + " | " + keyword);
+									if(videoTitle.toLowerCase().contains(keyword)) {
+										
+										// Setup the filter for video
+										boolean addVideo = false;
+										for (int i = 0 ; i < jsonArrayFilter.length(); i++) {
+											
+											
+											if("type".equalsIgnoreCase(jsonArrayFilter.getJSONObject(i).get("key").toString())) {
+												
+												
+												JSONArray videoList = (JSONArray) jsonArrayFilter.getJSONObject(i).get("child");
+												
+												JSONObject videoFilter = new JSONObject();
+												videoFilter.put("key", "video");
+												videoFilter.put("name", "Video");
+												videoList.put(videoFilter);
+												
+												jsonArrayFilter.getJSONObject(i).remove("child");
+												jsonArrayFilter.getJSONObject(i).put("child", videoList);
+												addVideo = true;
+												break;
+												
+											}
+										}
+										
+										if(!addVideo) {
+											
+											JSONObject jsonFilterType = new JSONObject();
+											jsonFilterType.put("key", "type");
+											jsonFilterType.put("title", "Type");
+											
+											JSONArray typeChild = new JSONArray();
+											JSONObject pageType = new JSONObject();
+											pageType.put("key", "video");
+											pageType.put("name", "Video");
+											typeChild.put(pageType);
+											jsonFilterType.put("child", typeChild);
+										}
+										
+										
+										totalMatchforContent++;
+										searchContentJson.put("key", "video_" + hitMultifieldVideoNo);
+										searchContentJson.put("title", videoTitle);
+										if(child2.getProperty("description") != null && !(child2.getProperty("description").getString().isEmpty())){
+											searchContentJson.put("description", child2.getProperty("description").getString());
+										}else {
+											
+											if(asset.getMetadataValue("jcr:description") != null) {
+												searchContentJson.put("description", asset.getMetadataValue("jcr:description"));
+											}else {
+												searchContentJson.put("description", asset.getMetadataValue("dc:description"));
+											}
+											
+										}
+										
+										if(asset.getRendition("cq5dam.thumbnail.319.319.png") != null) {
+											
+											searchContentJson.put("image", asset.getRendition("cq5dam.thumbnail.319.319.png").getPath());
+										}else {
+											searchContentJson.put("image", defaultSearchImage);
+										}
+																					
+										searchContentJson.put("type", "video");
+										hitMultifieldVideoNo++;
+										
+										
+										jsonArrayProduct.put(searchContentJson);
+										
+									}
+					        	}
+								
+							}
+				        }
+				    }					
 					
 				}
 			}
@@ -498,8 +638,10 @@ public class SearchServlet extends BaseAllMethodsServlet {
 			}else {
 				apiResponse.put("result", false);
 			}
-
+			
 			apiResponse.put("path", path);
+			apiResponse.put("single_video", totalMatchforVideo);
+			apiResponse.put("multifield_video", totalMatchforMultifieldVideo);
 			apiResponse.put("keyword", keyword);
 			apiResponse.put("num_result", totalMatchforContent);
 			apiResponse.put("filter_listing", jsonArrayFilter);
@@ -555,6 +697,30 @@ public class SearchServlet extends BaseAllMethodsServlet {
 		queryMap.put("2_property", "assetType");
 		queryMap.put("2_property.value", "assetVideo");
 //		queryMap.put("fulltext", keywordWildCard);
+		queryMap.put("orderby", "@jcr:score");
+		queryMap.put("orderby.sort", "desc");
+		queryMap.put("p.limit", "-1");
+
+		LOG.info("queryVideo builder = " + builder);
+		
+		Query query = builder.createQuery(PredicateGroup.create(queryMap), session);
+		SearchResult result = query.getResult();
+		
+		return result;
+	}
+	
+	public SearchResult queryMultifieldVideo(ResourceResolver resourceResolver, String path, String keyword) {
+
+		Session session = resourceResolver.adaptTo(Session.class);
+		Map<String, String> queryMap = new HashMap<String, String>();
+		String keywordWildCard = "*" + keyword + "*";
+
+		queryMap.put("path", path);
+		queryMap.put("1_property", "sling:resourceType");
+		queryMap.put("1_property.1_value", "usgbv3/components/content/main-banner-component");
+		queryMap.put("1_property.2_value", "usgbv3/components/content/mix-media-player-component");
+		queryMap.put("2_property", "enableVideo");
+		queryMap.put("2_property.value", "true");
 		queryMap.put("orderby", "@jcr:score");
 		queryMap.put("orderby.sort", "desc");
 		queryMap.put("p.limit", "-1");

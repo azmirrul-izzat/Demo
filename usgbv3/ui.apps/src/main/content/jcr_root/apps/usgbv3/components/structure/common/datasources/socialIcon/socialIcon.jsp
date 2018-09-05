@@ -18,8 +18,11 @@
 
     kv.put("None", "");
     kv.put("Facebook", "fa-facebook-square");
+    kv.put("Youtube", "fa-youtube-square");
     kv.put("Twitter", "fa-twitter-square");
     kv.put("LinkedIn", "fa-linkedin-square");
+    kv.put("Pinterest", "fa-pinterest-square");
+    kv.put("Instagram", "fa-instagram");
 
 
     for (String key : kv.keySet()) {

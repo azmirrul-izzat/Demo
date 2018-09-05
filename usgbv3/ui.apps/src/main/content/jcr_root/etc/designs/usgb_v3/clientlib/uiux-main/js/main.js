@@ -29,7 +29,7 @@
 "use strict";
     $(document).ready(function () {
         $('.same-height').matchHeight({ byRow: true });
-
+        $('.match-height').matchHeight({ byRow: true });
     });
 
 })(); 

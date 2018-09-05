@@ -21,6 +21,9 @@
         excelContain="australia"
         homepageUrl="https://www.usgboral.com/en_au/"
         hreflang="en-au"
+        language="en"
+        languageFull="English"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/australia.png"
         pathCode="en_au"
         searchUrl="/content/usgboral/en_au/search"
         sitePath="/content/usgboral/en_au"
@@ -39,7 +42,11 @@
         excelContain="china"
         homepageUrl="https://www.usgboral.com/zh_cn/"
         hreflang="zh-cn"
-        pathCode="zh_cn"/>
+        language="zh"
+        languageFull="简体中文"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/china.png"
+        pathCode="zh_cn"
+        sitePath="/content/usgboral/zh_cn"/>
     <en_in
         cq:lastReplicated="{Date}2018-01-24T21:36:50.041+08:00"
         cq:lastReplicatedBy="APD_admin"
@@ -54,7 +61,11 @@
         excelContain="india"
         homepageUrl="https://www.usgboral.com/en_in/"
         hreflang="en-in"
-        pathCode="en_in"/>
+        language="en"
+        languageFull="English"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/india.png"
+        pathCode="en_in"
+        sitePath="/content/usgboral/en_in"/>
     <in_id
         cq:lastReplicated="{Date}2018-01-24T21:36:51.771+08:00"
         cq:lastReplicatedBy="APD_admin"
@@ -69,7 +80,11 @@
         excelContain="indonesia_in"
         homepageUrl="https://www.usgboral.com/in_id/"
         hreflang="in-id"
-        pathCode="id/in_id"/>
+        language="in"
+        languageFull="Bahasa"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/indonesia.png"
+        pathCode="id/in_id"
+        sitePath="/content/usgboral/id/in_id"/>
     <ko_kr
         cq:lastReplicated="{Date}2018-01-24T21:36:53.336+08:00"
         cq:lastReplicatedBy="APD_admin"
@@ -84,7 +99,11 @@
         excelContain="korea"
         homepageUrl="https://www.usgboral.com/ko_kr/"
         hreflang="ko-kr"
-        pathCode="ko_kr"/>
+        language="ko"
+        languageFull="한국어 "
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/korea.png"
+        pathCode="ko_kr"
+        sitePath="/content/usgboral/ko_kr"/>
     <en_sg
         cq:lastReplicated="{Date}2018-01-24T21:36:55.115+08:00"
         cq:lastReplicatedBy="APD_admin"
@@ -99,13 +118,18 @@
         excelContain="singapore"
         homepageUrl="https://www.usgboral.com/en_sg/"
         hreflang="en-sg"
-        pathCode="en_sg"/>
+        language="en"
+        languageFull="English"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/singapore.png"
+        pathCode="en_sg"
+        sitePath="/content/usgboral/en_sg"/>
     <en_my
         cq:lastReplicated="{Date}2018-01-24T21:36:56.448+08:00"
         cq:lastReplicatedBy="APD_admin"
         cq:lastReplicationAction="Activate"
         jcr:mixinTypes="[cq:ReplicationStatus]"
         jcr:primaryType="nt:unstructured"
+        contactusUrl="/content/usgboral/en_my/contact-us"
         countryCode="en_my"
         countryId="my"
         countryName="Malaysia"
@@ -114,7 +138,13 @@
         excelContain="malaysia"
         homepageUrl="https://www.usgboral.com/en_my/"
         hreflang="en-my"
-        pathCode="en_my"/>
+        language="en"
+        languageFull="English"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/malaysia.png"
+        pathCode="en_my"
+        searchUrl="/content/usgboral/en_my/search"
+        sitePath="/content/usgboral/en_my"
+        wtbUrl="/content/usgboral/en_my/where-to-buy"/>
     <en_nz
         cq:lastReplicated="{Date}2018-01-24T21:36:58.327+08:00"
         cq:lastReplicatedBy="APD_admin"
@@ -129,7 +159,11 @@
         excelContain="new_zealand"
         homepageUrl="https://www.usgboral.com/en_nz/"
         hreflang="en-nz"
-        pathCode="en_nz"/>
+        language="en"
+        languageFull="English"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/new-zealand.png"
+        pathCode="en_nz"
+        sitePath="/content/usgboral/en_nz"/>
     <en_ph
         cq:lastReplicated="{Date}2018-01-24T21:37:00.208+08:00"
         cq:lastReplicatedBy="APD_admin"
@@ -144,7 +178,11 @@
         excelContain="philippines"
         homepageUrl="https://www.usgboral.com/en_ph/"
         hreflang="en-ph"
-        pathCode="en_ph"/>
+        language="en"
+        languageFull="English"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/philippines.png"
+        pathCode="en_ph"
+        sitePath="/content/usgboral/en_ph"/>
     <vi_vn
         cq:lastReplicated="{Date}2018-01-24T21:37:01.936+08:00"
         cq:lastReplicatedBy="APD_admin"
@@ -159,7 +197,11 @@
         excelContain="vietnam"
         homepageUrl="https://www.usgboral.com/vi_vn/"
         hreflang="vi-vn"
-        pathCode="vi_vn"/>
+        language="vi"
+        languageFull="ngôn ngữ tiếng việt"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/vietnam.png"
+        pathCode="vi_vn"
+        sitePath="/content/usgboral/vi_vn"/>
     <th_th
         cq:lastReplicated="{Date}2018-01-24T21:37:03.304+08:00"
         cq:lastReplicatedBy="APD_admin"
@@ -174,7 +216,11 @@
         excelContain="thailand"
         homepageUrl="https://www.usgboral.com/th_th/"
         hreflang="th-th"
-        pathCode="th/th_th"/>
+        language="th"
+        languageFull="Thai"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/thailand.png"
+        pathCode="th/th_th"
+        sitePath="/content/usgboral/th/th_th"/>
     <en_me
         cq:lastReplicated="{Date}2018-01-24T21:37:04.872+08:00"
         cq:lastReplicatedBy="APD_admin"
@@ -189,7 +235,11 @@
         excelContain="middleeast"
         homepageUrl="https://www.usgboral.com/en_me/"
         hreflang="en-me"
-        pathCode="en_me"/>
+        language="en"
+        languageFull="English"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/middle-east.png"
+        pathCode="en_me"
+        sitePath="/content/usgboral/en_me"/>
     <en_id
         cq:lastReplicated="{Date}2018-01-24T21:37:06.561+08:00"
         cq:lastReplicatedBy="APD_admin"
@@ -204,7 +254,11 @@
         excelContain="indonesia_en"
         homepageUrl="https://www.usgboral.com/en_id/"
         hreflang="en-id"
-        pathCode="id/en_id"/>
+        language="en"
+        languageFull="English"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/indonesia.png"
+        pathCode="id/en_id"
+        sitePath="/content/usgboral/id/en_id"/>
     <en_ex
         cq:lastReplicated="{Date}2018-01-24T21:37:08.088+08:00"
         cq:lastReplicatedBy="APD_admin"
@@ -213,13 +267,17 @@
         jcr:primaryType="nt:unstructured"
         countryCode="en_ex"
         countryId="en_ex"
-        countryName="Thailand"
+        countryName="Thailand Export"
         damApprover="usgb_ex_approver"
         damPath="/content/dam/USGBoral/Thailand_EX"
         excelContain="thailand_en_ex"
         homepageUrl="https://www.usgboral.com/en_ex/"
         hreflang="en-ex"
-        pathCode="th/en_ex"/>
+        language="en"
+        languageFull="English"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/thailand.png"
+        pathCode="th/en_ex"
+        sitePath="/content/usgboral/th/en_ex"/>
     <en_ip
         jcr:primaryType="nt:unstructured"
         countryCode="en_ip"
@@ -229,5 +287,9 @@
         damPath="/content/dam/USGBoral/IndustrialPlaster"
         excelContain="industrialpluster"
         homepageUrl="https://www.usgboral.com/en_ip/"
-        pathCode="en_ip"/>
+        language="en"
+        languageFull="English"
+        logo="/content/dam/USGBoral/Global/Website/Images/v3/global-landing/thailand.png"
+        pathCode="en_ip"
+        sitePath="/content/usgboral/en_ip"/>
 </jcr:root>
