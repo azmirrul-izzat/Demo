@@ -16,7 +16,7 @@
 		</sly>
             <div class="bg-light-grey box-size-m box-type-1 p-md-xs p-xs height-full" >
                 <div class="center width-full">
-                    <div class="box-inner-img">
+                    <div class="box-inner-img imgLiquidFill imgLiquid">
                         <img src="${properties.imgPath @ context='unsafe'}" alt="${properties.alt @ context='unsafe'}" />
                     </div>
                     <h2 class="m-top-m m-bottom-xs ht5 color-darker-grey text-center uppercase">${properties.title @ context='html'}</h2>  
@@ -47,7 +47,7 @@
             <div class="box-type-4 bg-primary-green box-size-m m-bottom-xl">
                 
                 <div class="center width-full">
-                    <div class="box-inner-img"><img src="${properties.imgPath @ context='unsafe'}" /></div>
+                    <div class="box-inner-img imgLiquidFill imgLiquid"><img src="${properties.imgPath @ context='unsafe'}" /></div>
                 </div>
 
         		<div class="bg-box-hover ${properties.description ? '' : 'no-description' }">
@@ -76,7 +76,7 @@
 		<sly data-sly-test="${!urlExist}">
 			<a class="visible-xs m-bottom-s" style="z-index:1; background:transparent url(${properties.imgPath @ context='unsafe'}) center center no-repeat; background-size:cover;" >
 		</sly>
-        
+
 			<div class="bg-overlay"> 
 				<div class="p-s text-center">
 					<h2 class="ht5 color-white uppercase p-top-s">${properties.title @ context='html'}</h2>
@@ -86,3 +86,10 @@
         <!-- MOBILE VERSION END -->
 
 </div>
+
+<script>
+
+
+
+
+</script>

@@ -87,3 +87,14 @@ var uniqueArray = function (arrArg) {
         });
     });
 })();
+
+/*imgliquid==========================*/
+(function () {
+    "use strict";
+	$(document).ready(function () {
+
+        $(".imgLiquidFill").imgLiquid();
+
+	});
+
+})();
