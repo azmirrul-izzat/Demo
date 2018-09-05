@@ -130,6 +130,9 @@
                 //console.log(currOnStageMainResultData);
                 if(filteredData.length > 0){
                     paginationResult (currOnStageMainResultData);
+                } else {
+                    $('.main-search-result-wrapper .inner').empty().html("<p>No filtered result been found.</p>");
+                    $('.main-search-result-wrapper #pagination-container').empty();
                 }
                 scrollToTarget('.search-category-controller-container');
                 if($('.filter-icon').is(':visible')){
@@ -179,7 +182,7 @@
             });
 
             $(document).on('change', '#type-group input[type="checkbox"]', function(e){
-                if(currCategory == "doc_finder"){
+                if(currCategory == "doc_finder" || (currCategory == "content" && e.target.value == "page")){
                     var value = $(this).val();
                     if($(this).is(":checked")){
                         $('#'+ value +'_category-group').removeClass('hidden');
@@ -342,7 +345,7 @@
 
     function scrollToTarget(target){
         $('html, body').animate({
-            scrollTop: $(target).offset().top - 50
+            scrollTop: $(target).offset().top - 100
         }, 500);
     }
 
@@ -388,6 +391,8 @@
                     // Hide filter category by default for document finder
                     if(currCategory == "doc_finder"){
                         $('#products_category-group, #solutions_category-group').addClass('hidden');
+                    } else if(currCategory == "content"){
+                        $('#page_category-group').addClass('hidden');
                     }
 
                     //populate search related listing
@@ -464,6 +469,11 @@
 
     Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
         return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+    });
+
+    Handlebars.registerHelper('arrayItemCommaSpacing', function (str) {
+        var string = str.join(', ');
+        return new Handlebars.SafeString(string);
     });
 
 

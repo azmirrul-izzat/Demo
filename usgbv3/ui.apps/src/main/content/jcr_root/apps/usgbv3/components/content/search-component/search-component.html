@@ -472,7 +472,7 @@
         <div class="align-center align-md-bottom flex-row right width-full">
             <a href="{{link}}" target="_blank" class="flex-basis-no flex-IE-grow-auto flex-grow-1 m-right-m">
                 <div class="content p-left-no p-md-left-l">
-                    <p class="sub-headline fs-2 m-bottom-xs">{{category_header}} | {{document_type}}</p>
+                    <p class="sub-headline fs-2 m-bottom-xs">{{category_header}} {{#if document_type}}|{{/if}} {{arrayItemCommaSpacing document_type_names}}</p>
                     <h6 class="headline ht6 uppercase m-bottom-xxs">{{title}}</h6>
                     <p class="description m-no">
                         {{{description}}}
@@ -530,7 +530,7 @@
                 <div class="align-center align-md-bottom flex-row right width-full">
                     <a href="{{link}}" target="_blank" class="flex-basis-no flex-IE-grow-auto flex-grow-1 m-right-m">
                         <div class="content p-left-no p-md-left-l">
-                            <!-- <p class="sub-headline fs-2 m-bottom-xs">{{category_header}} | {{document_type}}</p> -->
+                            <!-- <p class="sub-headline fs-2 m-bottom-xs">{{category_header}} {{#if document_type}}|{{/if}} {{arrayItemCommaSpacing document_type_names}}</p> -->
                             <h6 class="headline ht6 uppercase m-bottom-xxs">{{title}}</h6>
                             <p class="description m-no">
                                 {{{description}}}
