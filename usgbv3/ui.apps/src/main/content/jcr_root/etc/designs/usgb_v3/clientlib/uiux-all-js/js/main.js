@@ -63,6 +63,7 @@ function hookHeadScript(url, async, defer, callback) {
 //END Default reusable functions
 // ----------------------------------------------------------------------
 
+
 // ----------------------------------------------------------------------
 // Load inline youtube video(s) in background
 // ----------------------------------------------------------------------
@@ -902,21 +903,21 @@ function hookHeadScript(url, async, defer, callback) {
         $(".header .hamburger").on("click", function () {
             var $hamburgerContent = $('.hamburger-content');
 
-            
+
             if ($hamburgerContent.hasClass('hidden')) {
                 $hamburgerContent.removeClass('hidden');
-                $hamburgerContent.css("left","800px");
+                $hamburgerContent.css("left", "800px");
                 $hamburgerContent.animate({
-      				left:"0px"
-    			},800);
+                    left: "0px"
+                }, 800);
             } else {
 
-                 $hamburgerContent.animate({
-      				left:"800px"
+                $hamburgerContent.animate({
+                    left: "800px"
 
-                 },1000, function(){
-                     $hamburgerContent.addClass('hidden');
-                 });
+                }, 1000, function () {
+                    $hamburgerContent.addClass('hidden');
+                });
 
             }
 
@@ -2028,10 +2029,10 @@ $(window).on('load', function () {
                 if (scrollPos <= 500 || scrollPos < 800) {
                     stickySidebar.updateSticky();
                 }
-                if ( scrollPos > 900) {
+                if (scrollPos > 900) {
                     stickySidebar.destroy();
-                 }
- 
+                }
+
             }
 
 

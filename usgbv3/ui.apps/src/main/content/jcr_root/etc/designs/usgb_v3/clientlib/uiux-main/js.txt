@@ -5,7 +5,8 @@ jquery.fancybox.js
 jquery.validate.min.js
 handlebars.js
 pagination.js
+imgLiquid.js
 scrollReveal.js
 autocomplete.js
 utils.js
-main.js
+main.js 
