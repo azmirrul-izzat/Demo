@@ -429,6 +429,8 @@
                             if(response.content.length > 0){
                                 var subResultContentHtml = $('#templSubSearchResult_content').html();
                                 var temptSubResultContentHtml = Handlebars.compile(subResultContentHtml);
+                                $($('.sub-search-result-wrapper')[0]).html(temptSubResultContentHtml(resultData));
+                            } else {
                                 $($('.sub-search-result-wrapper')[0]).html("");
                             }
                             break;
