@@ -472,7 +472,10 @@
     });
 
     Handlebars.registerHelper('arrayItemCommaSpacing', function (str) {
-        var string = str.join(', ');
+        var string = "";
+        if(str !== undefined){
+            string = str.join(', ');
+        }
         return new Handlebars.SafeString(string);
     });
 
