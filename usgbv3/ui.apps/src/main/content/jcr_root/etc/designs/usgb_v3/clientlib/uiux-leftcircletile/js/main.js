@@ -30,21 +30,24 @@
             ]
         });
 
+
+
+        if ($(window).width() < 960) {
+        }
+        else {
+    
+                var tileNum =  $(".left-circle-tile .slick-slide").length;
+                if(tileNum < 4){
+                    $(".left-circle-tile .slick-dots").hide(100);
+                    $(".left-circle-tile .slick-arrow").hide(100);
+                }else{
+                    $(".left-circle-tile .slick-dots").show(100);
+                    $(".left-circle-tile .slick-arrow").show(100);
+                }
+        }
+
     });
 
-    if ($(window).width() < 960) {
-    }
-    else {
-
-            var tileNum =  $(".left-circle-tile .slick-slide").length
-            if(tileNum < 4){
-                $(".left-circle-tile .slick-dots").hide(100);
-                $(".left-circle-tile .slick-arrow").hide(100);
-            }else{
-                $(".left-circle-tile .slick-dots").show(100);
-                $(".left-circle-tile .slick-arrow").show(100);
-            }
-    }
 
 
 })();

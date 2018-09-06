@@ -143,79 +143,29 @@
             </sly>
     
         </div>
-<<<<<<< HEAD
         
     <!-- modal pop WTB -->
         <!-- Modal -->
         <div class="wtb-pop-modal">
-            <div id="content-wtb" class="modal fade p-no modal-popup" style="padding:none!important;" role="dialog">
-                <div class="flex-column justify-center height-sm-full" >
-                    <div class="width-full ">
-                        <!-- Modal content-->
-                        <div class="close-btn">
-                            <a data-dismiss="modal" href="#" class="icon-color-white icon-size-xs glyphicon glyphicon-remove"></a>
-                        </div>
+				<div id="content-wtb" class="modal fade p-no modal-popup" style="padding:none!important;" role="dialog">
+                    <div class="flex-column justify-center height-sm-full" >
+                        <div class="width-full ">
+                            <!-- Modal content-->
+        					<div class="close-btn">
+                            	<a data-dismiss="modal" href="#" class="icon-color-white icon-size-xs glyphicon glyphicon-remove"></a>
+							</div>
 
-                        <div class="map-container">
-                            <sly data-sly-resource="${'wtb-reference' @ resourceType='usgbv3/components/content/wtb-reference'}"/> 
+        					<div class="map-container">
+                            	<sly data-sly-resource="${'wtb-reference' @ resourceType='usgbv3/components/content/wtb-reference'}"/> 
+                        	</div>
+                        
                         </div>
-                    
-                    </div>
-                </div>
-            </div>	
+        			</div>
+        		</div>	
         </div>
 
-    <!-- modal pop WTB end -->
-
-        
-        
-            <!-- comapre popup from  -->
-            <script id="compare-popup-local" type="text/x-handlebars-template">
-    
-                {{#each this}}
-                <div class='each content-wrapper' data-content-title="{{url}}">
-                    <a href="{{url}}" target='_blank'>
-                        <div class='img-content'>
-                            <img src="{{img}}"> </div>
-                        <div class='right-content title-content' data-content-value="">{{title}}</div>
-                    </a>
-                    <button class='close-btn-box'>
-                        <span class='bold'>x</span>
-                    </button>
-                    <hr class='col-xs-12 m-no m-top-m'>
-                </div>
-        
-                {{/each}}
-        
-        
-            </script>
-            <!-- compare popup from local -->
-=======
-    </div>
-    
-    <!-- modal pop WTB -->
-        <!-- Modal -->
-        <div id="content-wtb" class="modal fade bg-white p-no modal-popup" role="dialog">
-            <div class="row  flex-column justify-center height-sm-full">
-                <div class="row width-full ">
-                    <!-- Modal content-->
-    
-                    <div class="close-pop-up p-l text-right">
-                        <a data-dismiss="modal" href="#" class="icon-color-darker-grey icon-size-xs glyphicon glyphicon-remove"></a>
-                    </div>
-    
-                    <div class="col-xs-12 m-sm-no m-vertical-3xl ">
-    
-                        <div class="p-no col-xs-12 col-sm-12">
-                            <sly data-sly-resource="${'wtb-reference' @ resourceType='usgbv3/components/content/wtb-reference'}"/>
-                        </div>
-    
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- modal pop WTB end -->
-    
+
     
         <!-- comapre popup from  -->
         <script id="compare-popup-local" type="text/x-handlebars-template">
@@ -232,14 +182,11 @@
                 </button>
                 <hr class='col-xs-12 m-no m-top-m'>
             </div>
->>>>>>> 050bde3affa5a603b7de6b7805ad0c85f0826335
     
             {{/each}}
     
     
         </script>
-        <!-- compare popup from local -->
-
     
         <!--compare popup -->
         <div id="compare-pop-detail-page" class="compare-popup" style="display:none;">
@@ -258,7 +205,7 @@
                         <div class="left img-content"> </div>
                         <div class="right title-content"> </div>
                         <button type="button" class="close-btn-box" aria-label="Close">
-                            <span class="bold" aria-hidden="true">Ã—</span>
+                            <span class="bold" aria-hidden="true">×</span>
                         </button>
                     </div>
                     <hr> -->
