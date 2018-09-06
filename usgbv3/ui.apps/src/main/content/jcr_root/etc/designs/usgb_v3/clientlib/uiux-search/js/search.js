@@ -390,7 +390,7 @@
 
                     // Hide filter category by default for document finder
                     if(currCategory == "doc_finder"){
-                        $('#products_category-group, #solutions_category-group').addClass('hidden');
+                        $('#products_category-group, #systems_category-group').addClass('hidden');
                     } else if(currCategory == "content"){
                         $('#page_category-group').addClass('hidden');
                     }
