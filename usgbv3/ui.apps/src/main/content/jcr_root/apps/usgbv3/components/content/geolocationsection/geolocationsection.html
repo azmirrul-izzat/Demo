@@ -21,7 +21,7 @@
             <!-- 1 -->
             <div class="col-xs-12 p-no m-no" data-sly-repeat.generictile="${geolocation.generalTileModelList}">
                 <a href="${generictile.tilelink}.html" target="_blank">
-                    <div class="box-inner-img" style="background: url(${generictile.bgtileimage @ context='unsafe'}) left center / cover no-repeat transparent; min-height:280px;">
+                    <div class="box-inner-img" style="background: url(${generictile.bgtileimage @ context='unsafe'}) center center / cover no-repeat transparent; min-height:280px;">
                         <div class="bg-overlay" style="min-height:280px;">
                             <div class="content uppercase">${generictile.tiledescription @ context='html'}</div>
                         </div>
@@ -35,7 +35,7 @@
     </div>
     <!-- slick div end -->
     <script id="global-landing" type="text/x-handlebars-template">
-        <div class="location" style=" background: url('{{bgimage}}') no-repeat left center; background-size:cover;">
+        <div class="location" style=" background: url('{{bgimage}}') no-repeat center center; background-size:cover;">
             <div class="bg-overlay">
                 <div class="m-l p-top-l">
                     <p class="sub-heading uppercase">{{{title}}}</p>
