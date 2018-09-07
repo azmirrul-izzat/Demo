@@ -300,22 +300,22 @@
                 </table>
                
                 <div class="sample-orders-container">
+                    {{#each ordersList}}
                     <div class="align-content-center relative clearfix">
-                        {{#each ordersList}}
-                            <div class="sample-img inline-block-sm">
-                                <img src="{{pagePropertiesList.0.pageImage}}" alt="" class="width-full">
+                        <div class="sample-img inline-block-sm">
+                            <img src="{{pagePropertiesList.0.pageImage}}" alt="" class="width-full">
+                        </div>
+                        <div class="sample-desc inline-block-sm">
+                            <h6 class="title m-bottom-s"><strong>{{pagePropertiesList.0.pageTitle}}</strong></h6>
+                            <p>{{pagePropertiesList.0.pageDescription}}</p>
+                        </div>
+                        <div class="sample-quantity inline-block-sm">
+                            <div class="align-content-center">
+                                <strong class="content-label">Quantity: </strong> {{quantity}}
                             </div>
-                            <div class="sample-desc inline-block-sm">
-                                <h6 class="title m-bottom-s"><strong>{{pagePropertiesList.0.pageTitle}}</strong></h6>
-                                <p>{{pagePropertiesList.0.pageDescription}}</p>
-                            </div>
-                            <div class="sample-quantity inline-block-sm">
-                                <div class="align-content-center">
-                                    <strong class="content-label">Quantity: </strong> {{quantity}}
-                                </div>
-                            </div>
-                        {{/each}}
+                        </div>
                     </div>
+                    {{/each}}
                 </div>
         </div>
 
