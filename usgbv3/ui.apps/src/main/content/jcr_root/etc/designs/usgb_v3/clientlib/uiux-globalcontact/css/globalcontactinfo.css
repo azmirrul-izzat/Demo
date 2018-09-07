@@ -8,7 +8,9 @@
     padding: 7px 6px;
     width: 100%;
     max-width: 275px;
-    margin-top: 10px;
+    @media (max-width: 480px) {
+        margin-top: 10px;
+    }
 }
 
 .global-contact-information-component h5.media-heading {
@@ -23,12 +25,6 @@
 .global-contact-information-component .titleDropdown {
     color: #000000;
     font-size: 14px;
-}
-
-@media (min-width: 480px) {
-    .global-contact-information-component .filterDetail {
-        margin-top: 15px;
-    }
 }
 
 .global-contact-information-component .xs-text-center {
