@@ -692,9 +692,6 @@
                     if(markersData.length > 0){
                         if( currSenario.indexOf('proximity') < 0 && currSenario !== "searchUserLocation" ){
                             currLocation = null;
-                        } else {
-                            checkDuoLocation();
-                            addDistanceToData();
                         }
 
                         var templateSource = $("#infoTemplate").html();
@@ -714,8 +711,10 @@
                             currLocation = pos;
                         }
 
-                        checkDuoLocation();
-                        addDistanceToData();
+                        if( currSenario.indexOf('proximity') >= 0 || currSenario == "searchUserLocation" ){
+                            checkDuoLocation();
+                            addDistanceToData();
+                        }
 
                         // 2. load map with getted data
                         initialize();
