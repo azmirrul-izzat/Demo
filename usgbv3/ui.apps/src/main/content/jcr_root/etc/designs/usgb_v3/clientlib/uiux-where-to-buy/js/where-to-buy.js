@@ -280,7 +280,7 @@
                             strokeWeight: 0,
                         });
                         circleOnMap.push(circle);
-                        if(proximityLocationMarker !== undefined){
+                        if(currSenario.indexOf('proximity') >= 0){
                             circle.bindTo('center', proximityLocationMarker, 'position');
                         } else {
                             circle.bindTo('center', currUserLocationMarker, 'position');
