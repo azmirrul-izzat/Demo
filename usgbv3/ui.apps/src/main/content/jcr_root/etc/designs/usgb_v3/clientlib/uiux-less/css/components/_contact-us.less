@@ -110,11 +110,14 @@
         -webkit-transform: translate3d(0, -10px, 0);
         transform: translate3d(0, -10px, 0);
         background: #ffffff;
-        width: calc(~"100% - 25px");
+        width: calc(~"100% - 15px");
         height: 25px;
         top: 11px;
         padding-top: 4px;
         z-index: 6;
+        @media(min-width:768px){
+            width: calc(~"100% - 25px");
+        }
     }
     .float-label textarea:valid+label,
     .float-label textarea:read-only+label,
@@ -124,11 +127,14 @@
         -webkit-transform: translate3d(0, -10px, 0);
         transform: translate3d(0, -10px, 0);
         background: #ffffff;
-        width: calc(~"100% - 25px");
+        width: calc(~"100% - 15px");
         height: 25px;
         top: 11px;
         padding-top: 4px;
         z-index: 6;
+        @media(min-width:768px){
+            width: calc(~"100% - 25px");
+        }
     }
     .float-label {
         .drop-down-select {
