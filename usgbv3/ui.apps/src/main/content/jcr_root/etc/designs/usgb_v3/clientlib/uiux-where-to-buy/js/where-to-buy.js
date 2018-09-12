@@ -280,7 +280,7 @@
                             strokeWeight: 0,
                         });
                         circleOnMap.push(circle);
-                        if(proximityLocationMarker !== undefined){
+                        if(currSenario.indexOf('proximity') >= 0){
                             circle.bindTo('center', proximityLocationMarker, 'position');
                         } else {
                             circle.bindTo('center', currUserLocationMarker, 'position');
@@ -429,7 +429,11 @@
                 event.preventDefault();
                 $('.state-wrap').addClass('open');
             });
-            
+
+            $(document).on('click', '#no-result-modal button', function(event) {
+                event.preventDefault();
+                window.location.href = window.location.origin + window.location.pathname;
+            });
 
             if($("#input-search-location").length){
                 $.ajax({
