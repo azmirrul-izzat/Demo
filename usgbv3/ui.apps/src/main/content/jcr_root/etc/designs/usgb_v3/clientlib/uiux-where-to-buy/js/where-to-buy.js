@@ -244,6 +244,13 @@
                     $('.search-detail-group').html(template(dataFiltered));
                 } else {
                     $('.search-detail-group').html('<div class="p-3xl"><h5>Sorry</h5><p><i>No result has been found.</i></p></div>');
+                    if(currSenario.indexOf('proximity') >= 0){
+                        map.setCenter(proximityLocationMarker.position);
+                    } else {
+                        map.setCenter(currUserLocationMarker.position);
+                    }
+                    map.setZoom(10);
+                    $('.filter-back-btn').click();
                 }
 
                 // filtered item click event
