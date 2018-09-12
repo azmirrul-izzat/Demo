@@ -109,7 +109,7 @@
                         console.log("successs submit");
                 
                         $.ajax({ //ajax form submit
-                            url: '/json/formvalidate.json',
+                            url: '/bin/usgb/v3/contactusbasic',
                             type: 'POST',
                             data: $("form").serialize(),
                             dataType: 'json',
