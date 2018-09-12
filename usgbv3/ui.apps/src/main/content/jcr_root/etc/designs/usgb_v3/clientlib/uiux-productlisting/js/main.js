@@ -787,7 +787,7 @@
                 //get current data-selection button  
                 checkname = $(this).data("selection")
                 //uncheck the checkbox (desktop)
-                $("[data-checkname=" + checkname + "]").attr('checked', false);
+                $("[data-checkname=" + checkname + "]").prop('checked', false);
                 //get current wrapper data when button click desktop
                 currentData = $('[data-checkbutton]>[data-selection=' + checkname + ']').parent().data('checkbutton')
                 //count how many buttons remaning in selected wrapper desktop
