@@ -17,7 +17,7 @@
         <div class="${properties.buttonText ? 'big-size' : ''}">
             <div class="text-center">
             	<sly data-sly-test.isImage="${properties.hiddenImage == properties.imageType}">
-					<div class="m-top-m border flex-grow-0 flex-shrink-0 m-bottom-l ${properties.imageStyle @ context='unsafe'}" style="background: transparent url(${properties.imgPath @ context='unsafe'}) center center no-repeat; background-size:100%;">
+					<div class="m-top-m border flex-grow-0 flex-shrink-0 m-bottom-l ${properties.imageStyle @ context='unsafe'}" style="background: transparent url(${properties.imgPath @ context='unsafe'}) center center no-repeat; background-size:cover;">
                     </div>
                 </sly>
                 <sly data-sly-test="${!isImage}">
