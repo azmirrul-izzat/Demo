@@ -52,10 +52,11 @@ function getElement() {
     var findElem = findElement(currProductData, "link", getLink);
 
     function findElement(currProductData, propName, propValue) {
-
-        for (var i = 0; i < currProductData.length; i++)
-            if (currProductData[i][propName] == propValue)
+        for (var i = 0; i < currProductData.length; i++){
+            if (currProductData[i][propName] == propValue){
                 return currProductData[i];
+            } 
+        } 
     }
     //pass json details
     inputVal = findElem.link;
@@ -195,7 +196,7 @@ function storeCompareLocalStorage() {
 
 function removeCompareLocalStorage(data) {
     // var getIndex1 = storeData.findIndex(x => x.url == data);     
-    var getIndex1
+    var getIndex1;
     storeData.some(function (x, i) {
         if (x.url == data) {
             getIndex1 = i;
@@ -311,10 +312,10 @@ function minimisePopup(){
 ////// REFINE SEARCH  FEATURE start //////
 
 ////filtering product listing////
-var productData
+var productData;
 var currOnStageMainResultData = [];
-var currProductData //target the results
-var shoutout
+var currProductData; //target the results
+var shoutout;
 
 
 
@@ -625,15 +626,15 @@ function scrollTop_one(target) {
 
 ////////FILTER END//////
 
-var dataSearchVal
-var mdataSearchVal
-var checkname
-var countCheckboxSelect
-var checkboxName
-var currentData
-var countButton
-var MobileCurrentData
-var MobileCountButton
+var dataSearchVal;
+var mdataSearchVal;
+var checkname;
+var countCheckboxSelect;
+var checkboxName;
+var currentData;
+var countButton;
+var MobileCurrentData;
+var MobileCountButton;
 
 function hideAllWrappers() {
     // hide html divs desktop and mobile
