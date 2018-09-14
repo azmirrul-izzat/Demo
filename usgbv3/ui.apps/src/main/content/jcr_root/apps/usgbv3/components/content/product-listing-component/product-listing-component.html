@@ -7,7 +7,7 @@
 
     
     <div class="container ${properties.classid}" data-sly-use.component="com.usgbv3.core.components.ProductListingComponent" data-sly-use.countryInfo="com.usgbv3.core.components.CountryInfoComponent">
-            <div class="row m-bottom-xxl m-top-s  product-listing-sidebar ">
+            <div class="row m-bottom-5xl m-top-s product-listing-sidebar">
                 <!-- set p-left-no, avoid sticy width's glitch -->
                 <div class="col-xs-12 col-sm-3 col-md-3 hidden-xs p-left-no make-sticky">
                     <div class="make-sticky_inner">
@@ -98,7 +98,7 @@
                         </script>
                         <!-- handlebar product-listing-filter-wrapper end-->
     
-                        <form id="product-listing-form" class="hidden">
+                        <form id="product-listing-form" class="p-bottom-m hidden">
                             <div class="c-sidebar m-top-m rounded-corners">
     
                                 <div class="each product-listing-filter"></div>
@@ -358,7 +358,7 @@
     
     
         <!--compare popup --> 
-        <div class="compare-popup" style="display:none">
+        <div class="compare-popup" style="display:none;">
     
             <div class="title uppercase ">
                 Compare Product
@@ -410,7 +410,7 @@
         <!-- Shoutout end -->
     
 
-    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='uiux.stickysidebar'}" data-sly-unwrap/>
+    <!-- <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='uiux.stickysidebar'}" data-sly-unwrap/> -->
     <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='uiux.productlisting'}" data-sly-unwrap/>
     
     <script>
