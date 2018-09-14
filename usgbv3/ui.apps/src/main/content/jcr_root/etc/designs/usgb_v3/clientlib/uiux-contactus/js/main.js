@@ -111,17 +111,18 @@
                         $.ajax({ //ajax form submit
                             url: '/bin/usgb/v3/contactusbasic',
                             type: 'POST',
-                            data: $("form").serialize(),
+                            data: JSON.stringify($("form").serializeObject()),
                             dataType: 'json',
                             contentType: false,
                             cache: false,
                             processData: false
                         }).done(function (data) { //fetch server "json" messages when done
                             console.log("successs submit3");
-                            $('#id').val('data.id');
+                            $('#dbid').val(data.id);
                             $('#contactUsForm1').hide();
                             $('#contactUsForm2').removeClass('hidden');
                             $('.thank-you-contacting-msg').removeClass('hidden');
+                            scrollToTarget();
                         });
                        
                     }// end submit handler
@@ -170,7 +171,7 @@
                         console.log("successs submit", $("form").serializeObject());
 
                         $.ajax({ //ajax form submit
-                            url: '/json/formvalidate.json',
+                            url: '/bin/usgb/v3/contactusadvanced',
                             type: 'POST',
                             data: JSON.stringify($("form").serializeObject()),
                             dataType: 'json',
@@ -184,21 +185,22 @@
                             setTimeout(function(){
                                 location.reload()
                             }, 8000);
-                            
+                            scrollToTarget();
                         });
-                    
                     }// end submit handler
                 }); 
             }
-
-            function recaptchaCallback() {
-                $('#hiddenRecaptcha').valid();
-            };
-            
-
         }
     });
 
+    function scrollToTarget(target){
+        $('html, body').animate({
+            scrollTop: $('.page-content').offset().top - 100
+        }, 500);
+    }
     
 })();
     
+function recaptchaCallback() {
+    $('#hiddenRecaptcha').valid();
+};
