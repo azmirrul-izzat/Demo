@@ -1,61 +1,64 @@
 // ----------------------------------------------------------------------
 // Component: Mega menu
 // ----------------------------------------------------------------------
-.mega-menu-wrapper{
-  float:right;
+.mega-menu-wrapper {
+  float: right;
   width: 100%;
   padding-left: 0;
   padding-right: 0;
 
   //Level 1 style
-  ul{
+  ul {
 
-    >li{
-      >a{
+    >li {
+      >a {
         font-weight: bold;
-        padding-bottom:20px;
-        text-transform:uppercase;
+        padding-bottom: 20px;
+        text-transform: uppercase;
       }
     }
 
 
     //Level 2 style - default
     .mega-dropdown {
-      position: static !important; 
+      position: static !important;
+      cursor: pointer;
+
 
 
       .mega-dropdown-separator:after {
-          content: '';
-          display: block;
-          height: 1px;
-          background: @color-white;
-          position: absolute;
-          bottom: 0;
-          margin: auto;
-          width: calc(~"100% - 30px");
-          left: 0;
-          right: 0;
+        content: '';
+        display: block;
+        height: 1px;
+        background: @color-white;
+        position: absolute;
+        bottom: 0;
+        margin: auto;
+        width: calc(~"100% - 30px");
+        left: 0;
+        right: 0;
       }
 
       //when open
-      &.open{  
+      &.open {
         .mega-dropdown-menu {
-            max-height: 1000px;
+          max-height: 1000px;
         }
       }
-      .mega-dropdown-menu {   
-        background:@color-darker-grey;
+
+      .mega-dropdown-menu {
+        background: @color-darker-grey;
         float: left;
         position: absolute;
-        border:none;
+        border: none;
         text-align: left;
         width: 100%;
         left: 0;
         right: 0;
-        top:90px;
+        top: 90px;
         max-height: 0;
         overflow: hidden;
-        display:block;
+        display: block;
         -webkit-transition: max-height 1s ease;
         -moz-transition: max-height 1s ease;
         -ms-transition: max-height 1s ease;
@@ -65,17 +68,18 @@
         color: @color-white;
 
         //create inner scrollbar on mobile and tablet but not desktop
-        >*{
+        >* {
           overflow: auto;
           height: 350px;
-          @media only screen and (min-width:992px) {
+
+          @media only screen and (min-width: 992px) {
             overflow: hidden;
             height: 100%;
           }
         }
-        
 
-        a{
+
+        a {
           color: @color-primary-yellow;
 
           padding-left: 0;
@@ -84,48 +88,47 @@
           padding-bottom: 0;
 
 
-          &:hover{
-            color:@color-primary-yellow;
+          &:hover {
+            color: @color-primary-yellow;
           }
         }
 
-        
+
       }
 
       //Level 2 style - head
-      .mega-dropdown-menu-head{
+      .mega-dropdown-menu-head {
         height: 40px;
 
-        a{
+        a {}
 
-        }
-        
         //consistent line-height for accurate vertical alignment
-        >*{
-
-        }
+        >* {}
 
         .glyphicon {
           position: relative;
           top: 0px;
         }
-        span{
-          max-height:40px;
+
+        span {
+          max-height: 40px;
         }
       }
 
 
 
       //Level 2 style - content 
-      .mega-dropdown-menu-list{
-        li{
-          font-size:13px;
+      .mega-dropdown-menu-list {
+        li {
+          font-size: 13px;
           margin-bottom: 5px;
-          &:after{
+
+          &:after {
             display: none;
           }
         }
-        a{
+
+        a {
           color: @color-white;
           padding-left: 0;
           padding-right: 0;
@@ -134,25 +137,27 @@
           font-weight: normal;
           text-transform: none;
 
-          font-size:13px;
+          font-size: 13px;
 
-          &:hover{
-            color:@color-primary-yellow;
+          &:hover {
+            color: @color-primary-yellow;
           }
         }
       }
 
 
       //Level 2 style - content 
-      .mega-dropdown-menu-sidelist{
-        li{
-          font-size:13px;
+      .mega-dropdown-menu-sidelist {
+        li {
+          font-size: 13px;
           margin-bottom: 15px;
-          &:after{
+
+          &:after {
             display: none;
           }
         }
-        a{
+
+        a {
           color: @color-white;
           padding-left: 0;
           padding-right: 0;
@@ -161,17 +166,35 @@
           font-weight: normal;
           text-transform: none;
 
-          font-size:13px;
+          font-size: 13px;
 
-          &:hover{
-            color:@color-primary-yellow;
+          &:hover {
+            color: @color-primary-yellow;
           }
         }
+
         .glyphicon {
           position: relative;
           top: -1px;
         }
       }
     }
+
+
+    .arrow-up-green:before {
+      bottom: -13px;
+      content: "";
+      position: absolute;
+      left: 40%;
+      width: 0;
+      height: 0;
+      margin: 0px auto;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #008c37;
+      background: transparent;
+
+    }
+
   }
-} 
+}
