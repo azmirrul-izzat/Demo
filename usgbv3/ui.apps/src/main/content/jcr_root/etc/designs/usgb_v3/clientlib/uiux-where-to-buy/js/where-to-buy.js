@@ -630,8 +630,13 @@
                 // including content to the Info Window.
                 infoWindow.setContent(iwContent);
                 
-                // opening the Info Window in the current map and at the current marker location.
+                // grey out all non active markers
                 infoWindow.open(map, marker);
+                for (var i = 0; i < markers.length; i++) {
+                    markers[i].setIcon('/content/dam/USGBoral/Global/Website/Images/v3/component/marker.png');
+                }
+
+                // opening the Info Window in the current map and at the current marker location.
                 marker.setIcon('/content/dam/USGBoral/Global/Website/Images/v3/component/marker-active.png');
 
 
