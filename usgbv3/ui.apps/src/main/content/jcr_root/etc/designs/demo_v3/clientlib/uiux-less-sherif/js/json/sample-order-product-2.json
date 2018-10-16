@@ -1,0 +1,37 @@
+{"pagePropertiesList": [{
+    "image335x275": "/content/dam/demo/Malaysia/Website/images/products/ceilings/metal-ceiling-tiles/highland-series-a/CE039.jpg",
+    "seoDescription": "USG BORAL Highlands is series A was designed so it can be easily installed and demounted for full ceiling access. Learn more here.",
+    "pageTitle": "Highlands Series A",
+    "seoKeywords": "Metal Ceiling Tiles, Highland series, ceiling, building material",
+    "uri": "/content/demo/en_my/products/ceilings/metal-ceiling-tiles/highlands-series-a",
+    "categoryName": "MY_Ceilings",
+    "physicalProperties": "<ul>\n<li>Dimension: 575mm x 575mm, 585mm x 585mm and 595mm x 595mm<\/li>\n<\/ul>\n",
+    "categoryPageUri": "/content/demo/en_my/products/ceilings",
+    "image164x110": "/content/dam/demo/Malaysia/Website/images/products/ceilings/metal-ceiling-tiles/highland-series-a/rp-higha.jpg",
+    "image68x56": "/content/dam/demo/Malaysia/Website/images/products/ceilings/metal-ceiling-tiles/highland-series-a/cp-68x56.jpg",
+    "image250x145": "/content/dam/demo/Malaysia/Website/images/products/ceilings/metal-ceiling-tiles/highland-series-a/po-250x145.jpg",
+    "image616x472": "/content/dam/demo/Malaysia/Website/images/products/ceilings/metal-ceiling-tiles/highland-series-a/fp-616x427.jpg",
+    "comparablePropList": [
+      {
+      "propertyKey": "physicalProperties",
+      "propertyLabel": "Physical Properties"
+      },
+      {
+      "propertyKey": "applications",
+      "propertyLabel": "Applications"
+      },
+      {
+      "propertyKey": "sustainability",
+      "propertyLabel": "Sustainability"
+      },
+      {
+      "propertyKey": "resourceList",
+      "propertyLabel": "Documents and Resources"
+      }
+    ],
+    "orderSampleCategory": "Technical Wall",
+    "resourceList": [{
+      "title": "Highlands Series A",
+      "docSrc": "/content/dam/demo/Malaysia/Website/documents/english/brochures/Highlands Series A.pdf"
+      }]
+    }]}

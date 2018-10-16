@@ -1,0 +1,38 @@
+<sly data-sly-test="${wcmmode.edit || wcmmode.design}">
+	Edit here for Left Circle Tile Component
+</sly>
+
+<style>
+	${properties.cssoverwrite @ context='unsafe'}
+</style>
+
+<sly data-sly-use.component="com.apddemo.core.components.LeftCircleTileComponent">
+    <!-- testimonial carousel -->
+    <div class="row m-top-3xl m-sm-top-4xl m-bottom-4xl m-sm-bottom-5xl ${properties.classid @ context='unsafe'}" >
+        <div class="left-circle-tile" data-sly-list.articleList="${component.articleList}">
+            <!-- featured items start -->
+            <div class="slide" >
+                <div class="each flex-column flex-sm-row justify-center">
+                    <div class="border flex-grow-0 flex-shrink-0 m-bottom-l round-image">
+                        <a href="${articleList.link}.html" target="${properties.targettype == properties.hiddentarget ? properties.targetName : properties.targettype}">
+                            <img src="${articleList.image}" width="400" height="400" alt="">
+                        </a>
+                    </div>
+
+                    <div class="p-sm-left-m p-sm-right-m text-center text-sm-left">
+                        <h6 class="bold m-bottom-xxs uppercase">${articleList.title}</h6>
+                        <p>${articleList.description}</p>
+                        <a href="${articleList.link}.html" class="btn btn-top-border ${articleList.imgAlt}" tabindex="0" target="${properties.targettype == properties.hiddentarget ? properties.targetName : properties.targettype}">Read More
+                            <span class="glyphicon glyphicon-menu-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- featured items end -->
+        </div>
+    </div>
+    <!-- testimonial carousel -->
+</sly>
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='uiux.slick'}" data-sly-unwrap/>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='uiux.leftcircletile'}" data-sly-unwrap/>

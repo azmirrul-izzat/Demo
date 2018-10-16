@@ -1,0 +1,54 @@
+<%@page session="false"
+                import="java.util.ArrayList,
+                  java.util.HashMap,
+                  java.util.LinkedHashMap,
+                  org.apache.sling.api.wrappers.ValueMapDecorator,
+                  com.adobe.granite.ui.components.ds.DataSource,
+                  com.adobe.granite.ui.components.ds.EmptyDataSource,
+                  com.adobe.granite.ui.components.ds.SimpleDataSource,
+                  com.adobe.granite.ui.components.ds.ValueMapResource,
+				  org.apache.sling.api.resource.ResourceMetadata,
+				  com.adobe.cq.commerce.api.ProductRelationshipsProvider,
+				  java.util.Map" %><%
+%><%@include file="/libs/foundation/global.jsp"%><%
+                                                    
+    ArrayList<Resource> resourceList = new ArrayList<Resource>();
+
+    Map<String, String> kv = new LinkedHashMap<String, String>();
+
+    kv.put("None", " ");
+    kv.put("After 2 Second", "wait 0.2s, then enter over 500ms after 0.2s");
+    kv.put("After 3 Second", "wait 0.2s, then enter over 500ms after 0.3s");
+    kv.put("After 4 Second", "wait 0.2s, then enter over 500ms after 0.4s");
+    kv.put("After 5 Second", "wait 0.2s, then enter over 500ms after 0.5s");
+    kv.put("After 6 Second", "wait 0.2s, then enter over 500ms after 0.6s");
+    kv.put("After 7 Second", "wait 0.2s, then enter over 500ms after 0.7s");
+    kv.put("After 8 Second", "wait 0.2s, then enter over 500ms after 0.8s");
+    kv.put("After 9 Second", "wait 0.2s, then enter over 500ms after 0.9s");
+    kv.put("After 10 Second", "wait 0.2s, then enter over 500ms after 1.0s");
+
+
+    for (String key : kv.keySet()) {
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		map.put("text", key);
+		map.put("value", kv.get(key));
+		
+		ValueMapResource syntheticResource = new ValueMapResource(resourceResolver, new ResourceMetadata(), "", new ValueMapDecorator(map));
+		resourceList.add(syntheticResource);
+    }
+
+    DataSource ds;
+
+    // if no matching nodes where found
+    if (resourceList.size() == 0){
+        // return empty datasource
+        ds = EmptyDataSource.instance();
+    } else {
+        // create a new datasource object
+        ds = new SimpleDataSource(resourceList.iterator());
+    }
+
+    // place it in request for consumption by datasource mechanism
+    request.setAttribute(DataSource.class.getName(), ds);
+%>

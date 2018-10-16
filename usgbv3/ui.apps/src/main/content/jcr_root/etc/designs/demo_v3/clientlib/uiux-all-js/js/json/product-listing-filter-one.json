@@ -1,0 +1,163 @@
+{
+    "category_key": "finishes",
+    "country_key":"en_au",
+    "product_listing_filter": [{
+        "catergory_key": "refine_search",
+        "category_title": "Refine Your Search",
+        "category_child": [{
+            "key": "texture",
+            "value": "Texture",
+            "child": [{
+                "key": "lightly_texture",
+                "value": "Lightly Texture"
+            }, {
+                "key": "medium_texture",
+                "value": "Medium Texture"
+            }, {
+                "key": "smooth_texture",
+                "value": "Smooth Texture"
+            }, {
+                "key": "hard_texture",
+                "value": "hard Texture"
+            }]
+        }, {
+            "key": "thickness",
+            "value": "Thickness",
+            "child": [{
+                "key": "5mm",
+                "value": "5mm"
+            }, {
+                "key": "4mm",
+                "value": "4mm"
+            }, {
+                "key": "3mm",
+                "value": "3mm"
+            }, {
+                "key": "2mm",
+                "value": "2mm"
+            }]
+        }, {
+            "key": "lr_rating",
+            "value": "LR Rating",
+            "child": [{
+                "key": "5",
+                "value": "5.00"
+            }, {
+                "key": "4",
+                "value": "4.00"
+            }, {
+                "key": "3",
+                "value": "3.00"
+            }]
+        }]
+
+    }],
+    "shoutout": true,
+    "product_result": [{
+            "num":1,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "hard  5mm title finish",
+            "texture": "hard_texture",
+            "thickness": "5mm",
+            "link": "/etc/designs/demo_v3/clientlib/uiux-all-js/js/json/product-compare-one.html"
+        }, {
+            "num":2,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "5 smooth title finish",
+            "texture": "smooth_texture",
+            "lr_rating": "5",
+            "link": "/etc/designs/demo_v3/clientlib/uiux-all-js/js/json/product-compare-two.html"
+        },
+        {
+            "num":3,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "5mm 5 title finish",
+            "thickness": "4mm",
+            "lr_rating": "5",
+            "link": "/etc/designs/demo_v3/clientlib/uiux-all-js/js/json/product-compare-three.html"
+        }, {
+            "num":4,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "smooth 5 4mm title title",
+            "texture": "smooth_texture",
+            "lr_rating": "5",
+            "thickness": "4mm",
+            "link": "/content/v3/demo/samplepage/product-details.html"
+        }, {
+            "num":5,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "hard 3 3mm title title",
+            "texture": "hard_texture",
+            "lr_rating": "3",
+            "thickness": "3mm",
+            "link": "/content/v3/demo/samplepage/product-details.html"
+        }, {
+            "num":6,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "hard 3 title title",
+            "texture": "hard_texture",
+            "lr_rating": "3",
+            "link": "/content/v3/demo/samplepage/product-details.html"
+        },
+        {   
+            "num":7,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "smooth 3mm title title",
+            "texture": "smooth_texture",
+            "thickness": "3mm",
+            "link": "/content/v3/demo/samplepage/product-details.html"
+        }, {
+            "num":8,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "lightly 2mm title title",
+            "texture": "lightly_texture",
+            "thickness": "2mm",
+            "link": "/content/v3/demo/samplepage/product-details.html"
+        }, {
+            "num":9,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "medium 2mm title title",
+            "texture": "medium_texture",
+            "thickness": "2mm",
+            "link": "/content/v3/demo/samplepage/product-details.html"
+        }, {
+            "num":10,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "lightly 2mm 4 title title",
+            "texture": "lightly_texture",
+            "thickness": "2mm",
+            "lr_rating": "4",
+            "link": "/content/v3/demo/samplepage/product-details.html"
+        }, {
+            "num":11,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "hard 3 title title",
+            "texture": "hard_texture",
+            "lr_rating": "3",
+            "link": "/content/v3/demo/samplepage/product-details.html"
+        },
+        {
+            "num":12,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "hard 3mm title title",
+            "texture": "hard_texture",
+            "thickness": "3mm",
+            "link": "/content/v3/demo/samplepage/product-details.html"
+        }, {
+            "num":13,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "hard 3 title title",
+            "texture": "hard_texture",
+            "lr_rating": "3",
+            "link": "/content/v3/demo/samplepage/product-details.html"
+        },
+        {
+            "num":14,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/bg-banner-tile.jpg",
+            "title": "hard 3mm title title",
+            "texture": "hard_texture",
+            "thickness": "3mm",
+            "link": "/content/v3/demo/samplepage/product-details.html"
+        }
+    ]
+}

@@ -17,10 +17,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com</groupId>
-    <artifactId>usgbv3</artifactId>
+    <artifactId>apddemo</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <description>usgbv3</description>
+    <description>apddemo</description>
 
     <modules>
         <module>core</module>
@@ -40,8 +40,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!--     DEV -->
-        <aem.host.dev>usgbdevaut.cloudapp.net</aem.host.dev>
-        <aem.port.dev>4502</aem.port.dev>
+        <aem.host.dev>serenity.southeastasia.cloudapp.azure.com</aem.host.dev>
+        <aem.port.dev>4505</aem.port.dev>
         <aem.slng.user.dev>admin</aem.slng.user.dev>
         <aem.slng.password.dev>admin</aem.slng.password.dev>
         <aem.vlt.user.dev>admin</aem.vlt.user.dev>
@@ -53,7 +53,7 @@
         <aem.slng.user.uat>admin</aem.slng.user.uat>
         <!-- WARNING! to avoid accidental deployment, manually copy password and DON'T COMMIT POM changes! -->
         <!-- manually copy this password to below: Usg_boral@Apd16 -->
-        <aem.slng.password.uat>Usgb@123</aem.slng.password.uat>
+        <aem.slng.password.uat>Demo@123</aem.slng.password.uat>
 
         <!--     PROD 2 -->
         <aem.host.prod2>usgbproaut2.cloudapp.net</aem.host.prod2>

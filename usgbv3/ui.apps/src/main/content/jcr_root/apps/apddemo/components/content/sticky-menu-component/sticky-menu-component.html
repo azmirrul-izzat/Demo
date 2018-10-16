@@ -1,0 +1,67 @@
+
+<sly data-sly-use.component="com.apddemo.core.components.StickyMenuComponent" >
+
+
+<!-- Product SUB NAVI START -->
+    <div class="container-fluid ">
+        <div class="row bg-gradient-yellow-x hidden-xs product-menu-desktop ">
+            <div class="container">
+                <div class="row product-menu-list-wrapper ">
+                    <ul class="color-darker-grey list-inline desktop-list-inline m-m bold fs-2 text-center" name="bodydestopvalue">
+        				<sly data-sly-list.fluid="${component.containerFluidList}">
+                            <li class="list-inline-item" data-product-list="${fluid.nodeName}">${fluid.title}</li>
+        				</sly>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- mobile dropdowns -->
+    <div class="container-fluid ">
+        <div class="row bg-light-grey visible-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="dropdown  width-full" data-toggle="dropdown">
+                        <select id="mobile-sub-dropdown" class=" bg-light-grey btn-default color-darker-grey">
+        					<sly data-sly-list.fluid="${component.containerFluidList}">
+                                <option value="${fluid.nodeName}">${fluid.title}</option>
+        					</sly>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Product SUB NAVI END -->
+
+
+	<div data-product-menu="start" class="data-scroll-wrapper ">
+    	<sly data-sly-resource="${'sub-menu-par' @ resourceType='foundation/components/parsys'}"/>
+        <div class=" product-menu-end"></div>
+    </div>
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='uiux.sidescroll'}" data-sly-unwrap/>
+
+
+<script>
+
+$(window).on('load', function() {
+
+    var firstvalue = '${component.firstNode @ context="scriptString"}';
+    var bodySelection = $('ul[name=bodydestopvalue]').html();
+
+	// to sync list at header component same as at body - START
+    $('ul[name=headerdestopvalue]').html(bodySelection);
+    // to sync list at header component same as at body - END
+
+    $(".data-scroll-wrapper").find("[data-scroll='" + firstvalue + "']").addClass("product-menu-start");
+
+
+    if ($('[data-product-menu=start]').length) detectSection();
+});
+
+</script>
+
+</sly>

@@ -1,0 +1,55 @@
+<div class="search-pop-up hidden">
+    <div class="bg-overlay-dark">
+
+        <div class="close-pop-up p-l">
+            <a href="#" class="icon-color-white icon-size-xs glyphicon glyphicon-remove"></a>
+        </div>
+
+        <div class="container-fluid flex-column height-full justify-center">
+            <div class="row width-full">
+                <div class="col-xs-12 p-no text-center">
+
+                    <h4 class="color-white ht4 m-bottom-m text-center uppercase">${'What are you looking for ?' @ i18n}</h4>
+
+                    <form>
+                        <div class="flex-row justify-center m-bottom-m">
+
+                            <div class="flex-row input-same-line line-dark-grey-3">
+                                <div class="color-dark-grey search-box">
+                                    <input id="header-search-input" placeholder="${'Search' @ i18n}" data-autocomplete="/bin/usgb/v3/searchAutoComplete" autocomplete="off">
+                                <div class="autocomplete" style="top:40px;left:15px;width:568px;"></div><div class="autocomplete" style="top:40px;left:15px;width:568px;"></div></div>
+                                <div class="side-button">
+                                    <button type="submit" class="bg-primary-yellow p-side-m p-vertical-s search-btn">
+                                        <span class="color-dark-grey glyphicon glyphicon-search m-no p-no"></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+
+                    <p class="color-white fs-3">${'Search by product name, solution, system, drawings, documents or content here' @ i18n}</p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<sly data-sly-use.countryInfo="com.apddemo.core.components.CountryInfoComponent" />
+
+<script>
+	$(document).ready(function () {
+
+        // header search keyword
+        $(document).on('click', '.search-pop-up button[type="submit"]', function(e){
+            e.preventDefault();
+            var text = $(this).closest('.search-pop-up').find('.search-box input').val();
+            window.location.href = "${countryInfo.countryInfo.sitePath @ context='unsafe'}" + "/search.html?text=" + text;
+        });
+
+     });
+
+</script>

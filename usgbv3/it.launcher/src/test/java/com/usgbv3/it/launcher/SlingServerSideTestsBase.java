@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.usgbv3.it.launcher;
+package com.apddemo.it.launcher;
 
 import static org.junit.Assert.fail;
 

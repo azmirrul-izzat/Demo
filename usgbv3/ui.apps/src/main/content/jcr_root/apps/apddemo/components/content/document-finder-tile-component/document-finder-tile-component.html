@@ -1,0 +1,55 @@
+<sly data-sly-test="${wcmmode.edit || wcmmode.design}">
+	Edit here for Document Finder Tile Component
+</sly>
+
+<style>
+	${properties.cssoverwrite @ context='unsafe'}
+</style>
+
+<div class="${properties.classid }">
+	<sly data-sly-test.assetExist="${properties.imgPath }">
+		<div style="background:transparent url(${properties.imgPath @ context='unsafe'}) center center no-repeat; background-size:cover;">
+    </sly>
+    <sly data-sly-test="${!assetExist }">
+		<div style="background-color: ${properties.bgColor @ context='unsafe'}; display:block; height:100%">
+    </sly>
+		<div class="p-xl ${properties.opacity}">
+            <div class="text-center">
+                <h2 class="ht4 color-darker-grey uppercase m-bottom-xl">${properties.title @ context='html'}</h2>
+                <div class="color-darker-grey m-md-left-3xl m-md-right-3xl p-md-left-5xl p-md-right-5xl">${properties.description @ context='html'}</div>      
+            </div>
+            <div class="p-m">
+    
+                <div class="search-box color-dark-grey center-block input-lg add-drop-shadow">
+                    <input name="doc-finder-search-box" class="" placeholder="${'Search' @ i18n}" >
+                    <button type="submit" class=" search-btn doc-finder">
+                        <span class="color-primary-green glyphicon glyphicon-search p-no m-no"></span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+     </div>
+</div> 
+
+
+
+<sly data-sly-use.component="com.apddemo.core.components.CountryInfoComponent" >
+
+	<script>
+		$(".search-btn.doc-finder").on( "click", function() {
+          var dfVal = $("input[name=doc-finder-search-box]").val();
+
+            if(dfVal){
+                var searchUrl = "${component.countryInfo.searchUrl @ context='scriptString'}";
+				window.location.href = searchUrl + ".html?text=" + dfVal + "&category=doc_finder";
+                //alert(searchUrl);
+            }else{
+				alert("value is empty 1");
+            }
+
+        });
+
+    </script>
+</sly>

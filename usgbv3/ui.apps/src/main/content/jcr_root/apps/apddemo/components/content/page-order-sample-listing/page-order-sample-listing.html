@@ -1,0 +1,447 @@
+<!-- For testing purpose only -->
+<script>
+
+//Set a local storage of the products URL requested earlier to be added for sample orders
+////local storage is a string json object
+
+var sampleOrdersJson = [
+    {
+        productName: "Product 1",
+        productUrl: "http://usgbuataut.cloudapp.net:4504/etc/designs/demo_v3/clientlib/uiux-less-sherif/js/json/sample-order-product-1.json",
+        quantity: 2
+    },
+    {
+        productName: "Product 2",
+        productUrl: "http://usgbuataut.cloudapp.net:4504/etc/designs/demo_v3/clientlib/uiux-less-sherif/js/json/sample-order-product-2.json",
+        quantity: 5
+    },
+    {
+        productName: "Product 3",
+        productUrl: "http://usgbuataut.cloudapp.net:4504/etc/designs/demo_v3/clientlib/uiux-less-sherif/js/json/sample-order-product-3.json",
+        quantity: 1
+    }
+];
+
+localStorage.setItem('sampleOrdersList', JSON.stringify(sampleOrdersJson));
+
+
+
+</script>
+<!-- /END For testing purpose only -->
+
+
+<!-- PAGE CONTENT -->
+<div class="page-content">
+    
+    <!-- BREADCUMB-BOX -->
+    <div class="container ">
+        <div class="row m-vertical-m">
+            <div class=" col-xs-12">
+                <div class="breadcrumb-box">
+                    <ol class="breadcrumb m-no p-no bg-white">
+                        <li>USG Boral</li>
+                        <li class="active">
+                            <b>My Order Sample Cart</b>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BREADCUMB-BOX END -->
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-xs-12">
+                <h4 class="ht4 color-darker-grey uppercase m-bottom-m">My order sample cart</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDER Steps Wrapper-->
+    <div class="container order-steps-wrapper">
+        <div class="row">
+            <div class="col">
+
+                <!-- Steps Header -->
+                <div class="steps-header m-m m-sm-s  m-bottom-4xl m-sm-bottom-4xl">
+                    <div class="">
+                        <a href="#" data-step="step-1-select-wrapper" class="step-1-select steps active current-step">
+                            <div class="step-no">
+                                <b>1</b>
+                            </div>
+                            <div class="step-title">
+                                <span><b>ORDER</b></span>
+                                <span>SELECT SAMPLE</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="">
+                            <a href="#" data-step="step-2-shipping-wrapper" class="step-2-select steps">
+                                    <div class="step-no">
+                                        <b>2</b>
+                                    </div>
+                                    <div class="step-title">
+                                        <span><b>SHIPPING</b></span>
+                                        <span>DETAILS</span>
+                                    </div>
+                                </a>
+                    </div>
+                    <div class="">
+                            <a href="#" data-step="step-3-order-summary-wrapper" class="step-3-select steps">
+                                    <div class="step-no">
+                                        <b>3</b>
+                                    </div>
+                                    <div class="step-title">
+                                        <span><b>SUMMARY</b></span>
+                                    </div>
+                                </a>
+                    </div>
+                </div>
+                <!-- /END Steps Header -->
+
+                <!-- Step 1 Order Select Wrapper -->
+                <div class="step-1-select-wrapper steps-inner-wrapper step-active m-s">
+                    <table>
+                        <thead>
+                            <tr class="p-s">
+                                <th class="p-s sample-img">ITEMS</th>
+                                <th class="sample-desc"></th>
+                                <th class="p-s sample-quantity"><span>QUANTITY</span></th>
+                                <th class="sample-remove"></th>
+                            </tr>
+                        </thead>
+                       <tbody class="sample-orders-container">
+                            
+                       </tbody>
+                    </table>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="cart-empty text-center m-top-l">
+                                <h4 class="color-grey">No product added.</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-ctrls m-l">
+                        <a href="#" class="btn btn-brand-default button-grey m-s">View my order history</a>
+                        <a href="#" class="order-sample-btn btn btn-brand-default button-green m-s">order selected sample</a>
+                    </div>
+                </div>
+                <!-- /END Step 1 Order Select Wrapper -->
+
+                <!-- Step 2 Shipping Form -->
+                <div class="step-2-shipping-wrapper steps-inner-wrapper m-s">
+                    <form id="sampleOrderShippingForm" class="floating-type-form form-validate">
+                        
+                        <div class="col-sm-offset-1 col-xs-offset-0 col-sm-5 col-xs-12">
+                            
+                            <div class="float-label respond-msg">
+                                <input type="text" class="form-control name" name="name" value="" required>
+                                <label for="name" class="uppercase ">Recipient Name</label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-offset-1 col-xs-offset-0 col-sm-8 col-xs-12">
+                            
+                            <div class="float-label respond-msg">
+                                <input type="text" class="form-control address-1" name="addressOne" value="" required>
+                                <label for="addressOne" class="uppercase ">Address 1</label>
+                            </div>
+
+                            <div class="float-label respond-msg">
+                                <input type="text" class="form-control address-2" name="addressTwo" value="" required>
+                                <label for="addressTwo" class="uppercase ">Address 2</label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-offset-1 col-xs-offset-0 col-sm-4 col-xs-12">
+
+                            <div class="float-label respond-msg">
+                                <input type="text" class="form-control postal-code" name="postalCode" value="" digits="true" required>
+                                <label for="postalCode" class="uppercase ">Postal Code</label>
+                            </div>
+
+                            <div class="float-label respond-msg">
+                                <input type="text" class="form-control city" name="city" value="" required>
+                                <label for="city" class="uppercase ">City</label>
+                            </div>
+
+                            <div class="float-label respond-msg">
+                                <input type="text" class="form-control state" name="stateSelect" value="" required>
+                                <label class="uppercase ">State/Province/Region</label>
+                            </div>
+
+
+                            <div class="float-label respond-msg">
+                                <label class="uppercase">Country</label>
+                                    <span class="dropdown-arrow color-primary-green glyphicon glyphicon-menu-down fs-1"></span>
+                                    <select name="countrySelect" for="countrySelect" class="drop-down-select form-control country" type="select" required>
+                                        <option></option>
+                                        <option value="Malaysia" selected>Malaysia</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="China">China</option>
+                                        <option value="Korea">Korea</option>
+                                        <option value="Vietnam">Vietnam</option>
+                                        <option value="Philippines">Philippines</option>
+                                        <option value="Indonesia">Indonesia</option>
+                                        <option value="Thailand">Thailand</option>
+                                        <option value="Singapore">Singapore</option>
+                                        <option value="New Zealand">New Zealand</option>
+                                    </select>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-offset-1 col-xs-offset-0 col-sm-8 col-xs-12">
+
+                            <div class="float-label respond-msg">
+                                <textarea type="text" name="remarks" class="form-control h150 remark"></textarea>
+                                <label for="remarks" class="uppercase ">Additional Remark</label>
+                            </div>
+                
+                        </div>
+
+                        <div class="col-sm-offset-1 col-xs-offset-0 col-sm-4 col-xs-12">
+
+                            <div class="float-label respond-msg">
+                                <input type="text" class="form-control contact-no" name="contactNo" value="01234567890" digits="true" required>
+                                <label for="contactNo" class="uppercase ">Recipient contact no</label>
+                            </div>
+
+                            <div class="float-label respond-msg">
+                                <input type="text" class="form-control email" name="email" value="test@apdgroup.com" required>
+                                <label for="email" class="uppercase ">Recipient Email</label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-12 text-center  m-bottom-4xl">
+                            <div class="form-group">
+                                <a href="#" class="back-to-order-select btn btn-brand-default button-grey m-s">Edit Orderd Item(s)</a>
+                                <button id="sampleOrderShippingFormSubmit" class="btn btn-brand-default button-green" value="confirm">CONFIRM AND SUBMIT</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div> 
+                <!-- /END Step 2 Shipping Form -->
+
+                <!-- Step 3 Order Summary -->
+                <div class="step-3-order-summary-wrapper steps-inner-wrapper m-s">
+
+                    <div class="ship-to-summary container">
+
+                    </div>
+
+                </div>
+                <!-- /END Step 3 Order Summary -->
+
+            </div>
+        </div>
+    </div>
+    <!-- /END ORDER Steps Wrapper-->
+
+</div>
+<!-- END of PAGE CONTENT -->
+
+
+<!-- Sample orders listing Template -->
+<script id="sampleOrderTemplate" type="text/x-handlebars-template">
+
+    {{#each this}}
+        <tr data-producturl="{{productUrl}}">
+            <td class="sample-img">
+                <img src="https://dummyimage.com/250x145/000000/fff" alt=""> <!--{{pagePropertiesList.0.image616x472}}-->
+            </td>
+            <td class="sample-desc">
+                <h6 class="title m-s m-left-no">{{pagePropertiesList.0.pageTitle}}</h6>
+                <span>{{pagePropertiesList.0.pageDescription}}</span>
+            </td>
+            <td class="sample-quantity">
+                <a href="" class="quantity-ctrl dec-quantity"><i class="fa fa-minus" aria-hidden="true"></i>
+                </a>
+                <input class="quantity-amount"  type="text" min="1" max="100" value="{{quantity}}" readonly="">
+                <a href="" class="quantity-ctrl inc-quantity"><i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+            </td>
+            <td class="sample-remove">
+                <a href="" class="remove-selected-sample"><i class="fa fa-trash" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">REMOVE</span></a>
+            </td>
+        </tr>
+    {{/each}}
+
+</script>
+<!-- /End Sample orders listing Template -->
+
+
+<!-- After Submit orders summary Listing Template -->
+<script id="submitOrderSummaryTemplate" type="text/x-handlebars-template">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-push-8 order-date-no">
+            
+            <div class="order-details m-top-m m-sm-bottom-4xl">
+                <b>DATE:</b> <span class="recipient-order-date-output">{{orderDate}}</span>
+                <br>
+                <b>ORDER NO:</b> <span class="recipient-order-no-output">{{orderId}}</span>
+            </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-pull-4">
+
+            <h4 class="ht4 uppercase color-darker-grey">Ship To:</h4>
+
+            <p class="m-top-s">
+                <span class="recipient-name-output">{{shipToInfo.name}}</span>
+            </p>
+
+            <p class="m-top-s">
+                <span class="recipient-address-one-output">{{shipToInfo.address1}}</span>,
+                <br>
+                <span class="recipient-address-two-output">{{shipToInfo.address2}}</span>.
+                <br>
+                <span class="recipient-postal-code-output">{{shipToInfo.postcode}}</span> <span class="recipient-city-output">{{shipToInfo.city}}</span>,
+                <br>
+                <span class="recipient-state-output">{{shipToInfo.state}}</span>, <span class="recipient-country-output">{{shipToInfo.country}}</span>
+            </p>
+
+            <p class="m-top-m">
+                <span class="recipient-contact-no-output">{{shipToInfo.contactno}}</span>
+                <br> 
+                <span class="recipient-email-output">{{shipToInfo.email}}</span>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col">
+
+                <table class="m-top-m">
+                        <thead>
+                            <tr class="p-s">
+                                <th class="p-s">ITEMS</th>
+                                <th></th>
+                                <th class="p-s text-center">QUANTITY</th>
+                            </tr>
+                        </thead>
+                       <tbody>
+                           {{#each ordersList}}
+                            <tr>
+                                    <td class="sample-img">
+                                        <img src="http://usgbuataut.cloudapp.net:4504/content/dam/demo/Global/Website/Images/component/allsample/shaft-img.png" alt="">
+                                    </td>
+                                    <td class="sample-desc">
+                                        <h6 class="title m-s m-left-no">{{pagePropertiesList.0.pageTitle}}</h6>
+                                        <span>{{pagePropertiesList.0.seoDescription}}</span>
+                                    </td>
+                                    <td class="sample-quantity">
+                                        {{quantity}}
+                                    </td>
+                                </tr>
+                           {{/each}}
+                       </tbody>
+                    </table>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <p class="m-top-m">
+                <b>REMARKS</b> 
+                <br>
+                <span class="recipient-remarks-output">{{shipToInfo.remark}}</span> 
+            </p>
+        </div>
+    </div>
+
+</script>
+<!-- /End After Submit order summary Template -->
+
+
+<!-- Remove Sample product Modal -->
+<div id="removeSampleOrderModal" class="modal fade sample-orders-modal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="removeSampleOrderModalLabel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" role="document" width="750px">
+            <div class="modal-content">
+                <div class="modal-body m-vertical-s">
+                    <div class="row">
+                        <div class="col-md-12" align="center">
+                            <div class="svg-box">
+                                <svg class="circular yellow-stroke">
+                                    <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+                                </svg>
+                                <svg class="alert-sign yellow-stroke">
+                                    <g transform="matrix(1,0,0,1,-615.516,-257.346)">
+                                        <g transform="matrix(0.56541,-0.56541,0.56541,0.56541,93.7153,495.69)">
+                                            <path class="line" d="M634.087,300.805L673.361,261.53" fill="none" />
+                                        </g>
+                                        <g transform="matrix(2.27612,-2.46519e-32,0,2.27612,-792.339,-404.147)">
+                                            <circle class="dot" cx="621.52" cy="316.126" r="1.318" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <h4 class="ht4 uppercase color-primary-green">Are you sure?</h4>
+                            <p class="color-dark-grey">You will not be able to recover this product</p>
+                            <br>
+                            <p class="text-center m-bottom-l">
+                                <button data-dismiss="modal" class="btn btn-brand-default m-right-l">Cancel</button>
+                                <button class="btn btn-brand-default button-red cta-confirm-remove-order">Yes, Delete it!</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /END Remove Sample product Modal -->
+
+
+<!-- Order Submit Fail Modal -->
+<div id="orderSubmitFailModal" class="modal fade sample-orders-modal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="orderSubmitFailModalLabel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" role="document" width="750px">
+            <div class="modal-content">
+                <div class="modal-body m-vertical-s">
+                    <div class="row">
+                        <div class="col-md-12" align="center">
+                            <div class="svg-box">
+                                <svg class="circular yellow-stroke">
+                                    <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+                                </svg>
+                                <svg class="alert-sign yellow-stroke">
+                                    <g transform="matrix(1,0,0,1,-615.516,-257.346)">
+                                        <g transform="matrix(0.56541,-0.56541,0.56541,0.56541,93.7153,495.69)">
+                                            <path class="line" d="M634.087,300.805L673.361,261.53" fill="none" />
+                                        </g>
+                                        <g transform="matrix(2.27612,-2.46519e-32,0,2.27612,-792.339,-404.147)">
+                                            <circle class="dot" cx="621.52" cy="316.126" r="1.318" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <h4 class="ht4 uppercase color-primary-red">order failed!</h4>
+                            <p class="color-dark-grey">Something went wrong with your sample order submission.</p>
+                            <br>
+                            <p class="text-center m-bottom-l">
+                                <button data-dismiss="modal" class="btn btn-brand-default m-right-l">ok</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /END  Order Submit Fail Modal -->
+

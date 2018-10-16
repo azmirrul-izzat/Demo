@@ -1,0 +1,230 @@
+{
+    "keyword": "ceiling",
+    "result": true,
+    "num_result": 99,
+    "filter_listing": [
+        {
+            "key": "type",
+            "title": "Type",
+            "child": [
+                {
+                    "key": "products",
+                    "name": "Products"
+                },
+                {
+                    "key": "solutions",
+                    "name": "Solutions"
+                }
+            ]
+        },
+        {
+            "key": "products_category",
+            "title": "Products Category",
+            "child": [
+                {
+                    "key": "ceiling",
+                    "name": "Ceiling"
+                },
+                {
+                    "key": "wall",
+                    "name": "Wall"
+                }
+            ]
+        },
+        {
+            "key": "solutions_category",
+            "title": "Solutions Category",
+            "child": [
+                {
+                    "key": "system",
+                    "name": "System"
+                },
+                {
+                    "key": "acoustics",
+                    "name": "Acoustics"
+                },
+                {
+                    "key": "fire_performance",
+                    "name": "fire Performance"
+                },
+                {
+                    "key": "firewall_system",
+                    "name": "Firewall System"
+                }
+            ]
+        },
+        {
+            "key": "document_type",
+            "title": "Document Type",
+            "child": [
+                {
+                    "key": "msds",
+                    "name": "MSDS"
+                },
+                {
+                    "key": "warranties",
+                    "name": "Warranties"
+                },
+                {
+                    "key": "case_studies",
+                    "name": "Case Studies"
+                }
+            ]
+        }
+        
+    ],
+    "content": [
+        {
+            "key": "content_123",
+            "link": "https://www.youtube.com/watch?v=Ous3ffTXRFw",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "A Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "videos",
+            "category_header": "Wall",
+            "product_category": "wall",
+            "created_date": 2018100723050508
+        },
+        {
+            "key": "content_456",
+            "link": "https://www.youtube.com/watch?v=Ous3ffTXRFw",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "c Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "videos",
+            "category_header": "Ceiling",
+            "product_category": "ceiling",
+            "created_date": 2018075523050508
+        },
+        {
+            "key": "content_789",
+            "link": "http://usgbuataut.cloudapp.net:4504/content/v3/demo/samplepage/product-details.html?wcmmode=disabled",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Z Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "pages",
+            "category_header": "Wall",
+            "product_category": "wall",
+            "created_date": 2018070716050508
+        }
+    ],
+    "doc_finder": [
+        {
+            "key": "docFinder_789",
+            "link": "/content/dam/demo/Global/Website/Images/component/allsample/pdf/plasterboard-catalogue.pdf",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "solutions",
+            "category_header": "Solutions Category",
+            "solutions_category": ["acoustics", "system"],
+            "document_type": "warranties",
+            "created_date": 2018070723050508
+        },
+        {
+            "key": "docFinder_456",
+            "link": "/content/dam/demo/Global/Website/Images/component/allsample/pdf/plasterboard-catalogue.pdf",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Array Single Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "solutions",
+            "category_header": "Solutions Category",
+            "solutions_category": ["system"],
+            "document_type": ["msds","case_studies"],
+            "created_date": 2018070723050508
+        },{
+            "key": "docFinder_789",
+            "link": "/content/dam/demo/Global/Website/Images/component/allsample/pdf/plasterboard-catalogue.pdf",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "String Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "category_header": "Wall",
+            "solutions_category": "system",
+            "product_category": "wall",
+            "document_type": "msds",
+            "created_date": 2018070723050508
+        },{
+            "key": "docFinder_123",
+            "link": "/content/dam/demo/Global/Website/Images/component/allsample/pdf/plasterboard-catalogue.pdf",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "solutions_category": ["system", "firewall_system"],
+            "category_header": "Wall",
+            "product_category": "wall",
+            "document_type": "msds",
+            "created_date": 2018070723050508
+        },
+        {
+            "key": "docFinder_456",
+            "link": "/content/dam/demo/Global/Website/Images/component/allsample/pdf/plasterboard-catalogue.pdf",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "solutions",
+            "category_header": "Wall",
+            "solutions_category": ["system", "firewall_system"],
+            "document_type": "msds",
+            "created_date": 2018070723050508
+        },{
+            "key": "docFinder_789",
+            "link": "/content/dam/demo/Global/Website/Images/component/allsample/pdf/plasterboard-catalogue.pdf",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "solutions",
+            "category_header": "Wall",
+            "solutions_category": ["acoustics", "fire_performance"],
+            "document_type": "msds",
+            "created_date": 2018070723050508
+        },{
+            "key": "docFinder_123",
+            "link": "/content/dam/demo/Global/Website/Images/component/allsample/pdf/plasterboard-catalogue.pdf",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "solutions_category": ["system", "firewall_system"],
+            "category_header": "Wall",
+            "product_category": "wall",
+            "document_type": "msds",
+            "created_date": 2018070723050508
+        },
+        {
+            "key": "docFinder_456",
+            "link": "/content/dam/demo/Global/Website/Images/component/allsample/pdf/plasterboard-catalogue.pdf",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "solutions",
+            "category_header": "Wall",
+            "solutions_category": "acoustics",
+            "document_type": "msds",
+            "created_date": 2018070723050508
+        },{
+            "key": "docFinder_789",
+            "link": "/content/dam/demo/Global/Website/Images/component/allsample/pdf/plasterboard-catalogue.pdf",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "solutions",
+            "category_header": "Wall",
+            "solutions_category": ["acoustics"],
+            "document_type": "msds",
+            "created_date": 2018070723050508
+        }
+    ],
+    "cad": [
+        {
+            "key": "articleKey",
+            "link": "http://usgbuataut.cloudapp.net:4504/content/v3/demo/samplepage/product-details.html?wcmmode=disabled",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "pages",
+            "category_header": "Wall",
+            "document_type": "msds",
+            "created_date": 2018070723050508
+        }
+    ],
+    "searches_related": ["ceiling tiles", "ceiling grids"]
+}

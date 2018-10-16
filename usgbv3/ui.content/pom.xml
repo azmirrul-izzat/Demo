@@ -21,7 +21,7 @@
     <!-- ====================================================================== -->
     <parent>
         <groupId>com</groupId>
-        <artifactId>usgbv3</artifactId>
+        <artifactId>apddemo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -29,7 +29,7 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>usgbv3.ui.content</artifactId>
+    <artifactId>apddemo.ui.content</artifactId>
     <packaging>content-package</packaging>
     <name>${artifactId} - UI content</name>
     <description>UI content package for ${artifactId}</description>
@@ -94,7 +94,7 @@
                     <embeddeds>
                         <embedded>
                             <groupId>com</groupId>
-                            <artifactId>usgbv3.core</artifactId>
+                            <artifactId>apddemo.core</artifactId>
                             <target>/apps/${artifactId}/install</target>
                         </embedded>
                     </embeddeds>
@@ -109,7 +109,7 @@
     <dependencies>
         <dependency>
             <groupId>com</groupId>
-            <artifactId>usgbv3.core</artifactId>
+            <artifactId>apddemo.core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

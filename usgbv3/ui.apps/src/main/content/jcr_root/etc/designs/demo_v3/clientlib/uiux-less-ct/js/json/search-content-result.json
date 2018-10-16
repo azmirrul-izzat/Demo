@@ -1,0 +1,197 @@
+{
+    "searched_text": "ceiling",
+    "result": true,
+    "num_result": 99,
+    "filter_listing": [
+        {
+            "key": "type",
+            "title": "Type",
+            "child": [
+                {
+                    "key": "pages",
+                    "name": "Pages"
+                },
+                {
+                    "key": "videos",
+                    "name": "Videos"
+                }
+            ]
+        },
+        {
+            "key": "product_category",
+            "title": "Product Category",
+            "child": [
+                {
+                    "key": "ceiling",
+                    "name": "Ceiling"
+                },
+                {
+                    "key": "wall",
+                    "name": "Wall"
+                }
+            ]
+        }
+    ],
+    "content": [
+        {
+            "key": "content_123",
+            "link": "https://www.youtube.com/watch?v=Ous3ffTXRFw",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "A Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "videos",
+            "product_category": "wall",
+            "created_date": 2018100723050508
+        },
+        {
+            "key": "content_456",
+            "link": "https://www.youtube.com/watch?v=Ous3ffTXRFw",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "c Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "videos",
+            "product_category": "ceiling",
+            "created_date": 2018075523050508
+        },
+        {
+            "key": "content_789",
+            "link": "http://usgbuataut.cloudapp.net:4504/content/v3/demo/samplepage/product-details.html?wcmmode=disabled",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Z Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "pages",
+            "product_category": "wall",
+            "created_date": 2018070716050508
+        },
+        {
+            "key": "content_123",
+            "link": "https://www.youtube.com/watch?v=Ous3ffTXRFw",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Y Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "videos",
+            "product_category": "wall",
+            "created_date": 2018070723500508
+        },
+        {
+            "key": "content_456",
+            "link": "https://www.youtube.com/watch?v=Ous3ffTXRFw",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "G Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "videos",
+            "product_category": "wall",
+            "created_date": 2018070723055908
+        },
+        {
+            "key": "content_789",
+            "link": "http://usgbuataut.cloudapp.net:4504/content/v3/demo/samplepage/product-details.html?wcmmode=disabled",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "u Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "pages",
+            "product_category": "wall",
+            "created_date": 2020070723050508
+        },
+        {
+            "key": "content_123",
+            "link": "https://www.youtube.com/watch?v=Ous3ffTXRFw",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "K Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "videos",
+            "product_category": "wall",
+            "created_date": 2018073123050508
+        },
+        {
+            "key": "content_456",
+            "link": "https://www.youtube.com/watch?v=Ous3ffTXRFw",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "videos",
+            "product_category": "wall",
+            "created_date": 2018070701050508
+        },
+        {
+            "key": "content_789",
+            "link": "http://usgbuataut.cloudapp.net:4504/content/v3/demo/samplepage/product-details.html?wcmmode=disabled",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "L Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "pages",
+            "product_category": "ceiling",
+            "created_date": 2018120723050508
+        },
+        {
+            "key": "content_123",
+            "link": "https://www.youtube.com/watch?v=Ous3ffTXRFw",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "La Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "videos",
+            "product_category": "wall",
+            "created_date": 2018120123050508
+        },
+        {
+            "key": "content_456",
+            "link": "https://www.youtube.com/watch?v=Ous3ffTXRFw",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "videos",
+            "product_category": "wall",
+            "created_date": 2018070723050505
+        },
+        {
+            "key": "content_789",
+            "link": "http://usgbuataut.cloudapp.net:4504/content/v3/demo/samplepage/product-details.html?wcmmode=disabled",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "pages",
+            "product_category": "ceiling",
+            "created_date": 2018070723050560
+        }
+    ],
+    "doc_finder": [
+        {
+            "key": "docFinder_123",
+            "link": "http://usgbuataut.cloudapp.net:4504/content/v3/demo/samplepage/product-details.html?wcmmode=disabled",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "pages",
+            "created_date": 2018070723050508
+        },
+        {
+            "key": "docFinder_456",
+            "link": "http://usgbuataut.cloudapp.net:4504/content/v3/demo/samplepage/product-details.html?wcmmode=disabled",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "pages",
+            "created_date": 2018070723050508
+        },{
+            "key": "docFinder_789",
+            "link": "http://usgbuataut.cloudapp.net:4504/content/v3/demo/samplepage/product-details.html?wcmmode=disabled",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "pages",
+            "created_date": 2018070723050508
+        }
+    ],
+    "cad": [
+        {
+            "key": "articleKey",
+            "link": "http://usgbuataut.cloudapp.net:4504/content/v3/demo/samplepage/product-details.html?wcmmode=disabled",
+            "image": "https://dummyimage.com/250x145/000000/fff",
+            "title": "Sonatex Colour Guide",
+            "desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonum",
+            "type": "pages",
+            "created_date": 2018070723050508
+        }
+    ],
+    "searches_related": ["ceiling tiles", "ceiling grids"]
+}

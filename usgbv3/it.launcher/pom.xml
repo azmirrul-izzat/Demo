@@ -18,7 +18,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com</groupId>
-        <artifactId>usgbv3</artifactId>
+        <artifactId>apddemo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -26,7 +26,7 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>usgbv3.it.launcher</artifactId>
+    <artifactId>apddemo.it.launcher</artifactId>
     <packaging>jar</packaging>
     <name>${artifactId} - Integration Tests Launcher</name>
     <description>Integration Tests Launcher for ${artifactId}</description>
@@ -224,8 +224,8 @@
                                 -->
                                 <sling.additional.bundle.1>org.apache.sling.junit.core</sling.additional.bundle.1>
                                 <sling.additional.bundle.2>org.apache.sling.junit.scriptable</sling.additional.bundle.2>
-                                <sling.additional.bundle.3>usgbv3.it.tests</sling.additional.bundle.3>
-                                <sling.additional.bundle.4>usgbv3.core</sling.additional.bundle.4>
+                                <sling.additional.bundle.3>apddemo.it.tests</sling.additional.bundle.3>
+                                <sling.additional.bundle.4>apddemo.core</sling.additional.bundle.4>
                                 <sling.additional.bundle.5>org.apache.sling.junit.remote</sling.additional.bundle.5>
                                 <sling.additional.bundle.6>org.apache.sling.testing.tools</sling.additional.bundle.6>
                                 <sling.additional.bundle.7>httpclient-osgi</sling.additional.bundle.7>
@@ -318,12 +318,12 @@
         </dependency>
         <dependency>
             <groupId>com</groupId>
-            <artifactId>usgbv3.it.tests</artifactId>
+            <artifactId>apddemo.it.tests</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com</groupId>
-            <artifactId>usgbv3.core</artifactId>
+            <artifactId>apddemo.core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

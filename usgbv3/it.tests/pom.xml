@@ -21,7 +21,7 @@
     <!-- ====================================================================== -->
     <parent>
         <groupId>com</groupId>
-        <artifactId>usgbv3</artifactId>
+        <artifactId>apddemo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -29,7 +29,7 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>usgbv3.it.tests</artifactId>
+    <artifactId>apddemo.it.tests</artifactId>
     <packaging>bundle</packaging>
     <name>${artifactId} - Integration Tests Bundles</name>
     <description>Bundles for Integration Tests for ${artifactId}</description>
@@ -90,7 +90,7 @@
 
         <dependency>
             <groupId>com</groupId>
-            <artifactId>usgbv3.core</artifactId>
+            <artifactId>apddemo.core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <type>bundle</type>
             <scope>provided</scope>

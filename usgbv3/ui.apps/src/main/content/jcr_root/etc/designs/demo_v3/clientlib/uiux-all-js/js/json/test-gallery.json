@@ -1,0 +1,185 @@
+{
+    "gallery_filter": [
+        {
+            "category_key": "view",
+            "category_title": "View By",
+            "child": [
+                {
+                    "key": "all",
+                    "value": "All"
+                },
+                {
+                    "key": "bathroom",
+                    "value": "Bathroom"
+                },
+                {
+                    "key": "bedroom",
+                    "value": "bedroom"
+                },
+                {
+                    "key": "childrensroom",
+                    "value": "childrensroom"
+                },
+                {
+                    "key": "dentalclinic",
+                    "value": "dentalclinic"
+                },
+                {
+                    "key": "entertainmentroom",
+                    "value": "entertainmentroom"
+                },
+                {
+                    "key": "kitchen",
+                    "value": "kitchen"
+                },
+                {
+                    "key": "livingroom",
+                    "value": "livingroom"
+                },
+                {
+                    "key": "restaurant",
+                    "value": "restaurant"
+                },
+                {
+                    "key": "showroom",
+                    "value": "Showroom"
+                }
+            ]
+        },
+        {
+            "category_key": "type",
+            "category_title": "Type",
+            "child": [
+                {
+                    "key": "all",
+                    "value": "All"
+                },
+                {
+                    "key": "classic",
+                    "value": "classic"
+                },
+                {
+                    "key": "modern",
+                    "value": "modern",
+                    "desc": "modern desc desc desc"
+                }
+            ]
+        }
+    ],
+    "result": [
+        {
+            "num": 3,
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/test.png",
+            "title": "Cổ điển",
+            "desc": "this is the description",
+            "view": "livingroom",
+            "type": "classic",
+            "link": "/content/demo/en_au/gallery/livingroom/classic.html"
+        },
+        {
+            "img": "/content/dam/demo/Global/Website/Images/component/allsample/test.png",
+            "title": "Hiện đại",
+            "desc": "this is the description",
+            "view": "livingroom",
+            "type": "modern",
+            "link": "/content/demo/en_au/gallery/livingroom/modern"
+
+        },
+        {
+            "title": "Hiện đại",
+            "view": "childrensroom",
+            "type": "modern",
+            "link": "/content/demo/en_au/gallery/childrensroom/modern"
+        },
+        {
+            "title": "Cổ điển",
+            "view": "childrensroom",
+            "type": "classic",
+            "link": "/content/demo/en_au/gallery/childrensroom/classic"
+        },
+        {
+            "title": "Hiện đại",
+            "view": "entertainmentroom",
+            "type": "modern",
+            "link": "/content/demo/en_au/gallery/entertainmentroom/modern"
+        },
+        {
+            "title": "Cổ điển",
+            "view": "entertainmentroom",
+            "type": "classic",
+            "link": "/content/demo/en_au/gallery/entertainmentroom/classic"
+        },
+        {
+            "title": "Hiện đại",
+            "view": "bathroom",
+            "type": "modern",
+            "link": "/content/demo/en_au/gallery/bathroom/modern"
+        },
+        {
+            "title": "Cổ điển",
+            "view": "bathroom",
+            "type": "classic",
+            "link": "/content/demo/en_au/gallery/bathroom/classic"
+        },
+        {
+            "title": "Hiện đại",
+            "view": "kitchen",
+            "type": "modern",
+            "link": "/content/demo/en_au/gallery/kitchen/modern"
+        },
+        {
+            "title": "Cổ điển",
+            "view": "kitchen",
+            "type": "classic",
+            "link": "/content/demo/en_au/gallery/kitchen/classic"
+        },
+        {
+            "title": "Hiện đại",
+            "view": "restaurant",
+            "type": "modern",
+            "link": "/content/demo/en_au/gallery/restaurant/modern"
+        },
+        {
+            "title": "Cổ điển",
+            "view": "restaurant",
+            "type": "classic",
+            "link": "/content/demo/en_au/gallery/restaurant/classic"
+        },
+        {
+            "title": "Hiện đại",
+            "view": "showroom",
+            "type": "modern",
+            "link": "/content/demo/en_au/gallery/showroom/modern"
+        },
+        {
+            "title": "Cổ điển",
+            "view": "showroom",
+            "type": "classic",
+            "link": "/content/demo/en_au/gallery/showroom/classic"
+        },
+        {
+            "title": "Hiện đại",
+            "view": "dentalclinic",
+            "type": "modern",
+            "link": "/content/demo/en_au/gallery/dentalclinic/modern"
+        },
+        {
+            "title": "Cổ điển",
+            "view": "dentalclinic",
+            "type": "classic",
+            "link": "/content/demo/en_au/gallery/dentalclinic/classic"
+        },
+        {
+            "title": "Hiện đại",
+            "view": "bedroom",
+            "type": "modern",
+            "link": "/content/demo/en_au/gallery/bedroom/modern"
+        },
+        {
+            "title": "Cổ điển",
+            "view": "bedroom",
+            "type": "classic",
+            "link": "/content/demo/en_au/gallery/bedroom/classic"
+        }
+    ]
+}

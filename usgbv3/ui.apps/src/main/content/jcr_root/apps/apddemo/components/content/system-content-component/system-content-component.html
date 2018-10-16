@@ -1,0 +1,120 @@
+<sly data-sly-test="${wcmmode.edit || wcmmode.design}">
+	Edit here for System Content Component
+</sly>
+
+<style>
+	${properties.cssoverwrite @ context='unsafe'}
+</style>
+
+
+<div class="${properties.classid }">
+
+	<div class="row m-bottom-s" data-sly-use.component="com.apddemo.core.components.SystemContentComponent">
+
+		<div class="col-xs-12 m-bottom-s">
+			<h2 class="uppercase color-darker-grey ht5">${properties.title }</h2>
+		</div>
+
+		<div class="col-xs-12  text-left ">
+
+			<div class="col-xs-12 col-sm-8 p-no">${properties.description @ context='html'}</div>
+			<div class="col-xs-12 col-sm-4 p-no">
+				<div class="search-filter-sort justify-end system-content-filter">
+                        <!-- SORT BY -->
+                        <div class="dropdown dp-form m-bottom-3xl float-right" style="max-width: 280px;">
+                            <button class="btn btn-default color-dark-grey dropdown-toggle text-left dp-clickable" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="dp-text text-capitalize">Show All</span>
+                                <input type="hidden" name="selectSortType" value="oldest">
+                                <span class="color-primary-green glyphicon glyphicon-menu-down right"></span>
+                            </button>
+                            <ul class="dropdown-menu dp-list" aria-labelledby="dropdownMenu1">
+
+                                <li>
+                                    <a class="text-capitalize" data-val="all">Show All</a>
+                                </li>
+
+                            	<sly data-sly-list.filterList="${component.filterList}">
+									<li>
+                                        <a class="text-capitalize" data-val="${filterList @ context='unsafe'}">${filterList @ context='unsafe'}</a>
+                                    </li>
+                                </sly>
+
+                            </ul>
+                        </div>
+
+                        <div class="dropdown dp-form-mobile dropdown-menu-right m-vertical-m d-small ">
+                            <select class="btn-default text-capitalize">
+
+                                <option class="text-capitalize" value="all">Show All</option>
+
+                                <sly data-sly-list.filterList="${component.filterList}">
+									<option class="text-capitalize" value="${filterList @ context='unsafe'}">${filterList @ context='unsafe'}</option>
+                                </sly>
+
+                            </select>
+                        </div>
+                    </div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="row pop-content-wrapper">
+		<div class="col-xs-12">
+        	<sly data-sly-list.systemPage="${component.productList}">
+
+				<div data-toggle="modal" data-target="#content-system-${systemPage.pageNo @ context='unsafe'}" data-system-category="${systemPage.category @ context='unsafe'}" class="col-sm-4 col-xs-12 p-md-m p-xxs p-no system-content-box">
+                    <div class="col-xs-4 p-no ">
+                        <img class="img-responsive" src="${systemPage.page.properties.pageImage @ context='unsafe'}">
+                    </div>
+                    <div class="col-xs-7 m-md-top-s p-left-s p-md-left-m p-no">
+                        <h6 class="bold">${systemPage.page.title @ context='unsafe'}</h6>
+                    </div>
+                </div>
+
+
+                <div id="content-system-${systemPage.pageNo @ context='unsafe'}" class="popup-icon-tile-modal modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="display: none;">
+                    <div class="align-bottom flex-column height-full justify-center modal-dialog modal-lg" role="document">
+
+                            <!-- modal header -->
+							<div class="modal-header">
+								<div class="close-pop-up text-right" data-dismiss="modal" aria-label="Close">
+									<a href="#" class="icon-color-white icon-size-xs glyphicon glyphicon-remove"></a>
+								</div>
+							</div>
+							<!-- end modal header -->
+							<!-- modal content -->
+							
+                            <div class="modal-content p-vertical-l overflow-hidden">
+								<!-- modal body -->
+								<div class="modal-body">
+									<div class="col-xs-12 col-sm-6 order-1 order-sm-2 p-top-no p-sm-top-xs p-bottom-m p-sm-bottom-no">
+										<img class="img-responsive hs-img" src="${systemPage.page.properties.pageImage @ context='unsafe'}">
+									</div>
+									<div class="col-xs-12 col-sm-6 order-2 order-sm-2">
+									<h2 class="ht4 m-sm-bottom-m m-bottom-s top-no hs-title">${systemPage.page.title @ context='unsafe'}</h2>
+									${systemPage.page.description @ context='html'}
+
+									<p>&nbsp;</p>
+
+									<p class="text-left ">
+										<a href="${systemPage.page.link @ context='unsafe'}.html" target="${properties.targettype == properties.hiddentarget ? properties.targetName : properties.targettype}" class="btn btn-brand-default button-green">Find out more</a>
+									</p>
+									</div>
+								</div>
+								
+								
+                            </div>
+                    </div>
+                </div>
+
+            </sly>
+
+		</div>
+	</div>
+
+
+</div>
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientlib.js @ categories='uiux.filtersort'}"/>

@@ -1,0 +1,63 @@
+<sly data-sly-test="${wcmmode.edit}">
+    Edit here for editing geolocationsection component
+</sly>
+<style>
+    ${properties.cssoverwrite @ context='unsafe'}
+</style>
+
+<div class="${properties.classid}">
+    <!-- slick div -->
+    <div class="feature-card-wrapper variation-1 m-bottom-s" data-sly-use.geolocation="com.apddemo.core.components.GeolocationComponent">
+        <div class="carousel-feature-card" data-slick='{
+                                "dots": true,
+                                "infinite": false,
+                                "speed": 300,
+                                "slidesToShow": 1,
+                                "slidesToScroll": 1,
+                                "arrows": false,
+                                "adaptiveHeight": true
+                            }'>
+            <!-- featured items start -->
+            <!-- 1 -->
+            <div class="col-xs-12 p-no m-no" data-sly-repeat.generictile="${geolocation.generalTileModelList}">
+                <a href="${generictile.tilelink}.html" target="_blank">
+                    <div class="box-inner-img" style="background: url(${generictile.bgtileimage @ context='unsafe'}) center center / cover no-repeat transparent; min-height:280px;">
+                        <div class="bg-overlay" style="min-height:280px;">
+                            <div class="content uppercase">${generictile.tiledescription @ context='html'}</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- 1 end -->
+            <!-- featured items end -->
+        </div>
+    
+    </div>
+    <!-- slick div end -->
+    <script id="global-landing" type="text/x-handlebars-template">
+        <div class="location" style=" background: url('{{bgimage}}') no-repeat center center; background-size:cover;">
+            <div class="bg-overlay">
+                <div class="m-l p-top-l">
+                    <p class="sub-heading uppercase">{{{title}}}</p>
+                    {{{description}}}
+                    <!--   class="sub-heading uppercase" -->
+                </div>
+            </div>
+        </div>
+    </script>
+    <div class="global-location-card">
+        <div class="global-landing"></div>
+    </div>
+    <div class="m-vertical-m" data-sly-test="${properties.globalinformationlink}">
+        <a href="${properties.globalinformationlink @ extension='html'}" class="uppercase color-darker-grey fs-2">
+            <span class="fa fa-globe"></span> Global Contact Information
+            <span class="glyphicon glyphicon-menu-right color-primary-green"></span>
+        </a>
+    </div>
+    <!-- slick div end -->
+
+</div>
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='uiux.slick'}" data-sly-unwrap/>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='uiux.geolocation'}" data-sly-unwrap/>
+

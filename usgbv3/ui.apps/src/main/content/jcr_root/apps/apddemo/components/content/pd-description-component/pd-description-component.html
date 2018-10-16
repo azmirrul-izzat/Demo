@@ -1,0 +1,845 @@
+<sly data-sly-test="${wcmmode.edit || wcmmode.design}">
+    Edit here for Product Detail Description Component
+    </sly>
+    
+    <style>
+        ${properties.cssoverwrite @ context='unsafe'}
+    </style>
+
+    <div class="${properties.classid }" data-sly-use.countryInfo="com.apddemo.core.components.CountryInfoComponent">
+        <h2 class="color-darker-grey uppercase ht5">
+            ${properties.title @ context='html'}
+        </h2>
+        <div class="fs-2 color-darker-grey m-top-xs">
+            ${properties.description @ context='html'}
+        </div>
+    
+        <sly data-sly-test="${!currentStyle.hideBookmark}">
+            <a href="${currentPage.path}.html" class="col-xs-4 color-darker-grey fs-3 p-no m-bottom-m hidden-xs cta-bookmark disabled">
+                <span class="glyphicon glyphicon-heart p-right-s"></span>${'Add to my bookmark' @ i18n}
+            </a>
+        </sly>
+
+        <sly data-sly-test="${!currentStyle.hidePrint}">
+            <a href="#" onclick="window.print();" class="col-xs-6 color-darker-grey fs-3 p-no m-bottom-m hidden-xs">
+                <span class="glyphicon glyphicon-print p-right-s"></span>${'Print' @ i18n}
+            </a>
+        </sly>
+    
+        <sly data-sly-test="${currentPage.properties.enableOrderSample }">
+            <div class="row">
+                <div class="col-xs-12">
+                    <a href="#" class="request-btn col-xs-12 col-sm-5 btn btn-lg btn-brand-default button-green locked">${'Request Sample' @ i18n}</a>
+                    <a href="#" class="add-to-cart"></a>
+                </div>
+            </div>
+        </sly>
+
+        <sly data-sly-test="${!currentStyle.hideCompare}">
+            <div class="radio text-center visible-xs m-vertical-m">
+                <label class="fs-3 color-grey container-checkbox">${'Compare this product' @ i18n}
+                    <input type="checkbox" data-input-value="${currentPage.path}.html">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </sly>
+    
+        <!-- show in mobile -->
+        <div class="row">
+            <div class="col-xs-12 m-top-m m-bottom-m visible-xs">
+    
+                <sly data-sly-test="${!currentStyle.hideBookmark}">
+                    <a href="${currentPage.path}.html" class="float-left stacked-default icon-color-darker-grey m-right-xxs cta-bookmark">
+                        <span class="fa-stack fa-5x">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </sly>
+    
+                <sly data-sly-test="${!currentStyle.hidePrint}">
+                    <a href="#" onclick="window.print();" class="float-left stacked-default icon-color-darker-grey m-right-xxs">
+                        <span class="fa-stack fa-5x">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-print fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </sly>
+    
+                <sly data-sly-test="${!currentStyle.hideShare}">
+                    <sly data-sly-resource="${'share-component' @ resourceType='apddemo/components/content/share-component'}"/>
+                </sly>
+    
+                <sly data-sly-test="${!currentStyle.hideWtb}" >
+                    <a href="${countryInfo.countryInfo.wtbUrl @ context='unsafe'}.html" class="float-right stacked-default icon-color-darker-grey ">
+                        <span class="fa-stack fa-5x">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </sly>
+    
+                <sly data-sly-test="${!currentStyle.hideContactUs}" >
+                    <a href="${countryInfo.countryInfo.contactusUrl @ context='unsafe'}.html" class="float-right stacked-default icon-color-darker-grey m-right-xxs">
+                        <span class="fa-stack fa-5x">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class="fa fa-phone fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                 </sly>
+    
+            </div>
+        </div>
+        <!-- show in mobile end-->
+    
+        <!-- show in desktop -->
+        <div class="row hidden-xs">
+            <div class="col-sm-8 col-xs-12">
+    
+                <sly data-sly-test="${!currentStyle.hideCompare}">
+                    <div class="radio">
+                        <label class="fs-3 color-grey container-checkbox">${'Compare this product' @ i18n}
+                            <input type="checkbox" data-input-value="${currentPage.path}.html">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </sly>
+    
+                <sly data-sly-test="${!currentStyle.hideShare}">
+                    <div class="m-top-s top-line-dark-grey">
+                        <div class=" fs-3 m-top-m m-bottom-xs color-grey">${'Share this product:' @ i18n} &nbsp;
+                            <sly data-sly-resource="${'share-component' @ resourceType='apddemo/components/content/share-component'}"/>
+                        </div>
+                    </div>
+                    </sly>
+            </div>
+    
+            <sly data-sly-test="${!currentStyle.hideWtb || !currentStyle.hideContactUs}">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="p-s p-right-l rounded-corners bg-light-grey float-right">
+    
+                        <sly data-sly-test="${!currentStyle.hideContactUs}" >
+                            <div class="p-no m-bottom-xs">
+                                <a class=" fs-2 uppercase bold p-left-s color-primary-grey" href="${countryInfo.countryInfo.contactusUrl @ context='unsafe'}.html">
+                                    <span class=" m-right-s glyphicon glyphicon-earphone"></span>${'Contact Us' @ i18n}
+                                </a>
+                            </div>
+                        </sly>
+    
+                        <sly data-sly-test="${!currentStyle.hideWtb && !currentStyle.hideContactUs}" >
+                            <div class="col-xs-11 m-bottom-xs m-left-s line-light-grey"></div>
+                        </sly>
+
+                        <sly data-sly-test="${!currentStyle.hideWtb}" >
+                            <div class="p-no">
+                                <a data-toggle="modal" data-target="#content-wtb" class="fs-2 uppercase bold p-left-xs color-primary-grey" href="#">
+                                        <span class="m-right-s glyphicon glyphicon-map-marker"></span>${'Where To Buy' @ i18n}
+                                </a>
+                            </div>
+                        </sly>
+    
+                    </div>
+                </div>
+            </sly>
+    
+        </div>
+        
+    <!-- modal pop WTB -->
+        <!-- Modal -->
+        <div class="wtb-pop-modal">
+				<div id="content-wtb" class="modal fade p-no modal-popup" style="padding:none!important;" role="dialog">
+                    <div class="flex-column justify-center height-sm-full" >
+                        <div class="width-full ">
+                            <!-- Modal content-->
+        					<div class="close-btn">
+                            	<a data-dismiss="modal" href="#" class="icon-color-white icon-size-xs glyphicon glyphicon-remove"></a>
+							</div>
+
+        					<div class="map-container">
+                            	<sly data-sly-resource="${'wtb-reference' @ resourceType='apddemo/components/content/wtb-reference'}"/> 
+                        	</div>
+                        
+                        </div>
+        			</div>
+        		</div>	
+        </div>
+
+        <!-- modal pop WTB end -->
+
+    
+        <!-- comapre popup from  -->
+        <script id="compare-popup-local" type="text/x-handlebars-template">
+
+            {{#each this}}
+            <div class='each content-wrapper' data-content-title="{{url}}">
+                <a href="{{url}}" target='_blank'>
+                    <div class='img-content'>
+                        <img src="{{img}}"> </div>
+                    <div class='right-content title-content' data-content-value="">{{title}}</div>
+                </a>
+                <button class='close-btn-box'>
+                    <span class='bold'>x</span>
+                </button>
+                <hr class='col-xs-12 m-no m-top-m'>
+            </div>
+    
+            {{/each}}
+    
+    
+        </script>
+    
+        <!--compare popup -->
+        <div id="compare-pop-detail-page" class="compare-popup" style="display:none;">
+
+            <div class="title uppercase ">
+                Compare Product
+                <span class=" btn-menu-down glyphicon glyphicon-menu-down float-right  p-s  text-center"></span>
+            </div>
+            
+            <div class="inner-content">
+                <div class="popup-content c-auto-center-list">
+
+                    <div class="compare-popup-local"> </div>
+    
+                    <!-- <div class="each  content-wrapper content1">
+                        <div class="left img-content"> </div>
+                        <div class="right title-content"> </div>
+                        <button type="button" class="close-btn-box" aria-label="Close">
+                            <span class="bold" aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <hr> -->
+                </div>
+    
+                <div class="each instruction-text ">
+                    <p class="m-bottom-xl color-grey text-center ">Select another product to compare</p>
+                </div>
+    
+                <div class="each btn-compare m-m">
+                    <a href="#">
+                        <button onclick="redirectToCompare();" class="btn width-full button-green btn-brand-default">compare selected</button>
+                    </a>
+                </div>
+            </div>    
+    
+        </div>
+        <!-- compare popup end -->
+        
+        <div id="add-bookmark-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="addBookmarkModalLabel">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog vertical-align-center" role="document" width="750px">
+                    <div class="modal-content">
+                        <div class="modal-body m-vertical-s">
+                            <div class="row">
+                                <div class="col-md-12" align="center">
+                                    <div class="svg-box">
+                                        <svg class="circular yellow-stroke">
+                                            <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+                                        </svg>
+                                        <svg class="alert-sign yellow-stroke">
+                                            <g transform="matrix(1,0,0,1,-615.516,-257.346)">
+                                                <g transform="matrix(0.56541,-0.56541,0.56541,0.56541,93.7153,495.69)">
+                                                    <path class="line" d="M634.087,300.805L673.361,261.53" fill="none" />
+                                                </g>
+                                                <g transform="matrix(2.27612,-2.46519e-32,0,2.27612,-792.339,-404.147)">
+                                                    <circle class="dot" cx="621.52" cy="316.126" r="1.318" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <h4 class="ht4 uppercase color-primary-green">Favourites!</h4>
+                                    <p class="color-dark-grey">Product already added</p>
+                                    <br>
+                                    <p class="text-center m-bottom-l">
+                                        <button data-dismiss="modal" class="btn btn-brand-default button-green">CLOSE</button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="signin-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="signinModalLabel">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog vertical-align-center" role="document" width="750px">
+                    <div class="modal-content">
+                        <div class="modal-body m-vertical-s">
+                            <div class="row">
+                                <div class="col-md-12" align="center">
+                                    <div class="svg-box">
+                                        <svg class="circular yellow-stroke">
+                                            <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+                                        </svg>
+                                        <svg class="alert-sign yellow-stroke">
+                                            <g transform="matrix(1,0,0,1,-615.516,-257.346)">
+                                                <g transform="matrix(0.56541,-0.56541,0.56541,0.56541,93.7153,495.69)">
+                                                    <path class="line" d="M634.087,300.805L673.361,261.53" fill="none" />
+                                                </g>
+                                                <g transform="matrix(2.27612,-2.46519e-32,0,2.27612,-792.339,-404.147)">
+                                                    <circle class="dot" cx="621.52" cy="316.126" r="1.318" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <h4 class="ht4 uppercase color-primary-green">Sign in?</h4>
+                                    <p class="color-dark-grey">Please login to enable this feature.</p>
+                                    <br>
+                                    <p class="text-center m-bottom-l">
+                                        <button class="btn btn-brand-default button-green cta-login">Login Now</button>
+                                        <button data-dismiss="modal" class="btn btn-brand-default button-green">CLOSE</button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+<script>
+    (function () {
+        "use strict";
+        //===========================
+        // check login, add bookmark
+        //===========================
+        $(document).ready(function () {
+            // check login
+            var dt = {};
+
+            if ($.ssoManager.isLogin) {
+                if (typeof $.ssoManager.sso.userInfo() !== 'undefined' &&
+                    typeof $.ssoManager.sso.userInfo().responseJSON !== 'undefined' &&
+                    ($.ssoManager.sso.userInfo().responseJSON).hasOwnProperty('id')) {
+                    var userInfo = $.ssoManager.sso.userInfo().responseJSON;
+
+                    //var dt = { user_info: {user_id: userInfo.id} };
+                    dt = {
+                        user_info: {
+                            user_id: userInfo.id,
+                            display_name: userInfo.profile.display_name,
+                            country: $.ssoManager.countryCode,
+                            first_name: userInfo.profile.first_name,
+                            last_name: userInfo.profile.last_name,
+                            email: userInfo.email.address
+                        }
+                    };
+                }
+
+                $('.cta-bookmark').removeClass('disabled');
+                $('.request-btn').removeClass('locked');
+            }
+
+            // login
+            $(document).on('click', '.cta-login', function (e) {
+                e.preventDefault();
+                $('.pre-login-nav a').click();
+            });
+
+            // add bookmark
+            $(document).on('click', '.cta-bookmark', function (e) {
+                e.preventDefault();
+                if (!$(this).hasClass('disabled')) {
+                    $('#add-bookmark-modal').modal('show');
+                    var url = $(this).attr('href').replace(".html", ".properties_v3.json");
+                    addNewBookmark(url);
+                } else {
+                    $('#signin-modal').modal('show');
+                }
+            });
+
+        });
+
+        function addNewBookmark(url) {
+            var urls = JSON.parse(localStorage.getItem('bookmarkStore')) || [];
+            urls.push(url);
+            urls = uniqueArray(urls);
+            localStorage.setItem('bookmarkStore', JSON.stringify(urls));
+        }
+
+        function uniqueArray(arrArg) {
+            return arrArg.filter(function (elem, pos, arr) {
+                return arr.indexOf(elem) == pos;
+            });
+        };
+    })();
+
+
+    (function () {
+        "use strict";
+        //===========================
+        // Browse history
+        //===========================
+        $(document).ready(function () {
+            var url = $('.cta-bookmark').attr('href').replace('.html', '.properties_v3.json');
+
+            addNewBrowseHistory(url);
+        });
+
+
+        function addNewBrowseHistory(url) {
+            var urls = JSON.parse(localStorage.getItem('browseHistory')) || [];
+            urls.unshift(url);
+            //console.log('urls', urls);
+            urls = uniqueArray(urls);
+            //to remove the laast one, if more than 5 items
+            if (urls.length > 5) {
+                urls.pop();
+            }
+            localStorage.setItem('browseHistory', JSON.stringify(urls));
+        }
+
+        function uniqueArray(arrArg) {
+            return arrArg.filter(function (elem, pos, arr) {
+                return arr.indexOf(elem) == pos;
+            });
+        };
+
+
+    })();
+
+
+
+
+    // ----------------------------------------------------------------------
+    // Checkbox  (product details)
+    // ----------------------------------------------------------------------
+    (function () {
+        "use strict";
+        $(document).ready(function () {
+
+
+
+            $(".compare-popup").hide();
+            $(".compare-popup .btn-compare").hide();
+            $(".compare-popup .instruction-text").hide();
+
+            var currCategoryKey;
+            var countryCode;
+            var getLink;
+            var checkStatus;
+            var storeData = [];
+            var currStoreData = [];
+            var detailsData;
+            var currInput;
+            var getIndex1;
+            var popContent;
+            var countDown;
+            var countSample;
+
+            var orderData = [];
+
+            //var tempURL = "/etc/designs/demo_v3/clientlib/uiux-all-js/js/json/product-compare-one.html";
+
+            //get browser url
+            var pathname = window.location.pathname;
+            var pagename = pathname.split(".").reverse()[1] + ".properties_v3.json";
+            //pass url to load json
+            var detailsJSON
+
+            function productCompareDetailPage() {
+
+
+                detailsJSON = pagename;
+                getJSONDetails();
+
+                $(document).on("change", '[data-input-value]', function () {
+
+                    event.preventDefault();
+                    getLink = $(this).data("input-value");
+
+                    if ($(this).is(':checked')) {
+                        console.log("check")
+                        checkStatus = $(this).prop("checked");
+                        $(this).prop('disabled', false);
+
+                        var groupElem = {
+                            "url": detailsData.uri + ".html",
+                            "img": detailsData.pageImage,
+                            "title": detailsData.pageTitle,
+                            "checked": checkStatus,
+                            "countryCode": countryCode
+                        }
+
+                        storeData.push(groupElem);
+                        //console.log("whencheck",groupElem);
+                        addToDetailsToLocal();
+
+                    } else {
+                        console.log("uncheck")
+                        // getIndex1
+                        var uncheckURL
+                        storeData.some(function (x, i) {
+                            if (x.url == getLink) {
+                                getIndex1 = i;
+                                uncheckURL = x.url;
+                                return true;
+                            }
+
+                        });
+
+                        var dataUncheck = $('[data-content-title="' + uncheckURL + '"]');
+                        dataUncheck.closest(".each").animate({
+                            left: "100px",
+                            opacity: 0
+                        }, 900);
+
+                        //console.log("xURL",uncheckURL)
+                        removeCompareDetails();
+                    }
+
+
+
+                });
+
+
+                //hide show popup          
+                $("body").on("click", ".compare-popup .title", function () {
+                    minimisePopup();
+                    clearTimeout(countDown);
+                    if($(".compare-popup .title").hasClass("selected")){
+                        console.log("click true")
+                    }else{
+                        console.log("click false")
+                        countDownPop();
+                    }
+               });
+
+
+                // close btn on popup to remove content
+                $("body").on("click", ".close-btn-box", function () {
+                    event.preventDefault();
+                    currInput = $(this).closest('.each').attr("data-content-title");
+                    $("[data-input-value ='" + currInput + "']").attr('checked', false);
+
+                    clearTimeout(countDown);
+                    $(this).closest(".each").animate({
+                        left: "100px",
+                        opacity: 0
+                    }, 600);
+
+                    getIndex1
+                    storeData.some(function (x, i) {
+                        if (x.url == currInput) {
+                            getIndex1 = i;
+                            return true;
+                        }
+                    });
+
+                    console.log("in2", getIndex1)
+                    removeCompareDetails();
+                });
+
+
+
+                // request btn
+                $("body").on("click", ".request-btn", function (e) {
+                    e.preventDefault();
+                    if (!$(this).hasClass('locked')) {
+                        var url = detailsData.uri + ".html";
+                        var array = JSON.parse(localStorage.getItem('sampleOrdersJson')) || [];
+                        var orderElem = {
+                            productName: detailsData.pageTitle,
+                            productUrl: detailsData.uri + ".html",
+                            quantity: 1
+                        }
+                        if (array.length == 0) {
+                            array.push(orderElem);
+                        } else {
+                            array.push(orderElem);
+                            var output = [];
+
+                            array.forEach(function (value) {
+                                var existing = output.filter(function (v, i) {
+                                    return v.productUrl == value.productUrl;
+                                });
+                                if (existing.length) {
+                                    var existingIndex = output.indexOf(existing[0]);
+                                            output[existingIndex].quantity = output[existingIndex].quantity + value.quantity;
+                                } else {
+                                    value.quantity = value.quantity;
+                                    output.push(value);
+                                }
+                            });
+
+                            array = output;
+                        }
+                        localStorage.setItem("sampleOrdersJson", JSON.stringify(array));
+                    } else {
+                        $('#signin-modal').modal('show');
+                    }
+
+
+                    //animation 
+                    if (!$(this).hasClass('locked')) {
+                    //count++;
+                    $("a.add-to-cart").addClass("size");
+                    setTimeout(function () {
+                        $("a.add-to-cart").addClass("hover");
+                    }, 10);
+                    setTimeout(function () {
+                        getNewSample_req();
+                         $(".header>.wrapper").addClass("desktop-mobile-slide-down");
+                         $("a.cart > .pop-notification").addClass("bounce-up");
+                    }, 400);
+                    setTimeout(function () {
+                         $("a.cart > .pop-notification").addClass("bounce-down");
+                    }, 500);
+
+                    setTimeout(function () {
+                        $("a.cart > .pop-notification").removeClass("bounce-down");
+                        $("a.cart > .pop-notification").removeClass("bounce-up");
+
+                        $("a.add-to-cart").hide();
+                        $("a.add-to-cart").removeClass("hover");
+                        $("a.add-to-cart").removeClass("size");
+                    }, 1000);
+                    setTimeout(function () {
+                        $("a.add-to-cart").show();
+                    }, 1200);
+                }
+        
+
+
+
+
+                });
+            }
+            if ($('#compare-pop-detail-page').length) productCompareDetailPage();
+
+
+            
+           
+
+            function addToDetailsToLocal() {
+                localStorage.setItem(currCategoryKey, JSON.stringify(storeData));
+                getDetailsLocalCompare();
+                checkPopupState();
+            }
+
+
+            function removeCompareDetails() {
+
+                //checkPopupState();
+                setTimeout(function () {
+                    clearTimeout(countDown);
+                    storeData.splice(getIndex1, 1);
+                    addToDetailsToLocal();
+                    $("[data-input-value ='" + currInput + "']").prop('checked', false);
+                }, 800);
+            }
+
+            function getNewSample_req() {
+                
+                if (localStorage.getItem('sampleOrdersJson') === null) {
+                    console.log("orderSampleEmpty")
+                } else {
+                    var array = JSON.parse(localStorage.getItem('sampleOrdersJson'));
+                    console.log("sampleORder", array.length );
+                    countSample = array.length;
+                    $("a.cart > .pop-notification").removeClass("width-none");
+                    $("a.cart > .pop-notification").addClass("counter");
+                    $("a.cart > .pop-notification.counter").text(countSample);
+            
+                }
+           }
+
+            function getDetailsLocalCompare() {
+
+                if (localStorage.getItem(currCategoryKey) === null) {
+                    console.log("detailLocalempty")
+                } else {
+                    //get from local storage
+                    storeData = JSON.parse(localStorage.getItem(currCategoryKey));
+                    currStoreData = storeData;
+                    console.log("currinLocal-", storeData);
+
+
+                    if (storeData.length >= 3) {
+                        //disbled all checks
+                        $('input[type="checkbox"]').prop('disabled', true);
+                        //enable only checked items to be uncheck
+                    } else {
+                        $('input[type="checkbox"]').prop('disabled', false);
+                    }
+
+
+                    var localNum = storeData.map(function (localNum) {
+                        return localNum.url;
+                    });
+                    console.log(localNum)
+
+                    $.each(localNum, function (i, val) {
+                        var selectedCard = $('[data-input-value="' + val + '"]');
+                        console.log(selectedCard);
+                        $(selectedCard).prop("checked", true);
+                        $(selectedCard).prop('disabled', false);
+                    });
+
+
+                    if (storeData.length < 1) {
+                        //console.log("nomore");
+                        localStorage.removeItem(currCategoryKey);
+                    }
+
+                    loadCompare();
+                    
+                }
+            }
+
+
+            //minimise Popup if idle
+
+            $( ".compare-popup .inner-content" )
+            .mouseenter(function() {
+                console.log("enterrring");
+                clearTimeout(countDown);
+                //checkPopupState();
+            })
+            .mouseleave(function() {
+                console.log("mouseleave");
+                clearTimeout(countDown);
+                countDownPop();
+          });
+
+
+
+            function countDownPop() {
+
+                console.log("counting")
+                countDown = setTimeout(function () {
+                    minimisePopup();
+                }, 5000);
+                //clearTimeout(countDown);
+            }
+
+            function checkPopupState() {
+                clearTimeout(countDown);
+                if ($(".compare-popup .inner-content").is(":visible")) {
+                    console.log("true")
+                    countDownPop();
+                } else {
+                    console.log("false")
+                    $(".compare-popup .inner-content").slideToggle(900);
+                    $(".compare-popup .title").toggleClass("selected");
+                    countDownPop();
+                }
+            }
+
+            function minimisePopup() {
+                $(".compare-popup .inner-content").slideToggle(900);
+                $(".compare-popup .title").toggleClass("selected");
+            }
+
+
+
+            function countPopContent() {
+                popContent = $("[data-content-title]").length;
+
+                if (popContent > 0) {
+                    $(".compare-popup").fadeIn(800);
+                    $(".popup-content").fadeIn(800);
+                    $(".compare-popup .btn-menu-down").fadeIn(800);
+                } else {
+                    $(".compare-popup").fadeOut(10);
+                }
+
+                if (popContent > 1) {
+                    $(".compare-popup .instruction-text").fadeOut(10);
+                    $(".compare-popup").fadeIn(800);
+                    $(".compare-popup .popup-content .each").fadeIn(800);
+                    $(".compare-popup .btn-compare").fadeIn(1300);
+                } else {
+                    $(".compare-popup .btn-compare").fadeOut(10);
+                    $(".compare-popup .instruction-text").fadeIn(900);
+                }
+
+                countDownPop();
+                console.log(popContent)
+            }
+
+
+
+            function loadCompare() {
+                //console.log("currStoreData-", currStoreData);
+                //load the popup
+                var comparePopupHTML = $('#compare-popup-local').html();
+                var temptcomparePopupHTML = Handlebars.compile(comparePopupHTML);
+                $('.compare-popup-local').html(temptcomparePopupHTML(storeData));
+
+                countPopContent();
+                $(".compare-popup .popup-content .each").css("opacity", "0");
+                setTimeout(function () {
+                    $(".compare-popup .popup-content .each").css({
+                        "top": "-5px",
+                        "opacity": "0"
+                    }).animate({
+                        top: "0px",
+                        opacity: 1
+                    }, 700);
+                }, 200);
+
+            }
+
+
+
+            function getJSONDetails() {
+
+                //console.log('urlJSON', detailsJSON)
+                $.ajax({
+                    url: detailsJSON,
+                    type: "GET",
+                    cache: false,
+                    success: function (response) {
+
+                        detailsData = response.pagePropertiesList[0];
+                        //console.log("res", detailsData);
+                        countryCode = detailsData.countryCode;
+                        currCategoryKey = detailsData.categoryKey + "_" + countryCode;
+                        //console.log("CK",currCategoryKey);
+
+                        // var groupElem = {
+                        //     "url": detailsData.pagePropertiesList[0].url,
+                        //     "img": detailsData.pagePropertiesList[0].image68x56,
+                        //     "title": detailsData.pagePropertiesList[0].pageTitle,
+                        //     "checked": checkStatus,
+                        //     "countryCode": countryCode
+                        // }
+                        // storeData.push(groupElem);
+                        // console.log("dStore", storeData)
+                        //localStorage.setItem(currCategoryKey, JSON.stringify(storeData));
+
+
+                        getDetailsLocalCompare();
+
+
+                    },
+                    beforeSend: function () {},
+                    complete: function () {}
+                });
+
+            }
+
+
+
+        });
+    })();
+
+
+    function redirectToCompare(){
+
+        var compareUrl = $(".compare-popup-local").find(".content-wrapper").first().find("a").attr('href');
+        $.ajax({
+            url: compareUrl.replace(".html", "") + ".properties_v3.json",
+        success : function(data) {
+    
+            window.location.href = "${countryInfo.countryInfo.sitePath @ context='unsafe'}" + "/compare.html?category=" + data.pagePropertiesList[0].categoryKey + "&countrycode=" + data.pagePropertiesList[0].countryCode;
+            }
+        });
+
+    }
+
+
+</script>

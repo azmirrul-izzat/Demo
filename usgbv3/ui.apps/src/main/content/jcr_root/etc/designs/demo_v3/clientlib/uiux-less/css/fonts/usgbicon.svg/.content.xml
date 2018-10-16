@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:usgb="http://www.demo.com/"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="b4658030-dafc-4aac-8a26-c72b83b4aad4">
+    <jcr:content
+        dam:assetState="processed"
+        dam:relativePath="geometrixx-outdoors/usgbicon.svg"
+        jcr:lastModified="{Date}2018-08-16T02:33:25.154+08:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:extracted="{Date}2018-08-16T02:33:24.947+08:00"
+            dam:sha1="49ee331909f8873bdb4e3197e3f0a137f096452f"
+            dam:size="{Long}37436"
+            dc:format="image/svg+xml"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            usgb:assetowner="admin"
+            usgb:parentasset="/content/dam/geometrixx-outdoors"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

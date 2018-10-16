@@ -1,0 +1,651 @@
+<link rel="stylesheet" href="/etc/designs/demo_v3/clientlib/uiux-less-ct.css" type="text/css">
+    
+<!-- SECTION SEARCH-->     
+<!-- BREADCUMB-BOX -->
+<div class="container m-vertical-m ">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="breadcrumb-box">
+                <ol class="breadcrumb m-no p-no bg-white">
+                    <li>USG BORAL</li>
+                    <li class="active"><b>Search</b></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BREADCUMB-BOX END -->
+
+        
+<!-- TITLE -->
+<div class="container m-vertical-m">
+    <div class="row">
+        <div class="col-xs-12">
+            <h4 class="ht4 uppercase color-darker-grey">SEARCH</h4> 
+        </div>
+    </div>
+</div>
+<!-- TITLE END --> 
+
+<!-- SEARCH INPUT (GROUP) -->
+<!-- SEARCH FORM -->
+<div class="bg-light-grey p-vertical-l m-vertical-m">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-5">
+                <form id="search-form" class="search-form">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Ceiling" autocomplete="off" data-autocomplete="/bin/usgb/v3/searchAutoComplete">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-default glyphicon glyphicon-search color-primary-green"></button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <p class="result-caption m-top-xs m-left-xxs m-no fs-3 hidden"><strong><span class="num">0</span> search results found from <i class="current-category"></i></strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SEARCH FORM END -->
+
+<!-- SUB-SEARCH-SECTION -->
+<div class="container-tabs-content-type m-vertical-xl hidden">
+    <div class="container search-category-controller-container">
+        <div class="row">
+            <div class="col-xs-12 text-center text-sm-left">
+                <ul class="sub-search-section clearfix">
+                    <li class="active"><a href="#" data-category="content" data-result-amount="6">Content</a></li>
+                    <li><a href="#" data-category="doc_finder" data-result-amount="10">Document Finder</a></li>
+                    <!-- <li><a href="#" data-category="cad" data-result-amount="9">CAD Drawing</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SUB-SEARCH-SECTION END-->
+
+
+<div class="container m-vertical-m search-result-container hidden">
+    <div class="row">
+        <div class="hidden-xs col-sm-3">
+            <!-- SEARCH FILTER -->
+            <div class="search-filter bg-light-grey m-bottom-xxl">
+                <form id="search-filter-desktop-form">
+                    <div class="wrapper">
+                        <div class="top">
+                            <p class="uppercase text-center m-no p-side-l p-top-m fs-2"><strong>refine your search</strong></p>
+                            <hr class="m-vertical-m">
+                        </div>
+                        <div class="middle">
+                        </div>
+                        <div class="bottom text-center p-side-l p-bottom-l">
+
+                            <button type="submit" class="btn btn-brand-default button-green btn-sm">APPLY FILTER</button>
+
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+            <!-- END SEARCH FILTER -->
+
+            <!-- RELATED SEARCH -->
+            <div class="related-search bg-light-grey m-bottom-xxl"></div>
+            <!-- END RELATED SERACH -->
+        </div>
+
+        <div class="col-xs-12 col-sm-9">
+            <!-- SEARCH CONTENT -->
+            <div class="relevant-content main-search-result-wrapper">
+                <div class="search-filter-sort justify-end">
+                    <!-- SORT BY -->
+                    <div class="dropdown dp-form d-small m-bottom-3xl float-right" style="max-width: 280px;">
+                        <button class="btn btn-default color-dark-grey dropdown-toggle text-left dp-clickable" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="dp-text">A - Z</span>
+                            <input type="hidden" name="selectSortType" value="a_z">
+                            <span class="color-primary-green glyphicon glyphicon-menu-down right"></span>
+                        </button>
+                        <ul class="dropdown-menu dp-list" aria-labelledby="dropdownMenu1">
+                            <li>
+                                <a data-val="a_z">A - Z</a>
+                            </li>
+                            <li>
+                                <a data-val="z_a">Z - A</a>
+                            </li>
+                            <li>
+                                <a data-val="latest">Latest to oldest</a>
+                            </li>
+                            <li>
+                                <a data-val="oldest">Oldest to latest</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown dp-form-mobile dropdown-menu-right m-vertical-m d-small">
+                        <select class="btn-default">
+                            <option value="a_z">A - Z</option>
+                            <option value="z_a">Z - A</option>
+                            <option value="latest">Latest to oldest</option>
+                            <option value="oldest">Oldest to latest</option>
+                        </select>
+                    </div>
+                    <!-- END SORT BY -->
+
+                    <!-- filter -->
+                    <a href="#" class="filter-icon btn visible-xs btn-smd m-left-m">
+                        <span class="color-primary-green glyphicon glyphicon-filter"></span>
+                    </a>
+                    <!-- end filter -->
+                </div>
+                <div id="data-container" class="inner"></div>
+                <!-- SEARCH PAGINATION -->
+                <!-- <nav aria-label="Page navigation">
+                    <ul class="pagination pull-right m-top-no">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&lt;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&gt;</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </nav> -->
+                <div id="pagination-container"></div>
+                <!-- END SEARCH PAGINATION -->
+            </div>
+            <!-- END SEARCH CONTENT -->
+
+            <div class="sub-search-result-wrapper"></div>
+            
+        </div>
+    </div>
+</div>
+<!-- SEARCH INPUT (GROUP) END-->
+
+<div class="no-search-result-container container m-bottom-5xl hidden">
+    <div class="row">
+        <div class="col-xs-12">
+            <h5 class="ht5 color-primary-green m-vertical-l m-bottom-s">Currently no result has been found.</h5>
+            <p>Please search again.</p>
+        </div>
+    </div>
+</div>
+<!-- SECTION SEARCH END -->
+
+
+<!-- END of PAGE CONTENT -->
+
+<!-- filter mobile content -->
+<div class="filter-mobile-content hidden">
+    <section class="section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 p-no ">         
+                    <div class="close-filter-mobile-content p-l">
+                        <a href="#" class="icon-color-darker-grey icon-size-xs glyphicon glyphicon-remove"></a>
+                    </div>
+                    <!-- SEARCH FILTER -->
+                    <div class="search-filter m-bottom-xxl">
+                        <form id="search-filter-mobile-form">
+                            <div class="wrapper">
+                                <div class="top">
+                                    <p class="uppercase text-center m-no p-side-l fs-2"><strong>refine your search</strong></p>
+                                    <hr class="m-vertical-m">
+                                </div>
+                                <div class="middle p-bottom-l">
+                                </div>
+                                <div class="bottom text-center p-side-l p-bottom-l">
+                                    <button type="submit" class="btn btn-brand-default button-green btn-sm">APPLY FILTER</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <!-- END SEARCH FILTER -->
+
+                    <!-- RELATED SEARCH -->
+                    <div class="related-search m-bottom-xxl"></div>
+                    <!-- END RELATED SERACH -->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<div id="add-submittal-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="addSubmittalModalLabel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" role="document" width="750px">
+            <div class="modal-content">
+                <div class="modal-body m-vertical-s">
+                    <div class="row">
+                        <div class="col-md-12" align="center">
+                            <div class="svg-box icon-correct">
+                                <svg class="circular green-stroke">
+                                    <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+                                </svg>
+                                <svg class="checkmark green-stroke">
+                                    <g transform="matrix(0.79961,8.65821e-32,8.39584e-32,0.79961,-489.57,-205.679)">
+                                        <path class="checkmark__check" fill="none" d="M616.306,283.025L634.087,300.805L673.361,261.53" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <h4 class="ht4 uppercase color-primary-green m-bottom-l">Successful!</h4>
+                            <p class="color-dark-grey">Added To My Submittal</p>
+                            <br>
+                            <p class="text-center m-bottom-l">
+                                <button data-dismiss="modal" class="btn btn-brand-default button-green">CLOSE</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="add-bookmark-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="addBookmarkModalLabel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" role="document" width="750px">
+            <div class="modal-content">
+                <div class="modal-body m-vertical-s">
+                    <div class="row">
+                        <div class="col-md-12" align="center">
+                            <div class="svg-box">
+                                <svg class="circular yellow-stroke">
+                                    <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+                                </svg>
+                                <svg class="alert-sign yellow-stroke">
+                                    <g transform="matrix(1,0,0,1,-615.516,-257.346)">
+                                        <g transform="matrix(0.56541,-0.56541,0.56541,0.56541,93.7153,495.69)">
+                                            <path class="line" d="M634.087,300.805L673.361,261.53" fill="none" />
+                                        </g>
+                                        <g transform="matrix(2.27612,-2.46519e-32,0,2.27612,-792.339,-404.147)">
+                                            <circle class="dot" cx="621.52" cy="316.126" r="1.318" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <h4 class="ht4 uppercase color-primary-green">Favourites!</h4>
+                            <p class="color-dark-grey">Product already added</p>
+                            <br>
+                            <p class="text-center m-bottom-l">
+                                <button data-dismiss="modal" class="btn btn-brand-default button-green">CLOSE</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="signin-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="signinModalLabel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" role="document" width="750px">
+            <div class="modal-content">
+                <div class="modal-body m-vertical-s">
+                    <div class="row">
+                        <div class="col-md-12" align="center">
+                            <div class="svg-box">
+                                <svg class="circular yellow-stroke">
+                                    <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+                                </svg>
+                                <svg class="alert-sign yellow-stroke">
+                                    <g transform="matrix(1,0,0,1,-615.516,-257.346)">
+                                        <g transform="matrix(0.56541,-0.56541,0.56541,0.56541,93.7153,495.69)">
+                                            <path class="line" d="M634.087,300.805L673.361,261.53" fill="none" />
+                                        </g>
+                                        <g transform="matrix(2.27612,-2.46519e-32,0,2.27612,-792.339,-404.147)">
+                                            <circle class="dot" cx="621.52" cy="316.126" r="1.318" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <h4 class="ht4 uppercase color-primary-green">Sign in?</h4>
+                            <p class="color-dark-grey">Please login to enable this feature.</p>
+                            <br>
+                            <p class="text-center m-bottom-l">
+                                <button class="btn btn-brand-default button-green cta-login">Login Now</button>
+                                <button data-dismiss="modal" class="btn btn-brand-default button-green">CLOSE</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="loaderWrapper">
+    <img class="loader" src="/content/dam/demo/Global/Website/Images/v3/component/spinner.gif" alt="loading">
+</div>
+
+<script id="templSearchFilterMobile" type="text/x-handlebars-template">
+    {{#each this}} 
+    <div id="{{key}}-group" class="accordionfc">
+        <p class="heading fs-2 uppercase p-no m-no m-side-l" data-target="#m_filter_{{key}}" data-toggle="collapse" aria-expanded="true">
+            <strong>
+                <span>{{title}}</span>
+                <span class="glyphicon glyphicon-minus"></span>
+                <span class="glyphicon glyphicon-plus"></span>
+            </strong>
+        </p>
+        <div class="content p-side-l collapse in" id="m_filter_{{key}}" aria-expanded="true">
+            <!-- expandable content -->
+            <div class="checkbox-wrapper">
+                {{#each child}} 
+                <label class="container-checkbox mobile fs-2">
+                    {{name}}
+                    <input type="checkbox" name="{{../key}}" value="{{key}}">
+                </label>
+                {{/each}}
+            </div>
+            <!-- END expandable content -->
+        </div>
+    </div>
+    {{/each}}
+</script>
+
+<script id="templSearchFilterDesktop" type="text/x-handlebars-template">
+    {{#each this}}
+        <div id="{{key}}-group" class="accordionfc">
+            <p class="heading fs-2 uppercase p-no m-no m-side-l" data-target="#d_filter_{{key}}" data-toggle="collapse">
+                <strong>
+                    <span>{{title}}</span>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <span class="glyphicon glyphicon-plus">
+                </strong>
+            </p>
+            <div class="content collapse in p-side-l" id="d_filter_{{key}}">
+                <!-- expandable content -->
+                <div class="checkbox-wrapper">
+                    {{#each child}}
+                    <div class="checkbox">
+                        <label class="container-checkbox fs-2">
+                            {{name}}
+                            <input type="checkbox" name="{{../key}}" value="{{key}}">
+                            <span class="checkmark fs-2"></span>
+                        </label>
+                    </div>
+                    {{/each}}
+                </div>
+                <!-- END expandable content -->
+            </div>
+        </div>
+    {{/each}}
+</script>
+
+
+<script id="templSearchRelated" type="text/x-handlebars-template">
+    <div class="wrapper p-l">
+        <p class="fs-2"><strong>Searches related to "{{keyword}}"</strong></p>
+        {{#each searches_related}}
+        <p class="fs-2 related-searches-result">
+            <a href="#">{{{this}}}</a> 
+        </p>
+        {{/each}}
+    </div>
+</script>
+
+<script id="templSearchResult_content" type="text/x-handlebars-template">
+    {{#each this}} 
+    <div class="each width-full flex-md-row m-bottom-4xl search-result-thumbnail" data-key="{{key}}">
+        <div class="left hidden-xs hidden-sm">
+            {{#ifEquals this.type "page"}}
+            <div class="thumbs">
+                <a href="{{link}}" target="_blank" class="width-full">
+                    <img src="{{image}}" class="width-full" alt="{{title}}">
+                </a>
+            </div>
+            {{else}}
+            <div class="c-video-popup">
+                <a data-fancybox="" href="{{link}}">
+                    <span class="ico-play-video color-white fa fa-play-circle"></span>
+                    <img src="{{image}}" class="width-full" alt="{{title}}">
+                </a>
+            </div>
+            {{/ifEquals}}
+        </div>
+        <div class="align-center align-md-bottom flex-row right width-full">
+            <a href="{{link}}" target="_blank" class="flex-basis-no flex-IE-grow-auto flex-grow-1 m-right-m" {{#ifEquals this.type "video"}}data-fancybox=""{{/ifEquals}}>
+                <div class="content p-left-no p-md-left-l">
+                    <p class="sub-headline fs-2 m-bottom-xs">{{category_header}}</p>
+                    <h6 class="headline ht6 uppercase m-bottom-xxs">{{title}}</h6>
+                    <p class="description m-no">
+                        {{{description}}}
+                    </p>
+                </div>
+            </a>
+
+            <div class="align-center flex-basis-no flex-IE-grow-auto flex-grow-0 flex-row justify-end side-functions-short">
+                {{#ifEquals this.type "page"}}
+                <div class="bookmark uppercase">
+                    <a href="{{link}}" class="cta-bookmark disabled">
+                        <div class="btn button-grey visible-xs">
+                            <span class="glyphicon glyphicon-bookmark"></span>
+                        </div>
+                        <div class="hidden-xs fs-3">
+                            <span class="glyphicon glyphicon-bookmark m-right-xxs"></span>
+                            <span>
+                                <strong>Bookmark</strong>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                {{/ifEquals}}
+
+                 {{#ifEquals this.type "video"}}
+                 <a data-fancybox="" href="{{link}}">
+                    <div class="btn button-green visible-xs">
+                        <span class="glyphicon glyphicon-play"></span>
+                    </div>
+                </a>
+                 {{/ifEquals}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+
+<script id="templSearchResult_docFinder" type="text/x-handlebars-template">
+    {{#each this}} 
+    <div class="each flex-md-row m-bottom-4xl search-result-thumbnail search-result-thumbnail--docFinder" data-key="{{key}}">
+        <div class="left hidden-xs hidden-sm">
+            <div class="thumbs">
+                <a href="{{link}}" target="_blank"><img src="{{image}}" class="width-full" alt="{{title}}"></a>
+            </div>
+        </div>
+        <div class="align-center align-md-bottom flex-row right width-full">
+            <a href="{{link}}" target="_blank" class="flex-basis-no flex-IE-grow-auto flex-grow-1 m-right-m">
+                <div class="content p-left-no p-md-left-l">
+                    <p class="sub-headline fs-2 m-bottom-xs">{{category_header}} {{#if document_type}}|{{/if}} {{arrayItemCommaSpacing document_type_names}}</p>
+                    <h6 class="headline ht6 uppercase m-bottom-xxs">{{title}}</h6>
+                    <p class="description m-no">
+                        {{{description}}}
+                    </p>
+                </div>
+            </a>
+            <div class="align-center flex-basis-no flex-IE-grow-auto flex-grow-0 flex-row justify-end side-functions">
+                <div class="bookmark uppercase fs-3">
+                    <a href="{{link}}" target="_blank">
+                        <div class="btn button-grey visible-xs">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </div>
+                        <div class="hidden-xs">
+                            <span class="glyphicon glyphicon-eye-open m-right-xxs"></span>
+                            <span>
+                                <strong>View</strong>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <span class="hidden-xs m-side-s">|</span>
+                <div class="addto uppercase fs-3 m-left-xxs">
+                    <a href="#" class="cta-add-submittal disabled">
+                        <div class="btn button-grey visible-xs btn-sm">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </div>
+                        <div class="hidden-xs">
+                            <span class="glyphicon glyphicon-plus m-right-xxs"></span>
+                            <span>
+                                <strong>Add to submittal</strong>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+
+
+<script id="templSubSearchResult_docFinder" type="text/x-handlebars-template">
+    <hr />
+    <h5 class="ht5 uppercase m-bottom-xl">We also found relevant "<span>{{keyword}}</span>" in Document Finder</h5>
+    <!-- RELEVANT SEARCH CONTENT -->
+    <div class="relevant-content">
+        <div class="inner">
+            {{#each doc_finder}}
+            <div class="each flex-md-row m-bottom-4xl search-result-thumbnail search-result-thumbnail--docFinder" data-key="{{key}}">
+                <div class="left hidden-xs hidden-sm">
+                    <div class="thumbs">
+                        <a href="{{link}}" target="_blank"><img src="{{image}}" class="width-full" alt="{{title}}"></a>
+                    </div>
+                </div>
+                <div class="align-center align-md-bottom flex-row right width-full">
+                    <a href="{{link}}" target="_blank" class="flex-basis-no flex-IE-grow-auto flex-grow-1 m-right-m">
+                        <div class="content p-left-no p-md-left-l">
+                            <!-- <p class="sub-headline fs-2 m-bottom-xs">{{category_header}} {{#if document_type}}|{{/if}} {{arrayItemCommaSpacing document_type_names}}</p> -->
+                            <h6 class="headline ht6 uppercase m-bottom-xxs">{{title}}</h6>
+                            <p class="description m-no">
+                                {{{description}}}
+                            </p>
+                        </div>
+                    </a>
+                    <div class="align-center flex-basis-no flex-IE-grow-auto flex-grow-0 flex-row justify-end side-functions">
+                        <div class="bookmark uppercase fs-3">
+                            <a href="{{link}}" target="_blank">
+                                <div class="btn button-grey visible-xs">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                </div>
+                                <div class="hidden-xs">
+                                    <span class="glyphicon glyphicon-eye-open m-right-xxs"></span>
+                                    <span>
+                                        <strong>View</strong>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <span class="hidden-xs m-side-s">|</span>
+                        <div class="addto uppercase fs-3 m-left-xxs">
+                            <a href="#" class="cta-add-submittal disabled">
+                                <div class="btn button-grey visible-xs btn-sm">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </div>
+                                <div class="hidden-xs">
+                                    <span class="glyphicon glyphicon-plus m-right-xxs"></span>
+                                    <span>
+                                        <strong>Add to submittal</strong>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <!-- END RELEVANT SEARCH CONTENT -->
+    <a href="#" class="btn btn-top-border btn-dark float-right sub-search-result-link" data-category="doc_finder">Read More <span class="glyphicon glyphicon-menu-right"></span></a>
+    <div class="clearfix"></div>
+</script>
+
+<script id="templSubSearchResult_content" type="text/x-handlebars-template">
+    <hr />
+    <h5 class="ht5 uppercase m-bottom-xl">We also found relevant "<span>{{keyword}}</span>" in Content</h5>
+    <!-- RELEVANT SEARCH CONTENT -->
+    <div class="relevant-content">
+        <div class="inner">
+            {{#each content}}
+                <div class="each width-full flex-md-row m-bottom-4xl search-result-thumbnail" data-key="{{key}}">
+                    <div class="left hidden-xs hidden-sm">
+                        {{#ifEquals this.type "page"}}
+                        <div class="thumbs">
+                            <a href="{{link}}" target="_blank">
+                                <img src="{{image}}" class="width-full" alt="{{title}}">
+                            </a>
+                        </div>
+                        {{else}}
+                        <div class="c-video-popup">
+                            <a data-fancybox="" href="{{link}}">
+                                <span class="ico-play-video color-white fa fa-play-circle"></span>
+                                <img src="{{image}}" class="width-full" alt="{{title}}">
+                            </a>
+                        </div>
+                        {{/ifEquals}}
+                    </div>
+                    <div class="align-center align-md-bottom flex-row right width-full">
+                        <a href="{{link}}" target="_blank" class="flex-basis-no flex-IE-grow-auto flex-grow-1 m-right-m" {{#ifEquals this.type "video"}}data-fancybox=""{{/ifEquals}}>
+                            <div class="content p-left-no p-md-left-l">
+                                <p class="sub-headline fs-2 m-bottom-xs">{{category_header}}</p>
+                                <h6 class="headline ht6 uppercase m-bottom-xxs">{{title}}</h6>
+                                <p class="description m-no">
+                                    {{{description}}}
+                                </p>
+                            </div>
+                        </a>
+                        <div class="align-center flex-basis-no flex-IE-grow-auto flex-grow-0 flex-row justify-end side-functions-short">
+                            {{#ifEquals this.type "page"}}
+                            <div class="bookmark uppercase">
+                                <a href="#" class="cta-bookmark disabled">
+                                    <div class="btn button-grey visible-xs">
+                                        <span class="glyphicon glyphicon-bookmark"></span>
+                                    </div>
+                                    <div class="hidden-xs fs-3">
+                                        <span class="glyphicon glyphicon-bookmark m-right-xxs"></span>
+                                        <span>
+                                            <strong>Bookmark</strong>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                            {{/ifEquals}}
+                            {{#ifEquals this.type "video"}}
+                            <a data-fancybox="" href="{{link}}">
+                                <div class="btn button-green visible-xs">
+                                    <span class="glyphicon glyphicon-play"></span>
+                                </div>
+                            </a>
+                            {{/ifEquals}}
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+    <!-- END RELEVANT SEARCH CONTENT -->
+    <a href="#" class="btn btn-top-border btn-dark float-right sub-search-result-link" data-category="content">Read More <span class="glyphicon glyphicon-menu-right"></span></a>
+    <div class="clearfix"></div>
+</script>
+
+
+
+
+<script src="/etc/designs/demo_v3/clientlib/uiux-search.js"></script>
+

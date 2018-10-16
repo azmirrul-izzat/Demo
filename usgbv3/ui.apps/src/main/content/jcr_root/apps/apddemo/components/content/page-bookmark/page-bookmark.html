@@ -1,0 +1,181 @@
+<link rel="stylesheet" href="/etc/designs/demo_v3/clientlib/uiux-less-vc.css" type="text/css"> 
+<link rel="stylesheet" href="/etc/designs/demo_v3/clientlib/uiux-less-ct.css" type="text/css"> 
+
+
+<!-- BREADCUMB-BOX -->
+<div class="container m-vertical-m ">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="breadcrumb-box">
+				<ol class="breadcrumb m-no p-no bg-white">
+					<li>USG BORAL</li>
+					<li class="active">
+						<b>My Bookmark</b>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- BREADCUMB-BOX END -->
+
+
+<!-- TITLE -->
+<div class="container m-vertical-m">
+	<div class="row">
+		<div class="col-xs-12">
+			<h4 class="ht4 uppercase color-darker-grey">Bookmark</h4>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+		</div>
+	</div>
+</div>
+<!-- TITLE END -->
+
+
+<div class="container m-vertical-m">
+	<div class="row">
+		<div class="col-xs-12 bookmark-wrap">
+			<!-- SEARCH CONTENT -->
+			<div class="no-result p-vertical-l">
+					<h5 class="ht5">No result.</h5>
+					<p>Please bookmark your favourite product.</p>
+			</div>
+			<div class="relevant-content hidden">
+				<div class="search-filter-sort justify-end hidden">
+					<!-- SORT BY -->
+					<div class="dropdown dp-form d-small m-bottom-3xl float-right" style="max-width: 280px;">
+						<button class="btn btn-default color-dark-grey dropdown-toggle text-left dp-clickable" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="dp-text">A - Z</span>
+							<input type="hidden" name="selectSortType" value="a_z">
+							<span class="color-primary-green glyphicon glyphicon-menu-down right"></span>
+						</button>
+						<ul class="dropdown-menu dp-list" aria-labelledby="dropdownMenu1">
+							<li>
+								<a data-val="a_z">A - Z</a>
+							</li>
+							<li>
+								<a data-val="categorize">Categorize</a>
+							</li>
+						</ul>
+					</div>
+	
+					<div class="dropdown dp-form-mobile dropdown-menu-right m-vertical-m d-small">
+						<select class="btn-default">
+							<option value="a_z">A - Z</option>
+							<option value="categorize">Categorize</option>
+						</select>
+					</div>
+					<!-- END SORT BY -->
+				</div>
+				<div class="inner">
+					<div class="bookmark-list"></div>
+				</div>
+			</div>
+			<!-- END SEARCH CONTENT -->
+
+			<!-- SEARCH PAGINATION -->
+			<hr />
+			<div id="pagination-container" class="m-bottom-m"></div>
+		
+			<a href="#" class="m-vertical-xxs icon-color-darker-grey hidden" data-toggle="modal" data-target="#bookmark-remove-all-modal">
+					<span class="icon-size-xs fa fa-trash-o m-right-xxs"></span> Delete all
+			</a>
+
+				
+			<!-- END SEARCH PAGINATION -->
+		</div>
+	</div>
+	<div class="social-media-group row hidden">
+		<div class="col-xs-12 text-center m-bottom-4xl">
+			<p class="m-bottom-xxs">Share on:</p>
+			<div class="icon-color-darker-grey share-icons"></div>
+		</div>
+	</div>
+</div>
+ 
+<div id="bookmark-remove-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel">
+	<div class="vertical-alignment-helper">
+		<div class="modal-dialog vertical-align-center" role="document" width="750px">
+			<div class="modal-content">
+				<div class="modal-body m-top-3xl m-bottom-m">
+					<div class="row">
+						<div class="col-md-12" align="center">
+							<div class="form-group">
+								<h4 class="ht4 uppercase color-primary-green m-bottom-l">Remove</h4>
+								<p class="color-dark-grey">Do you sure you want to remove this bookmark?</p>
+								<br>
+								<p style="text-align: center;">
+									<button class="btn btn-brand-default button-green cta-remove-bookmark">Yes</button>
+									<button data-dismiss="modal" class="btn btn-brand-default button-green">No</button>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="bookmark-remove-all-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel">
+	<div class="vertical-alignment-helper">
+		<div class="modal-dialog vertical-align-center" role="document" width="750px">
+			<div class="modal-content">
+				<div class="modal-body m-top-3xl m-bottom-m">
+					<div class="row">
+						<div class="col-md-12" align="center">
+							<div class="form-group">
+								<h4 class="ht4 uppercase color-primary-green m-bottom-l">Remove All</h4>
+								<p class="color-dark-grey">Do you sure you want to remove all bookmarks?</p>
+								<br>
+								<p style="text-align: center;">
+									<button class="btn btn-brand-default button-green cta-remove-all-bookmark">Yes</button>
+									<button data-dismiss="modal" class="btn btn-brand-default button-green">No</button>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script id="bookmark_template" type="text/x-handlebars-template">
+	{{#each this}}
+	<div class="each">
+		<div class="left">
+			<div class="thumbs">
+				<a href="{{pagePropertiesList.0.uri}}.html" terget="_blank">
+					<img src="{{pagePropertiesList.0.image616x472}}" alt="">
+				</a>
+			</div>
+		</div>
+		<div class="right">
+			<a href="{{pagePropertiesList.0.uri}}.html" terget="_blank">
+				<div class="content p-left-l">
+					<h6 class="fs-3 m-bottom-xs">{{pagePropertiesList.0.categoryName}}</h6>
+					<h6 class="headline ht6 uppercase m-bottom-xxs">{{pagePropertiesList.0.pageTitle}}</h6>
+					<p class="description m-no">
+							{{pagePropertiesList.0.pageDescription}}
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class="p-left-l">
+			<button class="btn btn-brand-default button-green cta-trigger-remove"> <span class="hidden-xs">REMOVE</span>
+				<i class="icon-size-xs fa fa-trash-o visible-xs"></i>
+			</button>
+		</div>
+	</div>
+	{{/each}}
+</script>
+
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='uiux.alljs'}" data-sly-unwrap/>
+
+<script src='https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js'></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+<script src="/etc/designs/demo_v3/clientlib/uiux-less-ct/js/vendors/pagination.js"></script>
+<script src="/etc/designs/demo_v3/clientlib/uiux-all-js-vc.js"></script>

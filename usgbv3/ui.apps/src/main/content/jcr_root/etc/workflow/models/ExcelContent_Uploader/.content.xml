@@ -22,7 +22,7 @@
                 sling:resourceType="cq/workflow/components/model/process">
                 <metaData
                     jcr:primaryType="nt:unstructured"
-                    PROCESS="com.usgbv3.core.workflow.ExcelContentUploader"
+                    PROCESS="com.apddemo.core.workflow.ExcelContentUploader"
                     PROCESS_AUTO_ADVANCE="true"/>
             </process>
         </flow>

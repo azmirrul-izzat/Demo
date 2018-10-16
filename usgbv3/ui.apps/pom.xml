@@ -21,7 +21,7 @@
     <!-- ====================================================================== -->
     <parent>
         <groupId>com</groupId>
-        <artifactId>usgbv3</artifactId>
+        <artifactId>apddemo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -29,10 +29,10 @@
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <artifactId>usgbv3.ui.apps</artifactId>
+    <artifactId>apddemo.ui.apps</artifactId>
     <packaging>content-package</packaging>
-    <name>usgbv3 - UI apps</name>
-    <description>UI apps package for usgbv3</description>
+    <name>apddemo - UI apps</name>
+    <description>UI apps package for apddemo</description>
 
     <!-- <scm>
         <connection></connection>
@@ -91,12 +91,12 @@
                     <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
                     <verbose>true</verbose>
                     <failOnError>true</failOnError>
-                    <group>USGBV3 Content Package</group>
+                    <group>apddemo Content Package</group>
                     <embeddeds>
                         <embedded>
                             <groupId>com</groupId>
-                            <artifactId>usgbv3.core</artifactId>
-                            <target>/apps/usgbv3/install</target>
+                            <artifactId>apddemo.core</artifactId>
+                            <target>/apps/apddemo/install</target>
                         </embedded>
                     </embeddeds>
                     <!--<subPackages>
@@ -122,7 +122,7 @@
     <dependencies>
         <dependency>
             <groupId>com</groupId>
-            <artifactId>usgbv3.core</artifactId>
+            <artifactId>apddemo.core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

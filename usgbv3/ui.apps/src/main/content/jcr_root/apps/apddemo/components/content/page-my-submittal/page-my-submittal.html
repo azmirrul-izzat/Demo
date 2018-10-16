@@ -1,0 +1,311 @@
+<!-- PAGE CONTENT -->
+<div class="page-content">
+
+    <!-- BREADCUMB-BOX -->
+    <div class="container ">
+        <div class="row m-vertical-m">
+            <div class=" col-xs-12">
+                <div class="breadcrumb-box">
+                    <ol class="breadcrumb m-no p-no bg-white">
+                        <li>USG Boral</li>
+                        <li class="active">
+                            <b>My Submittal</b>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BREADCUMB-BOX END -->
+
+
+    <div class="container">
+        <div class="row m-top-3xl">
+            <div class="col-xs-12">
+                <h4 class="ht5 color-primary-green uppercase m-bottom-m">My Submittal</h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDER History Wrapper-->
+
+    <div class="container m-sm-top-l">
+        <form id="submittal-form">
+            
+            <div class="bg-primary-green rounded-top p-m p-sm-bottom-4xl p-top-xl p-bottom-6xl hidden-xs">
+                <div class="col-xs-12 col-sm-6 uppercase color-white text-left p-left-xs p-sm-left-m">
+                    <h6 class="ht6">Document</h6>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 p-no">
+                    <div class="col-xs-8 uppercase color-white text-left  p-left-xs p-sm-left-m">
+                        <h6 class="ht6 m-sm-top-no m-top-m">Date Added</h6>
+                    </div>
+
+                    <div class="col-xs-4 text-right m-sm-top-no m-top-s p-no">
+                        <div class="checkbox-content">
+                            <label class="container-checkbox fs-2">
+                                <input type="checkbox" name="" data-check="all">
+                                <span class="checkmark inverted fs-2" style="top:-5px;"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-primary-green rounded-top p-m p-sm-bottom-4xl p-top-m p-bottom-6xl visible-xs">
+                <div class="col-xs-12 col-sm-6 p-no">
+                    <div class="col-xs-8 uppercase color-white text-left p-left-xs p-sm-left-m">
+                        <h6 class="ht6 m-sm-top-no m-top-m">Document</h6>
+                    </div>
+
+                    <div class="col-xs-4 text-right m-sm-top-no m-top-s p-no">
+                        <div class="checkbox-content">
+                            <label class="container-checkbox fs-2">
+                                <input type="checkbox" name="" data-check="all">
+                                <span class="checkmark inverted fs-2" style="top:-5px;"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="submittal-content"></div> 
+
+            <div class="col-xs-12 m-sm-top-xl m-sm-bottom-5xl m-top-m p-side-xxl">
+                <div class="col-xs-12 col-sm-4 text-sm-right text-center m-top-m">
+                    <a href="#" id="draft-btn" class="btn btn-brand-default button-outline-green uppercase width-full disabled">Email to</a>
+                </div>
+                <div class="col-xs-12 col-sm-4 text-sm-center text-center m-top-m">
+                    <a href="#" class="btn btn-brand-default button-outline-green uppercase width-full disabled" data-toggle="modal" data-target="#remove-selected-modal">Remove selected</a>
+                </div>
+                <div class="col-xs-12 col-sm-4 text-sm-left text-center m-top-m">
+                    <a href="#" id="download-btn" class="btn btn-brand-default button-outline-green uppercase width-full disabled">Download selected</a>
+                </div>
+            </div>
+
+        </form> 
+    </div>
+    <!-- /END ORDER History Wrapper-->
+
+</div>
+<!-- END of PAGE CONTENT -->
+
+
+
+<div id="emailModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <form id="emailForm" class="floating-type-form">
+                    <div class="form-group">
+                        <!-- <label for="example-text-input" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-form-label control-label text-left p-vertical-xs">To</label>
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                            <input class="mouseflow form-control" type="text" value="" id="recipientEmail" name="recipientEmail" placeholder="Recipient Email">
+                        </div> -->
+                        <div class="float-label respond-msg">
+                            <input type="text" class="mouseflow form-control" id="recipientEmail" name="recipientEmail" required>
+                            <label for="recipientEmail" class="uppercase">Recipient Email</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <!-- <label for="example-text-input" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-form-label text-left p-vertical-xs">From</label>
+                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                            <input class="mouseflow form-control" type="text" value="noreply@demo.com" id="fromEmail" name="fromEmail" readonly=""
+                                disabled="">
+                        </div> -->
+                        <div class="float-label respond-msg">
+                            <input type="text" class="mouseflow form-control" id="fromEmail" name="fromEmail" value="noreply@demo.com" readonly="" required>
+                            <label for="fromEmail" class="uppercase">From</label>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="form-group row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <textarea rows="6" style="margin: 0px; width: 100%; height: 100%; resize: none;" id="document-email-content" readonly=""
+                                disabled="">wqe has shared document(s) for you to read; 1. Achieving Fire &amp; Acoustic Compliance in Multi-Residential Construction - Whitepaper 2. Plasterboard Catalogue – Products and Applications 3. SHEETROCK  – Plasterboard and Cove Cornices 4. Safety Data Sheet - Regular Plasterboard, SHEETROCK Wall Board/Ceiling Board &amp; 13mm Regular
+                            </textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer text-center">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button data-dismiss="modal" class="btn btn-brand-default button-green">Cancel</button>
+                        <button id="email-btn" class="btn btn-brand-default button-green">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script id="templateSubmittalItem" type="text/x-handlebars-template">
+	{{#each this}}
+        <div class="col-xs-12 p-vertical-m bottom-line-grey">
+            <div class="col-xs-10 col-sm-6 color-grey text-left">
+                <a href="{{doc_path}}" target="_blank"><span class="doc-title">{{doc_name}}</span></a>
+                <span class="doc-date fs-3 visible-xs"><span class="visible-xs-inline">Created Date: </span>{{created_date}}</span>
+            </div>
+            <div class="col-xs-12 col-sm-4 p-no hidden-xs">
+                <div class="col-xs-8 color-grey text-left ">
+                    <span class="doc-date hidden-xs"><span class="visible-xs-inline">Created Date: </span>{{created_date}}</span>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 text-right p-no">
+                <div class="checkbox-content">
+                    <label class="container-checkbox fs-2">
+                        <input type="checkbox" name="item" class="document-item" doc-id="{{doc_id}}" doc-name="{{doc_name}}" doc-path="{{doc_path}}">
+                        <span class="checkmark fs-2"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+	{{/each}}
+</script>
+
+
+<div id="remove-selected-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="removeSelectedModalLabel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" role="document" width="750px">
+            <div class="modal-content">
+                <div class="modal-body m-vertical-s">
+                    <div class="row">
+                        <div class="col-md-12" align="center">
+                            <div class="svg-box">
+                                <svg class="circular yellow-stroke">
+                                    <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+                                </svg>
+                                <svg class="alert-sign yellow-stroke">
+                                    <g transform="matrix(1,0,0,1,-615.516,-257.346)">
+                                        <g transform="matrix(0.56541,-0.56541,0.56541,0.56541,93.7153,495.69)">
+                                            <path class="line" d="M634.087,300.805L673.361,261.53" fill="none" />
+                                        </g>
+                                        <g transform="matrix(2.27612,-2.46519e-32,0,2.27612,-792.339,-404.147)">
+                                            <circle class="dot" cx="621.52" cy="316.126" r="1.318" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <h4 class="ht4 uppercase color-primary-green m-bottom-l">Are you sure?</h4>
+                            <p class="color-dark-grey">You will not be able to recover this document.</p>
+                            <br>
+                            <p class="text-center m-bottom-l">
+                                <button data-dismiss="modal" class="btn btn-brand-default button-green">Cancel</button>
+                                <button id="delete-btn" class="btn btn-brand-default button-green">OK</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="remove-success-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="removeSelectedModalLabel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" role="document" width="750px">
+            <div class="modal-content">
+                <div class="modal-body m-vertical-s">
+                    <div class="row">
+                        <div class="col-md-12" align="center">
+                            <div class="svg-box icon-correct">
+                                <svg class="circular green-stroke">
+                                    <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+                                </svg>
+                                <svg class="checkmark green-stroke">
+                                    <g transform="matrix(0.79961,8.65821e-32,8.39584e-32,0.79961,-489.57,-205.679)">
+                                        <path class="checkmark__check" fill="none" d="M616.306,283.025L634.087,300.805L673.361,261.53" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <h4 class="ht4 uppercase color-primary-green m-bottom-l">Successful!</h4>
+                            <p class="color-dark-grey">Documents have been removed.</p>
+                            <br>
+                            <p class="text-center m-bottom-l">
+                                <button data-dismiss="modal" class="btn btn-brand-default button-green">Ok</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="email-success-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="emailSuccessModalLabel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" role="document" width="750px">
+            <div class="modal-content">
+                <div class="modal-body m-vertical-s">
+                    <div class="row">
+                        <div class="col-md-12" align="center">
+                            <div class="svg-box icon-correct">
+                                <svg class="circular green-stroke">
+                                    <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+                                </svg>
+                                <svg class="checkmark green-stroke">
+                                    <g transform="matrix(0.79961,8.65821e-32,8.39584e-32,0.79961,-489.57,-205.679)">
+                                        <path class="checkmark__check" fill="none" d="M616.306,283.025L634.087,300.805L673.361,261.53" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <h4 class="ht4 uppercase color-primary-green m-bottom-l">Send!</h4>
+                            <p class="color-dark-grey">Document have been sent to recipient.</p>
+                            <br>
+                            <p class="text-center m-bottom-l">
+                                <button data-dismiss="modal" class="btn btn-brand-default button-green">Ok</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="alert-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="removeSelectedModalLabel">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center" role="document" width="750px">
+            <div class="modal-content">
+                <div class="modal-body m-vertical-s">
+                    <div class="row">
+                        <div class="col-md-12" align="center">
+                            <div class="svg-box">
+                                <svg class="circular red-stroke">
+                                    <circle class="path" cx="75" cy="75" r="50" fill="none" stroke-width="5" stroke-miterlimit="10" />
+                                </svg>
+                                <svg class="cross red-stroke">
+                                    <g transform="matrix(0.79961,8.65821e-32,8.39584e-32,0.79961,-502.652,-204.518)">
+                                        <path class="first-line" d="M634.087,300.805L673.361,261.53" fill="none" />
+                                    </g>
+                                    <g transform="matrix(-1.28587e-16,-0.79961,0.79961,-1.28587e-16,-204.752,543.031)">
+                                        <path class="second-line" d="M634.087,300.805L673.361,261.53" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <h4 class="ht4 uppercase color-primary-green m-bottom-l">Failed!</h4>
+                            <p class="color-dark-grey">Please contact our support team.</p>
+                            <br>
+                            <p class="text-center m-bottom-l">
+                                <button data-dismiss="modal" class="btn btn-brand-default button-green">Ok</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='uiux.alljs'}"
+    data-sly-unwrap/>
+
+<script src="/etc/designs/demo_v3/clientlib/uiux-less-ct.js"></script>

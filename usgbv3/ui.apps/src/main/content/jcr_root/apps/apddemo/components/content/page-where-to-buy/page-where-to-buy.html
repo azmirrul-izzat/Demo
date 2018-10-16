@@ -1,0 +1,192 @@
+<!-- BREADCUMB-BOX -->
+<div class="container m-vertical-m ">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="breadcrumb-box">
+				<ol class="breadcrumb m-no p-no bg-white">
+					<li>USG BORAL</li>
+					<li class="active">
+						<b>Where to buy</b>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- BREADCUMB-BOX END -->
+
+
+<!-- TITLE -->
+<div class="container m-vertical-m">
+	<div class="row">
+		<div class="col-xs-12">
+			<h4 class="ht4 uppercase color-darker-grey">WHERE TO BUY</h4>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+		</div>
+	</div>
+</div>
+<!-- TITLE END -->
+
+
+<div class="container-fluid ">
+	<div class="row">
+		<div class="col-xs-12 p-no">
+			<form id="map-search-controller" onkeypress="return event.keyCode != 13;"> 
+				<div class="wtb-search-bar">
+					<div class="filter-back-btn">
+						Back
+					</div>
+					<div class="input-group search-group"> 
+						<input type="text" id="input-search-location" name="search_text" data-autocomplete="/bin/usgb/v3/storeAutoComplete" data-autocomplete-minchars="3" class="form-control placeholder" placeholder="City, postcode, Store name or address">
+
+
+						<div class="inputSearch-myLocation hidden"><img class="myLocation-pin" src="/content/dam/demo/Global/Website/Images/component/allsample/blue_pin.png">Use Current location</div>
+						<div class="dropdown dropdown-lg">
+							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<div class="dropdown-menu dropdown-menu-right" role="menu">
+								<div value="" selected="selected">ALL States</div>
+							</div>
+						</div>
+						<button type="button" class="btn btn-primary btn-search"><span class="glyphicon glyphicon-search icon-size-xs" aria-hidden="true"></span></button>
+						<button type="button" class="btn btn-primary btn-filter m-left-s disabled"><span class="fa fa-filter icon-size-xs" aria-hidden="true"></span></button>
+					</div>
+					<button type="button" class="btn btn-primary search-bar-toggle-button hidden-xs" ><span class="fa fa-angle-left icon-size" aria-hidden="true"></span></button>
+				</div>
+			</form>
+			<form id="filter-list-controller" onkeypress="return event.keyCode != 13;">
+				<div class="search-detail-wrap">
+					<div class="state-wrap">
+						<a href="#" class="cta-search-detail-on">
+							<span class="fa fa-info-circle icon-size-xs" aria-hidden="true"></span>
+						</a>
+						<a href="#" class="cta-search-detail-off">
+							<span class="fa fa-angle-left icon-size" aria-hidden="true"></span> Back
+						</a>
+						<div class="search-detail-group"></div>
+					</div>
+
+					<div class="filter-list-item"></div>
+
+				</div>
+			</form>
+			<div id="map-canvas"></div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container-fluid bg-light-grey p-vertical-l m-vertical-m">
+	<div class="container m-vertical-m ">
+		<div class="row row-eq-height">
+			<div class="col-sm-6 col-xs-12 p-sm-4xl p-l bg-white m-bottom-xl m-sm-no">
+				<div class="row">
+					<div class="col-sm-3 col-xs-4">
+						<div class="thumbs">
+							<img src="https://dummyimage.com/108x130/000000/fff">
+						</div>
+						
+					</div>
+					<div class="col-sm-9 col-xs-8">
+						<h4 class="ht4 uppercase color-darker-grey">USG Boral malaysia</h4>
+						<p>Suite 17-03, Level 17, The Pinnacle, <br>
+							Persiaran Lagoon, Bandar Sunway, <br>
+							46150 Petaling Jaya,<br>
+							Selangor Darul Ehsan - MALAYSIA
+						</p>
+						<p><i class="fa fa-phone icon-color-darker-grey icon-size-xs"></i>&nbsp;&nbsp; + 60 3 5624 3600 </p>
+						<p><i class="fa fa-fax icon-color-darker-grey icon-size-xs"></i>&nbsp; + 60 3 5624 3601</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-sm-6 col-xs-12 p-sm-4xl p-l bg-white left-line-light-grey">
+				<h4 class="ht4 uppercase color-darker-grey">usg boral global</h4>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
+				<p><a href="#" class="btn btn-brand-default button-green">FIND OUT MORE</a></p>
+			</div>
+		</div>  
+	</div>
+</div>
+
+<script id="infoTemplate" type="text/x-handlebars-template">
+	{{#each this}}
+	<div class="state-detail p-vertical-l">
+		<div class="row">
+			<div class="col-xs-8">
+				<a href="#" class="cta-location bold color-primary-green uppercase">{{companyName}}</a>
+				{{#if address1}}<p>
+					{{address1}}<br>
+					{{address2}}
+				</p>{{/if}}
+				{{#if phoneNumber}}<p><i class="fa fa-phone icon-color-darker-grey icon-size-xs"></i>&nbsp;&nbsp; <a href="tel:+{{phoneNumber}}">{{phoneNumber}}</a></p>{{/if}}
+				{{#if email}}<p><i class="fa fa-envelope icon-color-darker-grey icon-size-xs"></i>&nbsp; <a href="mailto:+{{email}}">{{email}}</a></p>{{/if}}
+			</div>
+
+			<div class="col-xs-4">
+				{{#if distance}}
+					<p class="distance">{{distance}}KM</p>
+				{{/if}}
+			</div>
+		</div>
+		<span class="float-right"><a href="https://www.google.com/maps?daddr={{latitude}},{{longitude}}" target="_blank"><u>Get Direction</u></a></span>
+		<div class="accordion-wrap clearfix">
+			<div class="btn-accordion">
+				<div class="col-l bold">
+					Product Availability
+				</div>
+				<div class="col-r">
+					<i class="icon-size-xs fa fa-angle-down"></i>
+				</div>
+			</div>
+			<div class="content-accordion">
+				{{#each product}}
+					<p>{{this}}</p>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</script>
+
+<script id="templWtbFilter" type="text/x-handlebars-template">
+	{{#each this}}
+	<div class="row">
+		<div class="col-xs-12 state-detail {{#ifEquals key "distance"}}state-detail--{{key}} hidden{{/ifEquals}} m-sm-bottom-l">
+			<p class="bold uppercase">{{title}}</p>
+			<div class="item-detail">
+				{{#ifEquals key "distance"}}
+					{{#each child}}
+					<div>
+						<input id="{{../key}}_{{key}}" name="{{../key}}" type="radio" class="radio" value="{{value}}">
+						<label class="checkbox-lable icon icon-80 {{icon}}" for="{{../key}}_{{key}}"></label>
+						<p class="fs-2 p-xxs">{{value}}</p>
+					</div>
+					{{/each}}
+				{{else}}
+					{{#each child}}
+					<div>
+						<input id="{{../key}}_{{key}}" name="{{../key}}" type="checkbox" class="checkbox" value="{{value}}">
+						<label class="checkbox-lable icon icon-80 {{icon}}" for="{{../key}}_{{key}}"></label>
+						<p class="fs-2 p-xxs">{{value}}</p>
+					</div>
+					{{/each}}
+				{{/ifEquals}}
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</script>
+
+
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" data-sly-call="${clientLib.js @ categories='uiux.alljs'}" data-sly-unwrap/>
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDylpywGh8XxHMztw-kBRtXCnqyAHZqPwQ"></script>
+<script src="/etc/designs/demo_v3/clientlib/uiux-less-ct/js/vendors/autocomplete.js"></script>
+<script src="/etc/designs/demo_v3/clientlib/uiux-less-ct/js/vendors/markerclusterer.js"></script>
+<script src="/etc/designs/demo_v3/clientlib/uiux-less-ct.js"></script>
