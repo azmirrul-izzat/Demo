@@ -740,6 +740,11 @@
                 <version>1.4</version>
                 <scope>test</scope>
             </dependency>
+         	<dependency>
+	            <groupId>org.apache.servicemix.bundles</groupId>
+	            <artifactId>org.apache.servicemix.bundles.solr-solrj</artifactId>
+	            <version>5.4.1_1</version>
+	        </dependency>
         </dependencies>
     </dependencyManagement>
 
